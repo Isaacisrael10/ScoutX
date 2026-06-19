@@ -3,7 +3,7 @@
 **Challenge Pelé Academia · FIAP · 1º ano de Engenharia de Software (Semipresencial) · Rio de Janeiro · 2026**
 Entrega de **Front-End Design (FED)** — interface visual em **HTML + CSS** (sem JavaScript). Este repositório é a base para a disciplina de **Web Development (WD)**, que adiciona a interatividade depois.
 
-> 🔗 Repositório: _[adicionar link do GitHub aqui]_
+> 🔗 Repositório: https://github.com/Isaacisrael10/ScoutX
 > ▶️ Protótipo publicado: _[adicionar link Vercel/Netlify/GitHub Pages aqui]_
 
 ---
