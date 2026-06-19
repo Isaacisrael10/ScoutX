@@ -4,7 +4,7 @@
 Entrega de **Front-End Design (FED)** — interface visual em **HTML + CSS** (sem JavaScript). Este repositório é a base para a disciplina de **Web Development (WD)**, que adiciona a interatividade depois.
 
 > 🔗 Repositório: https://github.com/Isaacisrael10/ScoutX
-> ▶️ Protótipo publicado: _[adicionar link Vercel/Netlify/GitHub Pages aqui]_
+> ▶️ Protótipo publicado: https://isaacisrael10.github.io/ScoutX/
 
 ---
 
