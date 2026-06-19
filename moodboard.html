@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ScoutX · Moodboard & Direção Visual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Archivo+Expanded:wght@700;800;900&family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B2A6B;--navy-deep:#071B45;--navy-line:#1b3f86;--paper:#F4EFE3;--paper-2:#EBE3D2;--paper-line:#ddd2bd;
+  --ink:#16120B;--ink-soft:#4b4334;--ink-mute:#7a715f;--ouro:#E0A92E;--ouro-lt:#F2C964;--ouro-dk:#A6781B;
+  --verde:#1FA05A;--verde-dk:#0E7A3D;--vermelho:#D12F2F;--mist:#cdd8f1;
+  --disp:"Archivo Expanded",sans-serif;--ui:"Archivo",sans-serif;--stat:"Saira Condensed",sans-serif;--body:"Inter",sans-serif;
+}
+*{margin:0;box-sizing:border-box}
+body{font-family:var(--body);background:var(--paper-2);color:var(--ink);line-height:1.55}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.kick{font-family:var(--ui);font-weight:800;text-transform:uppercase;letter-spacing:.16em;font-size:12px;color:var(--ouro-dk)}
+h1,h2,h3{font-family:var(--disp);letter-spacing:-.5px;line-height:1.05}
+
+/* capa */
+.cover{background:radial-gradient(1000px 500px at 80% -20%,#163a5e,var(--navy-deep) 60%);color:#fff;padding:64px 0 56px}
+.cover .kick{color:var(--ouro-lt)}
+.cover h1{font-size:clamp(40px,6vw,72px);color:#fff;margin:14px 0 10px}
+.cover h1 .x{color:var(--ouro)}
+.cover p{color:var(--mist);font-size:18px;max-width:60ch}
+.cover .meta{margin-top:24px;font-family:var(--stat);font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:13px;color:#9db4d1}
+
+section{padding:54px 0;border-bottom:1px solid var(--paper-line)}
+.sec-h{margin-bottom:28px}
+.sec-h h2{font-size:30px;color:var(--ink);margin-top:8px}
+.sec-h h2 .g{color:var(--ouro-dk)}
+.lead{color:var(--ink-soft);font-size:17px;max-width:64ch}
+
+/* conceito */
+.concept{display:grid;grid-template-columns:1fr 300px;gap:32px;align-items:center}
+.concept .quote{font-family:var(--disp);font-weight:800;font-size:24px;line-height:1.25;color:var(--ink)}
+.concept .quote em{color:var(--ouro-dk);font-style:italic}
+
+/* personas */
+.personas{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.persona{border-radius:14px;padding:22px;color:#fff}
+.persona h3{font-size:19px;color:#fff}
+.persona .role{font-family:var(--ui);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:11px;opacity:.9}
+.persona .task{margin-top:12px;font-size:14px;color:rgba(255,255,255,.92)}
+.persona .task b{color:#fff}
+.p-at{background:linear-gradient(160deg,#15723f,#0b4527)}
+.p-ol{background:linear-gradient(160deg,#102e69,#071b45)}
+.p-re{background:linear-gradient(160deg,#A6781B,#5e4310)}
+
+/* referências */
+.refs{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.ref{background:#fff;border:1px solid var(--paper-line);border-radius:14px;overflow:hidden;box-shadow:0 8px 22px rgba(7,27,69,.07)}
+.ref__media{height:170px;background:var(--navy-deep);overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center}
+.ref__media img{width:100%;height:100%;object-fit:cover}
+.ref__media.tag-built{background:linear-gradient(150deg,#0e2b63,var(--navy-deep))}
+.ref__body{padding:20px}
+.ref__body h3{font-family:var(--ui);font-weight:800;font-size:16px;color:var(--ink);letter-spacing:0}
+.ref__body .src{font-size:12px;color:var(--ink-mute);margin-bottom:12px}
+.ref__line{display:flex;gap:9px;font-size:14px;margin-top:8px;color:var(--ink-soft)}
+.ref__line .lbl{flex:none;font-family:var(--ui);font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:.06em;width:74px;padding-top:1px}
+.ref__line.take .lbl{color:var(--verde-dk)} .ref__line.drop .lbl{color:var(--vermelho)}
+
+/* mini carta + radar usados como amostra */
+.mini-carta{width:140px;aspect-ratio:1/1.4;border-radius:10px;padding:6px;background:linear-gradient(150deg,var(--ouro-lt),var(--ouro) 50%,var(--ouro-dk))}
+.mini-carta .in{height:100%;border-radius:6px;background:var(--navy-deep);position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:10px;color:#fff}
+.mini-carta img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.5) contrast(1.05);opacity:.85}
+.mini-carta .r{position:absolute;top:8px;left:9px;font-family:var(--stat);font-weight:800;font-size:24px;z-index:1;text-shadow:0 1px 6px #000}
+.mini-carta .nm{position:relative;z-index:1;font-family:var(--disp);font-weight:800;font-size:13px}
+
+/* paleta */
+.swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.sw{border-radius:12px;overflow:hidden;border:1px solid var(--paper-line);background:#fff}
+.sw__c{height:74px}
+.sw__t{padding:10px 12px}
+.sw__t b{font-family:var(--stat);font-weight:700;font-size:14px;color:var(--ink);display:block}
+.sw__t span{font-size:11px;color:var(--ink-mute)}
+
+/* tipografia */
+.type{display:flex;flex-direction:column;gap:22px}
+.type .row{border-left:4px solid var(--ouro);padding-left:18px}
+.type .row .label{font-family:var(--ui);font-weight:700;font-size:12px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.t-disp{font-family:var(--disp);font-weight:900;font-size:38px;color:var(--ink);letter-spacing:-1px}
+.t-stat{font-family:var(--stat);font-weight:700;font-size:34px;color:var(--navy);letter-spacing:.02em}
+.t-body{font-family:var(--body);font-size:18px;color:var(--ink-soft)}
+
+/* objeto + anti-padrões */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.mark{display:flex;align-items:center;gap:16px;background:var(--navy);border-radius:14px;padding:24px;color:#fff}
+.mark svg{width:54px;height:54px}
+.mark b{font-family:var(--disp);font-weight:900;font-size:24px}.mark b .x{color:var(--ouro)}
+.mark p{color:var(--mist);font-size:13px;margin-top:4px}
+.avoid{list-style:none;display:flex;flex-direction:column;gap:10px}
+.avoid li{display:flex;gap:10px;font-size:14px;color:var(--ink-soft)}
+.avoid li::before{content:"✕";color:var(--vermelho);font-weight:800;flex:none}
+footer{padding:30px 0;color:var(--ink-mute);font-size:13px;text-align:center}
+
+@media (max-width:820px){.concept,.refs,.two{grid-template-columns:1fr}.personas{grid-template-columns:1fr}.swatches{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+
+<!-- CAPA -->
+<header class="cover">
+  <div class="wrap">
+    <p class="kick">Challenge Pelé Academia · FIAP · Front-End Design</p>
+    <h1>Scout<span class="x">X</span> · Moodboard</h1>
+    <p>A direção visual da plataforma: as referências que estudamos, o que aproveitamos, o que descartamos — e por quê.</p>
+    <p class="meta">Conceito “A Carta do Atleta” · Navy-marinho + Dourado · 2026</p>
+  </div>
+</header>
+
+<!-- CONCEITO -->
+<section><div class="wrap">
+  <div class="sec-h"><p class="kick">O conceito</p><h2>A <span class="g">Carta do Atleta</span></h2></div>
+  <div class="concept">
+    <div>
+      <p class="lead">Cada atleta vira uma <b>carta/dossiê</b> — foto, score de IA, atributos e a coroa como selo de elite e legado do Rei. Não é figurinha de coleção: é o talento <b>visto, medido e valorizado</b>. Une o calor do futebol de base brasileiro ao rigor dos dados.</p>
+      <p class="quote" style="margin-top:22px">“A plataforma séria da Pelé Academia que enxerga, mede e valoriza o próximo craque brasileiro — <em>com o peso do legado do Rei.</em>”</p>
+    </div>
+    <div class="mini-carta" aria-hidden="true">
+      <div class="in"><img src="assets/img/craque-hero.jpg" alt=""><span class="r">92</span><span class="nm">G. Pereira</span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- USUÁRIO & TAREFA -->
+<section><div class="wrap">
+  <div class="sec-h"><p class="kick">Para quem · e a decisão de segundos</p><h2>Usuário e tarefa crítica</h2></div>
+  <div class="personas">
+    <div class="persona p-at"><span class="role">Atleta · 11–17</span><h3>Jovem talento</h3><p class="task"><b>Decisão:</b> “como me mostro e evoluo pra ser descoberto?” Precisa ver seu score, mídias e peneiras num relance.</p></div>
+    <div class="persona p-ol"><span class="role">Olheiro · assinante</span><h3>Recrutador externo</h3><p class="task"><b>Decisão:</b> “esse atleta vale meu contato?” Precisa filtrar e ler a análise de IA em segundos, e iniciar conversa segura.</p></div>
+    <div class="persona p-re"><span class="role">Pelé Academia</span><h3>Recrutador interno</h3><p class="task"><b>Decisão:</b> “quem priorizar e mediar agora?” Precisa de alertas de retenção, fila de mediação e visão da operação.</p></div>
+  </div>
+</div></section>
+
+<!-- REFERÊNCIAS -->
+<section><div class="wrap">
+  <div class="sec-h"><p class="kick">Análise crítica</p><h2>Referências: o que <span class="g">pegamos</span> e o que <span class="g">descartamos</span></h2></div>
+  <div class="refs">
+
+    <article class="ref">
+      <div class="ref__media"><img src="assets/img/ref-pele-site.png" alt="Site atual da Pelé Academia, usado como referência de marca"></div>
+      <div class="ref__body">
+        <h3>Site atual da Pelé Academia</h3><p class="src">peleacademia.com — referência de marca</p>
+        <div class="ref__line take"><span class="lbl">Pegamos</span><span>O azul-marinho + dourado, a coroa e o legado do “1000º gol”.</span></div>
+        <div class="ref__line drop"><span class="lbl">Descartamos</span><span>O visual datado e poluído (gradientes pesados, layout de 2012).</span></div>
+      </div>
+    </article>
+
+    <article class="ref">
+      <div class="ref__media"><img src="assets/img/ref-gemini.png" alt="Tela do Google Gemini, referência para o bloco de IA"></div>
+      <div class="ref__body">
+        <h3>Google Gemini</h3><p class="src">UI de IA — referência para o bloco “Análise da IA”</p>
+        <div class="ref__line take"><span class="lbl">Pegamos</span><span>A calma, o respiro e a aura suave de um espaço de IA.</span></div>
+        <div class="ref__line drop"><span class="lbl">Descartamos</span><span>A cópia descarada (sparkle, barra de chat, azul-céu) — refeito em navy + dourado.</span></div>
+      </div>
+    </article>
+
+    <article class="ref">
+      <div class="ref__media"><img src="assets/img/craque-varzea.jpg" alt="Jovem jogador em campo de terra, referência de fotografia"></div>
+      <div class="ref__body">
+        <h3>Fotografia de base brasileira</h3><p class="src">várzea / documental</p>
+        <div class="ref__line take"><span class="lbl">Pegamos</span><span>O realismo da quebrada/várzea, tratado em duotom navy+dourado.</span></div>
+        <div class="ref__line drop"><span class="lbl">Descartamos</span><span>Fotos de banco genéricas, sorrindo pra câmera.</span></div>
+      </div>
+    </article>
+
+    <article class="ref">
+      <div class="ref__media tag-built">
+        <div class="mini-carta" style="width:120px"><div class="in"><img src="assets/img/craque-13.jpg" alt=""><span class="r">86</span><span class="nm">Atleta</span></div></div>
+      </div>
+      <div class="ref__body">
+        <h3>Card de craque (FIFA Ultimate Team)</h3><p class="src">cultura do videogame</p>
+        <div class="ref__line take"><span class="lbl">Pegamos</span><span>A ideia de “carta” com rating, posição e atributos — instantânea de ler.</span></div>
+        <div class="ref__line drop"><span class="lbl">Descartamos</span><span>O clone literal/holográfico e a gamificação de coleção (vira a “Carta do Atleta”, sóbria).</span></div>
+      </div>
+    </article>
+
+    <article class="ref">
+      <div class="ref__media tag-built">
+        <svg width="150" height="150" viewBox="-28 -8 276 250" fill="none">
+          <polygon points="110,20 187.9,65 187.9,155 110,200 32.1,155 32.1,65" stroke="rgba(255,255,255,.18)" stroke-width="2"/>
+          <polygon points="110,65 148.97,87.5 148.97,132.5 110,155 71.03,132.5 71.03,87.5" stroke="rgba(255,255,255,.12)" stroke-width="2"/>
+          <polygon points="110,25.4 178.6,70.4 173.1,146.5 110,181.1 53.9,142.4 57,79.4" fill="rgba(224,169,46,.2)" stroke="#E0A92E" stroke-width="2.5"/>
+          <g fill="#F2C964"><circle cx="110" cy="25.4" r="4"/><circle cx="178.6" cy="70.4" r="4"/><circle cx="173.1" cy="146.5" r="4"/><circle cx="110" cy="181.1" r="4"/><circle cx="53.9" cy="142.4" r="4"/><circle cx="57" cy="79.4" r="4"/></g>
+        </svg>
+      </div>
+      <div class="ref__body">
+        <h3>Análise esportiva (Wyscout / StatsBomb)</h3><p class="src">scouting profissional</p>
+        <div class="ref__line take"><span class="lbl">Pegamos</span><span>A data-viz: radar de atributos, score e métricas por fundamento.</span></div>
+        <div class="ref__line drop"><span class="lbl">Descartamos</span><span>O visual frio de planilha — demos calor com a paleta da marca.</span></div>
+      </div>
+    </article>
+
+    <article class="ref">
+      <div class="ref__media tag-built" style="flex-direction:column;gap:2px;color:#fff">
+        <span style="font-family:var(--disp);font-weight:900;font-size:40px;letter-spacing:-2px">CRAQUE</span>
+        <span style="font-family:var(--stat);font-weight:700;letter-spacing:.2em;font-size:12px;color:var(--ouro-lt)">EDIÇÃO · Nº 01</span>
+      </div>
+      <div class="ref__body">
+        <h3>Revista esportiva editorial</h3><p class="src">El Gráfico / Placar</p>
+        <div class="ref__line take"><span class="lbl">Pegamos</span><span>Manchete grande, contraste de escala, kicker e fólio — energia de capa.</span></div>
+        <div class="ref__line drop"><span class="lbl">Descartamos</span><span>O excesso de texto; mantivemos só o impacto.</span></div>
+      </div>
+    </article>
+
+  </div>
+</div></section>
+
+<!-- PALETA -->
+<section><div class="wrap">
+  <div class="sec-h"><p class="kick">Cor</p><h2>Paleta — navy dominante + dourado</h2></div>
+  <div class="swatches">
+    <div class="sw"><div class="sw__c" style="background:#0B2A6B"></div><div class="sw__t"><b>#0B2A6B</b><span>Navy-marinho · marca</span></div></div>
+    <div class="sw"><div class="sw__c" style="background:#071B45"></div><div class="sw__t"><b>#071B45</b><span>Navy profundo · fundos</span></div></div>
+    <div class="sw"><div class="sw__c" style="background:#E0A92E"></div><div class="sw__t"><b>#E0A92E</b><span>Dourado · legado/destaque</span></div></div>
+    <div class="sw"><div class="sw__c" style="background:#F4EFE3"></div><div class="sw__t"><b>#F4EFE3</b><span>Papel · leitura</span></div></div>
+    <div class="sw"><div class="sw__c" style="background:#16120B"></div><div class="sw__t"><b>#16120B</b><span>Tinta · texto</span></div></div>
+    <div class="sw"><div class="sw__c" style="background:#1FA05A"></div><div class="sw__t"><b>#1FA05A</b><span>Verde · score alto/Brasil</span></div></div>
+    <div class="sw"><div class="sw__c" style="background:#FFCB05"></div><div class="sw__t"><b>#FFCB05</b><span>Amarelo · energia</span></div></div>
+    <div class="sw"><div class="sw__c" style="background:#D12F2F"></div><div class="sw__t"><b>#D12F2F</b><span>Vermelho · alerta</span></div></div>
+  </div>
+</div></section>
+
+<!-- TIPOGRAFIA -->
+<section><div class="wrap">
+  <div class="sec-h"><p class="kick">Tipografia</p><h2>Romance + dado</h2></div>
+  <div class="type">
+    <div class="row"><div class="label">Archivo Expanded · manchetes</div><div class="t-disp">Todo craque começa invisível.</div></div>
+    <div class="row"><div class="label">Saira Condensed · números / placar</div><div class="t-stat">SCORE 92 · FIN 94 · VEL 88 · R$ 1,2 mi</div></div>
+    <div class="row"><div class="label">Inter · corpo de texto</div><div class="t-body">A IA analisa cada fundamento do jogo com dados precisos, comparáveis e explicáveis.</div></div>
+  </div>
+</div></section>
+
+<!-- OBJETO + ANTI-PADRÕES -->
+<section><div class="wrap">
+  <div class="sec-h"><p class="kick">Identidade</p><h2>Objeto-assinatura &amp; o que evitamos</h2></div>
+  <div class="two">
+    <div class="mark">
+      <svg viewBox="0 0 48 48" fill="none"><path d="M6 16 V6 H16 M32 6 H42 V16 M42 32 V42 H32 M16 42 H6 V32" stroke="#fff" stroke-opacity=".5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 15 L33 33 M33 15 L15 33" stroke="#F2C964" stroke-width="7" stroke-linecap="round"/></svg>
+      <div><b>Scout<span class="x">X</span></b><p>Símbolo “Mira-X”: o X marca onde o talento foi encontrado. + a Carta do Atleta como objeto recorrente.</p></div>
+    </div>
+    <ul class="avoid">
+      <li>Glows radiais e dark-mode genérico de SaaS</li>
+      <li>Glassmorphism e chips brancos flutuantes</li>
+      <li>Emoji como ícone</li>
+      <li>Fotos de banco corporativas e sorridentes</li>
+      <li>Hero simétrico de 2 colunas, “div soup”</li>
+      <li>Tudo em Inter, sem personalidade</li>
+    </ul>
+  </div>
+</div></section>
+
+<footer>ScoutX · Moodboard &amp; Direção Visual · Challenge Pelé Academia · FIAP 2026 · ver. detalhada em docs/ART-DIRECTION.md</footer>
+
+</body>
+</html>

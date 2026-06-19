@@ -1,0 +1,70 @@
+/* =====================================================================
+   ScoutX · Design System — TOKENS  (direção final: "A Carta do Atleta")
+   Navy-marinho dominante (marca Pelé) + dourado (legado) + papel (leitura).
+   Tipografia: Archivo Expanded (display) · Saira Condensed (números) · Inter (corpo).
+   Contrastes texto/fundo conferidos para WCAG 2.1 AA.
+   ===================================================================== */
+:root{
+  /* ---------- Navy (marca, dominante) ---------- */
+  --navy-900:#071B45;  /* navy profundo — fundos escuros, interior da carta */
+  --navy-800:#0a2356;
+  --navy:#0B2A6B;      /* navy-marinho — COR DOMINANTE */
+  --navy-700:#0e3a86;
+  --navy-line:#1b3f86; /* fios/bordas sobre navy */
+  --navy-soft:#13357d;
+
+  /* ---------- Dourado (legado/realeza, acento) ---------- */
+  --ouro-dk:#A6781B;   /* dourado p/ texto sobre papel (contraste AA) */
+  --ouro:#E0A92E;      /* dourado de destaque */
+  --ouro-lt:#F2C964;
+  --ouro-soft:#fbf0d2;
+
+  /* ---------- Papel (leitura, coadjuvante) ---------- */
+  --paper:#F4EFE3;
+  --paper-2:#EBE3D2;
+  --paper-line:#ddd2bd;
+  --ink:#16120B;       /* texto forte sobre papel */
+  --ink-soft:#4b4334;  /* texto secundário sobre papel */
+  --ink-mute:#7a715f;
+
+  /* ---------- Texto sobre navy ---------- */
+  --on-navy:#ffffff;
+  --mist:#cdd8f1;      /* texto secundário sobre navy */
+  --mist-dim:#92a4cc;
+
+  /* ---------- Sotaque Brasil + semânticas ---------- */
+  --verde:#1FA05A; --verde-dk:#0E7A3D; --verde-soft:#e3f6ec;
+  --amarelo:#FFCB05;
+  --vermelho:#D12F2F; --vermelho-dk:#a82424; --vermelho-soft:#fde6e6;
+
+  /* ---------- Tokens de aplicação ---------- */
+  --focus-ring:var(--ouro);
+
+  /* ---------- Tipografia ---------- */
+  --display:"Archivo Expanded","Archivo","Segoe UI",sans-serif; /* manchetes */
+  --ui:"Archivo","Segoe UI",sans-serif;                          /* UI/botões/nav */
+  --stat:"Saira Condensed","Archivo",sans-serif;                 /* números/placar */
+  --body:"Inter","Segoe UI",sans-serif;                          /* corpo */
+  --logo:"Space Grotesk","Archivo",sans-serif;                   /* logotype */
+
+  --fs-xs:.75rem; --fs-sm:.875rem; --fs-base:1rem; --fs-md:1.125rem;
+  --fs-lg:1.375rem; --fs-xl:1.75rem; --fs-2xl:2.5rem; --fs-3xl:3.5rem; --fs-4xl:5rem;
+  --fw-medium:500; --fw-semibold:600; --fw-bold:700; --fw-extra:800; --fw-black:900;
+  --lh-tight:.98; --lh-normal:1.6;
+
+  /* ---------- Espaçamento ---------- */
+  --space-1:.25rem; --space-2:.5rem; --space-3:.75rem; --space-4:1rem;
+  --space-5:1.5rem; --space-6:2rem; --space-7:3rem; --space-8:4rem; --space-9:6rem;
+
+  /* ---------- Raios / sombras ---------- */
+  --radius-sm:4px; --radius-md:8px; --radius-lg:14px; --radius-pill:999px;
+  --shadow-sm:0 1px 3px rgba(7,27,69,.10);
+  --shadow-md:0 10px 28px rgba(7,27,69,.14);
+  --shadow-lg:0 30px 64px rgba(7,27,69,.30);
+
+  --transition-fast:120ms ease; --transition-base:220ms cubic-bezier(.2,.7,.3,1);
+  --container:1200px; --header-h:74px;
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+}

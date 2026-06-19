@@ -1,0 +1,14 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+
+# temporários / capturas de tela
+*.tmp
+_*.png
+_*.html
+zz-*.png
+
+# node (para quando o WD adicionar JS/tooling)
+node_modules/

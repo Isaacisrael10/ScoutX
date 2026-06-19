@@ -1,0 +1,70 @@
+/* =====================================================================
+   ScoutX · Design System — BASE (reset, tipografia, acessibilidade, layout)
+   ===================================================================== */
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);font-size:var(--fs-base);line-height:var(--lh-normal);
+  color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img,svg{display:block;max-width:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:var(--navy);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ---------- Tipografia ---------- */
+h1,h2,h3,h4{font-family:var(--display);line-height:var(--lh-tight);font-weight:var(--fw-black);
+  letter-spacing:-1px;color:var(--ink)}
+h1{font-size:var(--fs-3xl)} h2{font-size:var(--fs-2xl)} h3{font-size:var(--fs-lg);letter-spacing:-.4px}
+p{color:var(--ink-soft)}
+.eyebrow{font-family:var(--ui);font-weight:var(--fw-extra);text-transform:uppercase;
+  letter-spacing:.18em;font-size:var(--fs-xs);color:var(--ouro-dk)}
+.lead{font-size:var(--fs-md);color:var(--ink-soft);line-height:1.6}
+.muted{color:var(--ink-mute)}
+.serif-accent{font-style:italic} /* acento (a "romance" via itálico dourado) */
+
+/* ---------- Acessibilidade ---------- */
+:focus-visible{outline:3px solid var(--focus-ring);outline-offset:2px;border-radius:var(--radius-sm)}
+.skip-link{position:absolute;left:var(--space-4);top:-100px;z-index:200;background:var(--ink);color:#fff;
+  padding:.75rem 1.25rem;border-radius:var(--radius-sm);font-weight:var(--fw-semibold);transition:top var(--transition-base)}
+.skip-link:focus{top:var(--space-4);text-decoration:none}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ---------- Superfícies ---------- */
+.bg-navy{background:var(--navy);color:var(--on-navy)}
+.bg-navy-deep{background:var(--navy-900);color:var(--on-navy)}
+.bg-paper{background:var(--paper);color:var(--ink)}
+.bg-navy h1,.bg-navy h2,.bg-navy h3,.bg-navy-deep h1,.bg-navy-deep h2,.bg-navy-deep h3{color:#fff}
+.bg-navy p,.bg-navy-deep p{color:var(--mist)}
+.bg-navy .eyebrow,.bg-navy-deep .eyebrow{color:var(--ouro)}
+
+/* textura: grão sutil reutilizável */
+.grain{position:relative}
+.grain::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.06;mix-blend-mode:overlay;z-index:1;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ---------- Layout ---------- */
+.container{width:100%;max-width:var(--container);margin-inline:auto;padding-inline:var(--space-5)}
+.section{padding-block:var(--space-9)}
+.section--tight{padding-block:var(--space-8)}
+.stack{display:flex;flex-direction:column}
+.stack-2{gap:var(--space-2)}.stack-3{gap:var(--space-3)}.stack-4{gap:var(--space-4)}.stack-5{gap:var(--space-5)}
+.row{display:flex;gap:var(--space-4);align-items:center;flex-wrap:wrap}
+.grid{display:grid;gap:var(--space-5)}
+.grid-2{grid-template-columns:repeat(2,1fr)}.grid-3{grid-template-columns:repeat(3,1fr)}.grid-4{grid-template-columns:repeat(4,1fr)}
+.center{display:flex;align-items:center;justify-content:center}
+.between{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4)}
+.text-center{text-align:center}
+
+/* fio editorial (regra horizontal) */
+.rule-ink{height:2px;background:var(--ink);border:0}
+.rule-gold{width:64px;height:5px;border-radius:3px;background:var(--ouro);border:0}
+/* fio verde-amarelo (sotaque Brasil) */
+.br-stripe{display:flex;width:64px;height:5px;border-radius:3px;overflow:hidden}
+.br-stripe i{flex:1}.br-stripe i:first-child{background:var(--verde)}.br-stripe i:last-child{background:var(--amarelo)}
+
+@media (max-width:900px){
+  :root{--fs-3xl:2.6rem;--fs-2xl:1.9rem;--fs-4xl:3.2rem}
+  .grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}
+  .section{padding-block:var(--space-8)}
+}
+@media (max-width:600px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}.container{padding-inline:var(--space-4)}}

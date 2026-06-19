@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel do Recrutador · Pelé Academia — ScoutX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Archivo+Expanded:wght@700;800;900&family=Space+Grotesk:wght@500;700&family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/app.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="app-bar">
+  <div class="container">
+    <a class="logo" href="../index.html" aria-label="ScoutX — início">
+      <svg class="logo__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <path d="M6 16 V6 H16 M32 6 H42 V16 M42 32 V42 H32 M16 42 H6 V32" stroke="#F2C964" stroke-opacity=".5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15 15 L33 33 M33 15 L15 33" stroke="#F2C964" stroke-width="7" stroke-linecap="round"/>
+      </svg>
+      Scout<span class="x">X</span>
+    </a>
+    <span class="app-ctx">Pelé Academia</span>
+    <nav class="app-nav" aria-label="Navegação do recrutador">
+      <a href="gestor-dashboard.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 13h6v7H4zM14 4h6v16h-6zM4 4h6v5H4z"/></svg><span>Dashboard</span></a>
+      <a href="catalogo.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5"/></svg><span>Atletas</span></a>
+      <a href="#mediacao"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v11H8l-4 4z"/></svg><span>Mediação</span></a>
+      <a href="#peneiras"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg><span>Peneiras</span></a>
+      <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5M4 19h16M8 16V9M12 16V6M16 16v-4"/></svg><span>Relatórios</span></a>
+    </nav>
+    <div class="app-user">
+      <button class="bell" aria-label="Notificações"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9a6 6 0 1112 0c0 5 2 6 2 6H4s2-1 2-6z"/><path d="M10 21h4"/></svg><span class="pip"></span></button>
+      <span class="avatar" aria-hidden="true">PA</span>
+      <span class="who">Coord. Recrutamento<small>Pelé Academia</small></span>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo" class="page">
+  <div class="container">
+    <p class="eyebrow" style="margin-bottom:6px">Pelé Academia · operação de hoje</p>
+    <div class="page-title"><h1>Painel do Recrutador</h1></div>
+
+    <!-- KPIs (âncora navy) -->
+    <div class="kpi-band grain" style="margin-top:var(--space-5)">
+      <div class="kpi"><b>1.247</b><span class="lab">Atletas cadastrados</span><span class="delta">▲ +8% no mês</span></div>
+      <div class="kpi"><b>86</b><span class="lab">Olheiros assinantes</span><span class="delta">▲ +12% no mês</span></div>
+      <div class="kpi"><b>34</b><span class="lab">Conversas mediadas ativas</span><span class="delta">▲ +9 esta semana</span></div>
+      <div class="kpi"><b>R$ 92 mil</b><span class="lab">Receita do mês</span><span class="delta">▲ +15% no mês</span></div>
+    </div>
+
+    <div class="dash">
+      <!-- Coluna principal -->
+      <div>
+        <!-- Alertas de retenção (destaque) -->
+        <section class="panel panel--alert" aria-labelledby="ret-title">
+          <span class="panel__kick">⚠ Prioridade</span>
+          <div class="panel__head"><h3 id="ret-title">Alertas de retenção</h3><a href="#">Ver todos</a></div>
+          <p class="muted" style="font-size:var(--fs-sm);margin-bottom:var(--space-2)">Atletas com pico anômalo de interesse — aja antes de perder o talento.</p>
+          <div class="list-row">
+            <img class="av" src="../assets/img/craque-hero.jpg" alt="">
+            <div class="info"><b>Gabriel Pereira</b><p>ATA · 11 · Recife/PE · Score 92</p></div>
+            <div class="end"><span class="ret-val">+250%</span><a class="btn btn--gold btn--sm" href="atleta-detalhe.html">Priorizar</a></div>
+          </div>
+          <div class="list-row">
+            <img class="av" src="../assets/img/craque-celebra.jpg" alt="">
+            <div class="info"><b>Luan Costa</b><p>MEI · 15 · Belém/PA · Score 87</p></div>
+            <div class="end"><span class="ret-val">+180%</span><a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Acompanhar</a></div>
+          </div>
+          <div class="list-row">
+            <img class="av" src="../assets/img/craque-rooftop.jpg" alt="">
+            <div class="info"><b>Iago Martins</b><p>ATA · 16 · Goiânia/GO · Score 81</p></div>
+            <div class="end"><span class="ret-val">+120%</span><a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Acompanhar</a></div>
+          </div>
+        </section>
+
+        <!-- Mediação -->
+        <section class="panel" id="mediacao" aria-labelledby="med-title">
+          <span class="panel__kick">Governança</span>
+          <div class="panel__head"><h3 id="med-title">Mediação de contatos</h3><a href="#">Ver tudo</a></div>
+          <p class="muted" style="font-size:var(--fs-sm);margin-bottom:var(--space-2)">Toda conversa olheiro↔atleta passa por aqui. Você monitora e intervém por exceção.</p>
+          <div class="list-row">
+            <span class="mono" aria-hidden="true">CF</span>
+            <div class="info"><b>Clube parceiro → Gabriel Pereira</b><p>Pedido de contato · responsável notificado</p></div>
+            <div class="end"><span class="badge badge--gold">A revisar</span><a class="btn btn--gold btn--sm" href="#">Aprovar</a></div>
+          </div>
+          <div class="list-row">
+            <span class="mono" aria-hidden="true">RS</span>
+            <div class="info"><b>Ricardo S. (olheiro) → Luan Costa</b><p>Conversa em andamento · 4 mensagens</p></div>
+            <div class="end"><span class="badge badge--success">Ativa</span><a class="btn btn--outline btn--sm" href="#">Abrir</a></div>
+          </div>
+          <div class="list-row">
+            <span class="mono" aria-hidden="true">AG</span>
+            <div class="info"><b>Agência X → Thiago Lima</b><p>Sinalizada: tentativa de contato externo</p></div>
+            <div class="end"><span class="badge badge--danger">Sinalizada</span><a class="btn btn--danger btn--sm" href="#">Revisar</a></div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Coluna lateral -->
+      <div>
+        <!-- Receita (card navy destacado) -->
+        <section class="panel panel--navy" aria-labelledby="rev-title">
+          <span class="panel__kick">Modelo de negócio</span>
+          <div class="panel__head"><h3 id="rev-title">Receita do mês</h3></div>
+          <div class="rev-row"><span class="dot" style="background:var(--blue-500,#3d8bfd)"></span><span class="nm">Assinaturas de olheiros</span><span class="vl">R$ 64 mil</span></div>
+          <div class="rev-row"><span class="dot" style="background:var(--ouro)"></span><span class="nm">Intermediação + solidariedade</span><span class="vl">R$ 28 mil</span></div>
+          <div class="rev-total"><span>Total</span><b>R$ 92 mil</b></div>
+          <p class="muted" style="font-size:var(--fs-xs);margin-top:var(--space-3)">Financia as peneiras gratuitas e a missão social da academia.</p>
+        </section>
+
+        <!-- Peneiras -->
+        <section class="panel" id="peneiras" aria-labelledby="pen-title" style="margin-top:var(--space-5)">
+          <span class="panel__kick">Captação</span>
+          <div class="panel__head"><h3 id="pen-title">Próximas peneiras</h3><a href="criar-peneira.html">+ Criar peneira</a></div>
+          <div class="list-row">
+            <span class="mono" aria-hidden="true" style="background:var(--verde)">28</span>
+            <div class="info"><b>Nacional Sub-13 (online)</b><p>312 inscritos · encerra em 6 dias</p></div>
+            <a class="btn btn--outline btn--sm" href="peneira.html">Gerir</a>
+          </div>
+          <div class="list-row">
+            <span class="mono" aria-hidden="true">05</span>
+            <div class="info"><b>Seletiva Recife (presencial)</b><p>148 inscritos · check-in digital</p></div>
+            <a class="btn btn--outline btn--sm" href="peneira.html">Gerir</a>
+          </div>
+        </section>
+
+        <!-- Recrutar -->
+        <section class="recruit-cta" style="margin-top:var(--space-5)">
+          <h3>A Pelé também recruta</h3>
+          <p>Encontre talentos para as suas peneiras e para o elenco da academia.</p>
+          <a class="btn btn--gold btn--block" href="catalogo.html">Explorar o catálogo</a>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

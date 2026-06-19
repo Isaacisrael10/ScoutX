@@ -1,0 +1,142 @@
+/* =====================================================================
+   ScoutX · Design System — COMPONENTES (direção "Carta do Atleta")
+   Estados: default, hover, focus, active, disabled, error.
+   ===================================================================== */
+
+/* ============ BOTÃO ============ */
+.btn{--bg:var(--navy);--fg:#fff;--bd:transparent;
+  display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);
+  font-family:var(--ui);font-weight:var(--fw-extra);text-transform:uppercase;letter-spacing:.04em;font-size:var(--fs-sm);
+  line-height:1;padding:.95rem 1.6rem;border-radius:var(--radius-sm);
+  background:var(--bg);color:var(--fg);border:1.5px solid var(--bd);cursor:pointer;text-decoration:none;white-space:nowrap;
+  transition:transform var(--transition-fast),background var(--transition-base),box-shadow var(--transition-base)}
+.btn:hover{background:var(--navy-700);text-decoration:none;box-shadow:var(--shadow-md)}
+.btn:active{transform:translateY(1px)}
+.btn:focus-visible{outline:3px solid var(--focus-ring);outline-offset:2px}
+.btn:disabled,.btn[aria-disabled="true"]{background:var(--paper-2);color:var(--ink-mute);border-color:var(--paper-line);cursor:not-allowed;box-shadow:none;transform:none}
+.btn--lg{font-size:var(--fs-base);padding:1.1rem 2rem}
+.btn--sm{font-size:var(--fs-xs);padding:.6rem 1rem}
+.btn--block{width:100%}
+/* dourado (ação de destaque) */
+.btn--gold{--bg:var(--ouro);--fg:var(--navy-900)}
+.btn--gold:hover{background:var(--ouro-lt)}
+/* contorno escuro (sobre papel) */
+.btn--outline{--bg:transparent;--fg:var(--navy);--bd:var(--navy)}
+.btn--outline:hover{background:var(--navy);color:#fff}
+/* fantasma (sobre navy) */
+.btn--ghost{--bg:transparent;--fg:#fff;--bd:rgba(255,255,255,.4)}
+.btn--ghost:hover{background:rgba(255,255,255,.1)}
+/* perigo */
+.btn--danger{--bg:var(--vermelho);--fg:#fff}
+.btn--danger:hover{background:var(--vermelho-dk)}
+/* carregando */
+.btn.is-loading{color:transparent;pointer-events:none;position:relative}
+.btn.is-loading::after{content:"";position:absolute;width:18px;height:18px;border-radius:50%;
+  border:2.5px solid rgba(255,255,255,.45);border-top-color:#fff;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ============ CHIP de feature (no hero) ============ */
+.chip-feat{display:inline-flex;align-items:center;gap:8px;font-family:var(--ui);font-weight:var(--fw-bold);
+  font-size:var(--fs-sm);padding:9px 14px;border-radius:var(--radius-pill);
+  background:rgba(255,255,255,.08);color:#fff;border:1px solid var(--navy-line)}
+.chip-feat svg{width:16px;height:16px;color:var(--ouro-lt)}
+.bg-paper .chip-feat{background:#fff;color:var(--navy);border-color:var(--paper-line)}
+.bg-paper .chip-feat svg{color:var(--ouro-dk)}
+
+/* ============ CAMPO ============ */
+.field{display:flex;flex-direction:column;gap:var(--space-2)}
+.field__label{font-family:var(--ui);font-weight:var(--fw-bold);font-size:var(--fs-sm);color:var(--ink)}
+.field__label .req{color:var(--vermelho)}
+.input,.select,.textarea{width:100%;padding:.8rem 1rem;font-size:var(--fs-base);background:#fff;color:var(--ink);
+  border:1.5px solid var(--paper-line);border-radius:var(--radius-md);
+  transition:border-color var(--transition-base),box-shadow var(--transition-base)}
+.input::placeholder,.textarea::placeholder{color:var(--ink-mute)}
+.input:hover,.select:hover,.textarea:hover{border-color:var(--ink-mute)}
+.input:focus,.select:focus,.textarea:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(11,42,107,.15)}
+.input:disabled,.select:disabled,.textarea:disabled{background:var(--paper-2);color:var(--ink-mute);cursor:not-allowed}
+.textarea{min-height:120px;resize:vertical}
+.select{appearance:none;cursor:pointer;padding-right:2.6rem;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%237a715f' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
+.field--error .input,.field--error .select,.field--error .textarea{border-color:var(--vermelho)}
+.field--error .input:focus{box-shadow:0 0 0 3px var(--vermelho-soft)}
+.field__error{display:flex;align-items:center;gap:6px;color:var(--vermelho-dk);font-size:var(--fs-sm);font-weight:var(--fw-medium)}
+.field__error::before{content:"⚠";font-size:1rem}
+.field__hint{color:var(--ink-mute);font-size:var(--fs-sm)}
+
+/* ============ CARD genérico ============ */
+.card{background:#fff;border:1px solid var(--paper-line);border-radius:var(--radius-lg);
+  padding:var(--space-5);box-shadow:var(--shadow-sm);transition:box-shadow var(--transition-base),transform var(--transition-base),border-color var(--transition-base)}
+.card--hover:hover{box-shadow:var(--shadow-md);transform:translateY(-4px)}
+.card--hover:focus-within{box-shadow:var(--shadow-md);border-color:var(--ouro)}
+.card__num{font-family:var(--display);font-weight:var(--fw-black);font-size:var(--fs-xl);color:var(--ouro-dk)}
+.card__title{font-family:var(--display);font-weight:var(--fw-extra);font-size:var(--fs-lg);color:var(--ink);letter-spacing:-.4px}
+
+/* ============ A CARTA DO ATLETA (componente-assinatura) ============ */
+.carta{--w:300px;position:relative;width:var(--w);aspect-ratio:1/1.4;border-radius:12px;padding:8px;
+  background:linear-gradient(155deg,var(--ouro-lt),var(--ouro) 50%,var(--ouro-dk));
+  box-shadow:var(--shadow-lg),inset 0 0 0 1.5px rgba(255,255,255,.4);transition:transform var(--transition-base),box-shadow var(--transition-base)}
+.carta--tilt{transform:rotate(2deg)}
+.carta--link{display:block;text-decoration:none}
+.carta--link:hover{transform:translateY(-6px) rotate(0deg)}
+.carta--link:focus-visible{outline:3px solid var(--navy);outline-offset:4px}
+.carta__inner{position:relative;height:100%;border-radius:7px;overflow:hidden;background:var(--navy-900)}
+.carta__photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.6) contrast(1.05)}
+.carta__navy{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,27,69,.55),rgba(7,27,69,.2));mix-blend-mode:multiply}
+.carta__gold{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(224,169,46,.35));mix-blend-mode:overlay}
+.carta__shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,27,69,.12) 35%,rgba(7,27,69,.94) 100%)}
+.carta__reg{position:absolute;top:8px;left:50%;transform:translateX(-50%);z-index:4;font-family:var(--stat);font-size:10px;letter-spacing:.2em;color:rgba(255,255,255,.5)}
+.carta__top{position:absolute;top:14px;left:15px;right:15px;z-index:4;display:flex;justify-content:space-between;align-items:flex-start}
+.carta__rating{font-family:var(--stat);line-height:.78;text-align:center;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+.carta__rating b{font-size:calc(var(--w)*.18);display:block;color:#fff}
+.carta__rating span{font-size:calc(var(--w)*.06);letter-spacing:.14em;color:var(--ouro-lt)}
+.carta__elite{display:inline-flex;align-items:center;gap:6px;font-family:var(--ui);font-weight:var(--fw-extra);font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;background:rgba(7,27,69,.6);color:var(--ouro-lt);padding:5px 9px;border-radius:3px;border:1px solid rgba(224,169,46,.5)}
+.carta__elite svg{width:15px;height:12px;fill:currentColor}
+.carta__id{position:absolute;left:16px;right:16px;bottom:70px;z-index:4;display:flex;align-items:center;gap:10px}
+.carta__name{font-family:var(--display);font-weight:var(--fw-black);font-size:calc(var(--w)*.075);color:#fff;line-height:1;letter-spacing:-.5px}
+.carta__name small{display:block;font-family:var(--body);font-weight:400;font-size:11.5px;color:rgba(255,255,255,.72);margin-top:4px;letter-spacing:.02em}
+.carta__stats{position:absolute;left:16px;right:16px;bottom:15px;z-index:4;display:grid;grid-template-columns:repeat(5,1fr);gap:4px;border-top:1px solid rgba(255,255,255,.18);padding-top:9px}
+.carta__stats div{text-align:center;font-family:var(--stat);color:#fff}
+.carta__stats b{font-size:18px;display:block;line-height:1}
+.carta__stats span{font-size:9px;letter-spacing:.04em;color:rgba(255,255,255,.6)}
+/* bandeira BR (CSS) */
+.flag-br{width:25px;height:17px;border-radius:2px;background:var(--verde);position:relative;overflow:hidden;flex:none}
+.flag-br i{position:absolute;top:50%;left:50%;width:17px;height:17px;background:var(--amarelo);transform:translate(-50%,-50%) rotate(45deg)}
+.flag-br i::after{content:"";position:absolute;top:50%;left:50%;width:7px;height:7px;border-radius:50%;background:var(--navy);transform:translate(-50%,-50%) rotate(-45deg)}
+/* selo de score */
+.seal{width:78px;height:78px;border-radius:50%;background:var(--navy-900);border:2px solid var(--ouro);color:#fff;
+  font-family:var(--stat);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;line-height:1;box-shadow:var(--shadow-md)}
+.seal b{font-size:26px;color:var(--ouro-lt)}.seal span{font-size:8px;letter-spacing:.12em;margin-top:3px;color:var(--mist)}
+
+/* ============ SCORE inline (medidor) ============ */
+.score{display:inline-flex;align-items:center;gap:10px;font-family:var(--stat)}
+.score__badge{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:var(--fs-md);font-weight:var(--fw-bold)}
+.score--high .score__badge{background:var(--verde)}
+.score--mid .score__badge{background:var(--ouro-dk)}
+.score--low .score__badge{background:var(--ink-mute)}
+.score__label{font-family:var(--body);font-size:var(--fs-xs);color:var(--ink-mute);text-transform:uppercase;letter-spacing:.08em}
+
+/* ============ BADGE ============ */
+.badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--ui);font-weight:var(--fw-bold);font-size:var(--fs-xs);
+  padding:5px 11px;border-radius:var(--radius-pill);background:var(--paper-2);color:var(--ink-soft)}
+.badge--navy{background:rgba(11,42,107,.1);color:var(--navy)}
+.badge--gold{background:var(--ouro-soft);color:var(--ouro-dk)}
+.badge--success{background:var(--verde-soft);color:var(--verde-dk)}
+.badge--danger{background:var(--vermelho-soft);color:var(--vermelho-dk)}
+
+/* ============ ALERTA ============ */
+.alert{display:flex;gap:var(--space-3);padding:var(--space-4);border-radius:var(--radius-md);border:1px solid;align-items:flex-start}
+.alert--warning{background:#fff6e6;border-color:#f0d9a8;color:#945600}
+.alert--success{background:var(--verde-soft);border-color:#b9e6cd;color:var(--verde-dk)}
+.alert--info{background:rgba(11,42,107,.06);border-color:rgba(11,42,107,.2);color:var(--navy)}
+
+/* ============ NAV (app) ============ */
+.nav-link{display:inline-flex;align-items:center;gap:8px;padding:.5rem .9rem;border-radius:var(--radius-sm);
+  font-family:var(--ui);font-weight:var(--fw-bold);color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;font-size:var(--fs-sm);
+  transition:background var(--transition-base),color var(--transition-base)}
+.nav-link:hover{background:var(--paper-2);color:var(--ink);text-decoration:none}
+.nav-link[aria-current="page"]{background:rgba(11,42,107,.1);color:var(--navy)}
+
+/* ============ AVATAR ============ */
+.avatar{width:42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-weight:var(--fw-extra);font-size:var(--fs-sm)}
