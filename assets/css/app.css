@@ -592,3 +592,6 @@
 .msg-compose__send{flex:0 0 auto;width:44px;height:44px;border-radius:50%;border:0;background:var(--ouro);color:var(--navy);display:flex;align-items:center;justify-content:center;cursor:pointer}
 .msg-compose__send svg{width:20px;height:20px}
 @media (max-width:900px){.msgs{grid-template-columns:1fr}.msg-list{height:auto;max-height:280px}}
+
+/* avatares de mensagem com inicial (olheiro/clube/Pelé sem foto) */
+.msg-list__av,.msg-thread__av{display:flex;align-items:center;justify-content:center;font-family:var(--stat);font-weight:var(--fw-extra);font-size:var(--fs-sm);color:var(--ouro-lt)}
