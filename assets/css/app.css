@@ -534,3 +534,13 @@
 .composer__av img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
 .composer__prompt{flex:1;min-width:0;background:var(--paper);border:1px solid var(--paper-line);border-radius:99px;padding:11px 18px;color:var(--ink-mute);font-size:var(--fs-sm);font-family:var(--body)}
 @media (max-width:520px){.composer__prompt{display:none}}
+
+/* ===================== Faixa de resumo da semana (feed do atleta) ===================== */
+.weekbar{background:linear-gradient(180deg,#0e2b63,var(--navy-900));border:1px solid var(--navy-line);border-radius:var(--radius-lg);padding:var(--space-4) var(--space-5);display:flex;align-items:center;gap:var(--space-5);flex-wrap:wrap;color:#fff;position:relative;overflow:hidden}
+.weekbar::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 92% -20%,rgba(224,169,46,.22),transparent 55%);pointer-events:none}
+.weekbar__hi{font-family:var(--display);font-weight:var(--fw-extra);font-size:var(--fs-md);color:#fff;flex:1 0 100%;margin-bottom:var(--space-1);line-height:1.15;position:relative}
+.weekbar__hi span{display:block;font-family:var(--body);font-weight:400;font-size:var(--fs-xs);color:var(--mist);margin-top:3px}
+.weekbar__stat{flex:1;text-align:center;position:relative}
+.weekbar__stat b{font-family:var(--stat);font-weight:var(--fw-extra);font-size:var(--fs-lg);color:var(--ouro-lt);display:block;line-height:1}
+.weekbar__stat span{font-size:var(--fs-xs);color:var(--mist)}
+@media (max-width:600px){.weekbar{gap:var(--space-4)}.weekbar__hi{flex:1 0 100%;margin-bottom:var(--space-2)}}
