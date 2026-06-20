@@ -47,149 +47,190 @@
       <!-- ============ FEED ============ -->
       <div class="feed-col">
 
+        <div class="feed-tabs" role="tablist" aria-label="Filtrar feed">
+          <button class="feed-tab" role="tab" aria-selected="true">Para você</button>
+          <button class="feed-tab" role="tab" aria-selected="false">Seguindo</button>
+          <button class="feed-tab" role="tab" aria-selected="false">Em alta</button>
+          <button class="feed-tab" role="tab" aria-selected="false">Minha região</button>
+        </div>
+
+        <section class="destaques">
+        <h2 class="feed-h">Destaques da semana</h2>
+        <div class="stories">
+          <a class="story" href="atleta-detalhe.html"><span class="story__ring"><span class="story__av"><img src="../assets/img/craque-hero.jpg" alt="Gabriel Pereira"></span><span class="story__idx" aria-hidden="true">92</span></span><span class="story__name">Gabriel</span></a>
+          <a class="story" href="atleta-detalhe.html"><span class="story__ring"><span class="story__av"><img src="../assets/img/craque-celebra.jpg" alt="Luan Costa"></span><span class="story__idx" aria-hidden="true">87</span></span><span class="story__name">Luan</span></a>
+          <a class="story" href="atleta-detalhe.html"><span class="story__ring"><span class="story__av"><img src="../assets/img/craque-varzea.jpg" alt="Thiago Lima"></span><span class="story__idx" aria-hidden="true">85</span></span><span class="story__name">Thiago</span></a>
+          <a class="story" href="atleta-detalhe.html"><span class="story__ring"><span class="story__av"><img src="../assets/img/craque-goleiro.jpg" alt="Mateus Rocha"></span><span class="story__idx" aria-hidden="true">83</span></span><span class="story__name">Mateus</span></a>
+          <a class="story" href="atleta-detalhe.html"><span class="story__ring"><span class="story__av"><img src="../assets/img/craque-rooftop.jpg" alt="Iago Martins"></span><span class="story__idx" aria-hidden="true">81</span></span><span class="story__name">Iago</span></a>
+          <a class="story" href="atleta-detalhe.html"><span class="story__ring"><span class="story__av"><img src="../assets/img/craque-jovem.jpg" alt="Diego Nunes"></span><span class="story__idx" aria-hidden="true">80</span></span><span class="story__name">Diego</span></a>
+          <a class="story" href="atleta-detalhe.html"><span class="story__ring"><span class="story__av"><img src="../assets/img/craque-embaixada.jpg" alt="Felipe Andrade"></span><span class="story__idx" aria-hidden="true">79</span></span><span class="story__name">Felipe</span></a>
+          <a class="story" href="atleta-detalhe.html"><span class="story__ring"><span class="story__av"><img src="../assets/img/craque-trofeu.jpg" alt="Bruno Alves"></span><span class="story__idx" aria-hidden="true">77</span></span><span class="story__name">Bruno</span></a>
+        </div>
+        </section>
+
+        <!-- POST 1 -->
         <article class="igpost">
-          <header class="igpost__head">
-            <span class="igpost__av" aria-hidden="true">GP</span>
-            <span class="igpost__id"><b>gabriel.pereira</b><span>Atacante · 11 anos · Recife/PE</span></span>
-            <button class="igpost__follow" aria-pressed="false">Seguir</button>
-          </header>
           <div class="igpost__media">
+            <span class="igpost__stamp" aria-hidden="true">Pelé Academia</span>
             <img src="../assets/img/craque-hero.jpg" alt="Vídeo de Gabriel Pereira: gol de fora da área">
             <svg class="igpost__play" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,.4)"/><circle cx="12" cy="12" r="11" stroke="#fff" stroke-opacity=".75"/><path d="M10 8l6 4-6 4z" fill="#fff"/></svg>
-            <span class="igpost__pos"><span class="badge badge--gold">ATA</span></span>
-            <span class="idx"><b>92</b><span>Índice</span></span>
             <span class="igpost__dur">0:38</span>
+            <span class="idx"><b>92</b><span>Índice</span></span>
+            <div class="igpost__over">
+              <div class="igpost__overid">
+                <span class="igpost__kick">ATA · Registro 047</span>
+                <span class="igpost__name">Gabriel Pereira <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#E0A92E"/><path d="M8 12.4l2.6 2.6 5-5.6" fill="none" stroke="#0B2A6B" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <span class="igpost__loc">Recife/PE · há 3h</span>
+              </div>
+              <button class="igpost__follow" aria-pressed="false">Seguir</button>
+            </div>
           </div>
           <div class="igbar">
-            <button class="like" aria-label="Curtir"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z"/></svg>18,2 mil</button>
-            <button class="cmt" aria-label="Comentários"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 01-8.5 8.5 8.5 8.5 0 01-3.8-.9L3 21l1.9-5.7a8.5 8.5 0 01-.9-3.8A8.4 8.4 0 0112.5 3 8.4 8.4 0 0121 11.5z"/></svg>212</button>
-            <button class="shr" aria-label="Compartilhar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></button>
-            <button class="save" aria-label="Salvar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></button>
+            <div class="igbar__metric"><span><b>3,4 mil</b> votos</span><span><b>412 mil</b> views</span></div>
+            <button class="igact igact--vote" aria-label="Votar neste lance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.3l3.9 2.9-1.5 4.6H9.6L8.1 10.2z"/></svg></button>
+            <button class="igact" aria-label="Ver análises"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2.5h6V4M9 11h6M9 15h4"/></svg></button>
+            <button class="igact" aria-label="Adicionar ao radar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></button>
+            <button class="igact" aria-label="Compartilhar carta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.4l6.8 4M15.4 6.6l-6.8 4"/></svg></button>
           </div>
-          <div class="igmeta">
-            <span class="igmeta__likes">18.243 curtidas · <span style="color:var(--ouro-dk)">3,4 mil votos</span></span>
-            <p class="igmeta__cap"><b>gabriel.pereira</b> Gol de fora da área no estadual sub-13 ⚽🔥</p>
+          <div class="post-body">
+            <p class="post-cap"><b>Gabriel Pereira</b> Gol de fora da área no estadual sub-13 ⚽🔥</p>
             <div class="igtags"><span class="tag-c tag-hot">🔥 Em alta</span><span class="tag-c">Finalizador</span><span class="tag-c">Veloz</span><span class="tag-c">Canhota</span></div>
-            <button class="igmeta__cmts">Ver todos os 212 comentários</button>
-            <span class="igmeta__time">há 3 horas</span>
+            <p class="comment"><b>@torcedor_recife</b> Esse moleque é fenômeno, joga muito! ⚽</p>
+            <button class="post-analises">Ver todas as 212 análises</button>
+            <div class="igcta"><a class="btn btn--gold btn--sm" href="atleta-detalhe.html">Enviar mensagem</a><a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver perfil</a></div>
           </div>
-          <div class="igcta"><a class="btn btn--gold btn--sm" href="atleta-detalhe.html">Intermediar contato</a><a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver perfil</a></div>
         </article>
 
+        <!-- POST 2 -->
         <article class="igpost">
-          <header class="igpost__head">
-            <span class="igpost__av" aria-hidden="true">LC</span>
-            <span class="igpost__id"><b>luan.costa</b><span>Meia · 15 anos · Belém/PA</span></span>
-            <button class="igpost__follow" aria-pressed="false">Seguir</button>
-          </header>
           <div class="igpost__media">
+            <span class="igpost__stamp" aria-hidden="true">Pelé Academia</span>
             <img src="../assets/img/craque-celebra.jpg" alt="Vídeo de Luan Costa: assistência de letra">
             <svg class="igpost__play" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,.4)"/><circle cx="12" cy="12" r="11" stroke="#fff" stroke-opacity=".75"/><path d="M10 8l6 4-6 4z" fill="#fff"/></svg>
-            <span class="igpost__pos"><span class="badge badge--gold">MEI</span></span>
-            <span class="idx"><b>87</b><span>Índice</span></span>
             <span class="igpost__dur">0:45</span>
+            <span class="idx"><b>87</b><span>Índice</span></span>
+            <div class="igpost__over">
+              <div class="igpost__overid">
+                <span class="igpost__kick">MEI · Registro 051</span>
+                <span class="igpost__name">Luan Costa <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#E0A92E"/><path d="M8 12.4l2.6 2.6 5-5.6" fill="none" stroke="#0B2A6B" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <span class="igpost__loc">Belém/PA · há 6h</span>
+              </div>
+              <button class="igpost__follow" aria-pressed="false">Seguir</button>
+            </div>
           </div>
           <div class="igbar">
-            <button class="like" aria-label="Curtir"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z"/></svg>9,7 mil</button>
-            <button class="cmt" aria-label="Comentários"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 01-8.5 8.5 8.5 8.5 0 01-3.8-.9L3 21l1.9-5.7a8.5 8.5 0 01-.9-3.8A8.4 8.4 0 0112.5 3 8.4 8.4 0 0121 11.5z"/></svg>148</button>
-            <button class="shr" aria-label="Compartilhar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></button>
-            <button class="save" aria-label="Salvar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></button>
+            <div class="igbar__metric"><span><b>1,9 mil</b> votos</span><span><b>230 mil</b> views</span></div>
+            <button class="igact igact--vote" aria-label="Votar neste lance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.3l3.9 2.9-1.5 4.6H9.6L8.1 10.2z"/></svg></button>
+            <button class="igact" aria-label="Ver análises"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2.5h6V4M9 11h6M9 15h4"/></svg></button>
+            <button class="igact" aria-label="Adicionar ao radar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></button>
+            <button class="igact" aria-label="Compartilhar carta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.4l6.8 4M15.4 6.6l-6.8 4"/></svg></button>
           </div>
-          <div class="igmeta">
-            <span class="igmeta__likes">9.712 curtidas · <span style="color:var(--ouro-dk)">1,9 mil votos</span></span>
-            <p class="igmeta__cap"><b>luan.costa</b> Assistência de letra pro gol da vitória 🎩</p>
-            <div class="igtags"><span class="tag-c tag-hot">🔥 Em alta</span><span class="tag-c">Visão de jogo</span><span class="tag-c">Passe</span><span class="tag-c">Drible</span></div>
-            <button class="igmeta__cmts">Ver todos os 148 comentários</button>
-            <span class="igmeta__time">há 6 horas</span>
+          <div class="post-body">
+            <p class="post-cap"><b>Luan Costa</b> Assistência de letra pro gol da vitória 🎩</p>
+            <div class="igtags"><span class="tag-c tag-hot">🔥 Em alta</span><span class="tag-c">Visão de jogo</span><span class="tag-c">Passe</span></div>
+            <p class="comment"><b>@base_norte</b> Que passe! Visão de craque. 🎯</p>
+            <button class="post-analises">Ver todas as 148 análises</button>
+            <div class="igcta"><a class="btn btn--gold btn--sm" href="atleta-detalhe.html">Enviar mensagem</a><a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver perfil</a></div>
           </div>
-          <div class="igcta"><a class="btn btn--gold btn--sm" href="atleta-detalhe.html">Intermediar contato</a><a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver perfil</a></div>
         </article>
 
+        <!-- POST 3 -->
         <article class="igpost">
-          <header class="igpost__head">
-            <span class="igpost__av" aria-hidden="true">TL</span>
-            <span class="igpost__id"><b>thiago.lima</b><span>Zagueiro · 17 anos · Porto Alegre/RS</span></span>
-            <button class="igpost__follow" aria-pressed="false">Seguir</button>
-          </header>
           <div class="igpost__media">
+            <span class="igpost__stamp" aria-hidden="true">Pelé Academia</span>
             <img src="../assets/img/craque-varzea.jpg" alt="Vídeo de Thiago Lima: corte e saída de bola">
             <svg class="igpost__play" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,.4)"/><circle cx="12" cy="12" r="11" stroke="#fff" stroke-opacity=".75"/><path d="M10 8l6 4-6 4z" fill="#fff"/></svg>
-            <span class="igpost__pos"><span class="badge badge--gold">ZAG</span></span>
-            <span class="idx"><b>85</b><span>Índice</span></span>
             <span class="igpost__dur">0:52</span>
+            <span class="idx"><b>85</b><span>Índice</span></span>
+            <div class="igpost__over">
+              <div class="igpost__overid">
+                <span class="igpost__kick">ZAG · Registro 063</span>
+                <span class="igpost__name">Thiago Lima <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#E0A92E"/><path d="M8 12.4l2.6 2.6 5-5.6" fill="none" stroke="#0B2A6B" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <span class="igpost__loc">Porto Alegre/RS · há 9h</span>
+              </div>
+              <button class="igpost__follow" aria-pressed="false">Seguir</button>
+            </div>
           </div>
           <div class="igbar">
-            <button class="like" aria-label="Curtir"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z"/></svg>6,1 mil</button>
-            <button class="cmt" aria-label="Comentários"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 01-8.5 8.5 8.5 8.5 0 01-3.8-.9L3 21l1.9-5.7a8.5 8.5 0 01-.9-3.8A8.4 8.4 0 0112.5 3 8.4 8.4 0 0121 11.5z"/></svg>93</button>
-            <button class="shr" aria-label="Compartilhar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></button>
-            <button class="save" aria-label="Salvar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></button>
+            <div class="igbar__metric"><span><b>1,2 mil</b> votos</span><span><b>145 mil</b> views</span></div>
+            <button class="igact igact--vote" aria-label="Votar neste lance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.3l3.9 2.9-1.5 4.6H9.6L8.1 10.2z"/></svg></button>
+            <button class="igact" aria-label="Ver análises"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2.5h6V4M9 11h6M9 15h4"/></svg></button>
+            <button class="igact" aria-label="Adicionar ao radar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></button>
+            <button class="igact" aria-label="Compartilhar carta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.4l6.8 4M15.4 6.6l-6.8 4"/></svg></button>
           </div>
-          <div class="igmeta">
-            <span class="igmeta__likes">6.108 curtidas · <span style="color:var(--ouro-dk)">1,2 mil votos</span></span>
-            <p class="igmeta__cap"><b>thiago.lima</b> Corte na entrada da área e saída jogando 🧱</p>
+          <div class="post-body">
+            <p class="post-cap"><b>Thiago Lima</b> Corte na entrada da área e saída jogando 🧱</p>
             <div class="igtags"><span class="tag-c">Marcação</span><span class="tag-c">Cabeceio</span><span class="tag-c">Liderança</span></div>
-            <button class="igmeta__cmts">Ver todos os 93 comentários</button>
-            <span class="igmeta__time">há 9 horas</span>
+            <p class="comment"><b>@zagueiro.raiz</b> Defesa de homem feito — só tem 17 no documento.</p>
+            <button class="post-analises">Ver todas as 93 análises</button>
+            <div class="igcta"><a class="btn btn--gold btn--sm" href="atleta-detalhe.html">Enviar mensagem</a><a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver perfil</a></div>
           </div>
-          <div class="igcta"><a class="btn btn--gold btn--sm" href="atleta-detalhe.html">Intermediar contato</a><a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver perfil</a></div>
         </article>
 
+        <!-- POST 4 -->
         <article class="igpost">
-          <header class="igpost__head">
-            <span class="igpost__av" aria-hidden="true">IM</span>
-            <span class="igpost__id"><b>iago.martins</b><span>Atacante · 16 anos · Goiânia/GO</span></span>
-            <button class="igpost__follow" aria-pressed="false">Seguir</button>
-          </header>
           <div class="igpost__media">
+            <span class="igpost__stamp" aria-hidden="true">Pelé Academia</span>
             <img src="../assets/img/craque-rooftop.jpg" alt="Vídeo de Iago Martins: pique e finalização">
             <svg class="igpost__play" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,.4)"/><circle cx="12" cy="12" r="11" stroke="#fff" stroke-opacity=".75"/><path d="M10 8l6 4-6 4z" fill="#fff"/></svg>
-            <span class="igpost__pos"><span class="badge badge--gold">ATA</span></span>
-            <span class="idx"><b>81</b><span>Índice</span></span>
             <span class="igpost__dur">0:41</span>
+            <span class="idx"><b>81</b><span>Índice</span></span>
+            <div class="igpost__over">
+              <div class="igpost__overid">
+                <span class="igpost__kick">ATA · Registro 072</span>
+                <span class="igpost__name">Iago Martins <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#E0A92E"/><path d="M8 12.4l2.6 2.6 5-5.6" fill="none" stroke="#0B2A6B" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <span class="igpost__loc">Goiânia/GO · há 12h</span>
+              </div>
+              <button class="igpost__follow" aria-pressed="false">Seguir</button>
+            </div>
           </div>
           <div class="igbar">
-            <button class="like" aria-label="Curtir"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z"/></svg>7,2 mil</button>
-            <button class="cmt" aria-label="Comentários"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 01-8.5 8.5 8.5 8.5 0 01-3.8-.9L3 21l1.9-5.7a8.5 8.5 0 01-.9-3.8A8.4 8.4 0 0112.5 3 8.4 8.4 0 0121 11.5z"/></svg>117</button>
-            <button class="shr" aria-label="Compartilhar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></button>
-            <button class="save" aria-label="Salvar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></button>
+            <div class="igbar__metric"><span><b>1,1 mil</b> votos</span><span><b>168 mil</b> views</span></div>
+            <button class="igact igact--vote" aria-label="Votar neste lance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.3l3.9 2.9-1.5 4.6H9.6L8.1 10.2z"/></svg></button>
+            <button class="igact" aria-label="Ver análises"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2.5h6V4M9 11h6M9 15h4"/></svg></button>
+            <button class="igact" aria-label="Adicionar ao radar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></button>
+            <button class="igact" aria-label="Compartilhar carta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.4l6.8 4M15.4 6.6l-6.8 4"/></svg></button>
           </div>
-          <div class="igmeta">
-            <span class="igmeta__likes">7.231 curtidas · <span style="color:var(--ouro-dk)">1,1 mil votos</span></span>
-            <p class="igmeta__cap"><b>iago.martins</b> Pique do meio de campo e finaliza no canto 💨</p>
+          <div class="post-body">
+            <p class="post-cap"><b>Iago Martins</b> Pique do meio de campo e finaliza no canto 💨</p>
             <div class="igtags"><span class="tag-c tag-hot">🔥 Em alta</span><span class="tag-c">Velocidade</span><span class="tag-c">Finalização</span></div>
-            <button class="igmeta__cmts">Ver todos os 117 comentários</button>
-            <span class="igmeta__time">há 12 horas</span>
+            <p class="comment"><b>@go_futebol</b> Velocidade absurda, ninguém pega!</p>
+            <button class="post-analises">Ver todas as 117 análises</button>
+            <div class="igcta"><a class="btn btn--gold btn--sm" href="atleta-detalhe.html">Enviar mensagem</a><a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver perfil</a></div>
           </div>
-          <div class="igcta"><a class="btn btn--gold btn--sm" href="atleta-detalhe.html">Intermediar contato</a><a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver perfil</a></div>
         </article>
 
+        <!-- POST 5 -->
         <article class="igpost">
-          <header class="igpost__head">
-            <span class="igpost__av" aria-hidden="true">DN</span>
-            <span class="igpost__id"><b>diego.nunes</b><span>Meia · 15 anos · São Paulo/SP</span></span>
-            <button class="igpost__follow" aria-pressed="false">Seguir</button>
-          </header>
           <div class="igpost__media">
+            <span class="igpost__stamp" aria-hidden="true">Pelé Academia</span>
             <img src="../assets/img/craque-jovem.jpg" alt="Vídeo de Diego Nunes: lançamento preciso">
             <svg class="igpost__play" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,.4)"/><circle cx="12" cy="12" r="11" stroke="#fff" stroke-opacity=".75"/><path d="M10 8l6 4-6 4z" fill="#fff"/></svg>
-            <span class="igpost__pos"><span class="badge badge--gold">MEI</span></span>
-            <span class="idx"><b>80</b><span>Índice</span></span>
             <span class="igpost__dur">0:36</span>
+            <span class="idx"><b>80</b><span>Índice</span></span>
+            <div class="igpost__over">
+              <div class="igpost__overid">
+                <span class="igpost__kick">MEI · Registro 088</span>
+                <span class="igpost__name">Diego Nunes <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#E0A92E"/><path d="M8 12.4l2.6 2.6 5-5.6" fill="none" stroke="#0B2A6B" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <span class="igpost__loc">São Paulo/SP · há 1 dia</span>
+              </div>
+              <button class="igpost__follow" aria-pressed="false">Seguir</button>
+            </div>
           </div>
           <div class="igbar">
-            <button class="like" aria-label="Curtir"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z"/></svg>4,8 mil</button>
-            <button class="cmt" aria-label="Comentários"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 01-8.5 8.5 8.5 8.5 0 01-3.8-.9L3 21l1.9-5.7a8.5 8.5 0 01-.9-3.8A8.4 8.4 0 0112.5 3 8.4 8.4 0 0121 11.5z"/></svg>74</button>
-            <button class="shr" aria-label="Compartilhar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></button>
-            <button class="save" aria-label="Salvar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></button>
+            <div class="igbar__metric"><span><b>870</b> votos</span><span><b>121 mil</b> views</span></div>
+            <button class="igact igact--vote" aria-label="Votar neste lance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.3l3.9 2.9-1.5 4.6H9.6L8.1 10.2z"/></svg></button>
+            <button class="igact" aria-label="Ver análises"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2.5h6V4M9 11h6M9 15h4"/></svg></button>
+            <button class="igact" aria-label="Adicionar ao radar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></button>
+            <button class="igact" aria-label="Compartilhar carta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.4l6.8 4M15.4 6.6l-6.8 4"/></svg></button>
           </div>
-          <div class="igmeta">
-            <span class="igmeta__likes">4.806 curtidas · <span style="color:var(--ouro-dk)">870 votos</span></span>
-            <p class="igmeta__cap"><b>diego.nunes</b> Lançamento de 40 metros no pé do atacante 🎯</p>
+          <div class="post-body">
+            <p class="post-cap"><b>Diego Nunes</b> Lançamento de 40 metros no pé do atacante 🎯</p>
             <div class="igtags"><span class="tag-c">Passe</span><span class="tag-c">Visão de jogo</span><span class="tag-c">Chute de média</span></div>
-            <button class="igmeta__cmts">Ver todos os 74 comentários</button>
-            <span class="igmeta__time">há 1 dia</span>
+            <p class="comment"><b>@sp_scout</b> Lançamento cirúrgico — meia clássico.</p>
+            <button class="post-analises">Ver todas as 74 análises</button>
+            <div class="igcta"><a class="btn btn--gold btn--sm" href="atleta-detalhe.html">Enviar mensagem</a><a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver perfil</a></div>
           </div>
-          <div class="igcta"><a class="btn btn--gold btn--sm" href="atleta-detalhe.html">Intermediar contato</a><a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver perfil</a></div>
         </article>
 
       </div>
@@ -197,25 +238,25 @@
       <!-- ============ TRILHO ============ -->
       <aside class="rail" aria-label="Sugestões e filtros">
         <div class="rail-card">
-          <h3>Em alta na comunidade <a href="#">Ver tudo</a></h3>
+          <h3>Em alta na comunidade <a href="rankings.html">Ver tudo</a></h3>
           <div class="rail-hot">
             <span class="rail-hot__av" aria-hidden="true">GP</span>
-            <span class="rail-hot__id"><b>gabriel.pereira</b><span>ATA · Recife/PE</span></span>
+            <span class="rail-hot__id"><b>Gabriel Pereira</b><span>ATA · Recife/PE</span></span>
             <span class="rail-hot__idx" title="Índice da Comunidade">92</span>
           </div>
           <div class="rail-hot">
             <span class="rail-hot__av" aria-hidden="true">LC</span>
-            <span class="rail-hot__id"><b>luan.costa</b><span>MEI · Belém/PA</span></span>
+            <span class="rail-hot__id"><b>Luan Costa</b><span>MEI · Belém/PA</span></span>
             <span class="rail-hot__idx" title="Índice da Comunidade">87</span>
           </div>
           <div class="rail-hot">
             <span class="rail-hot__av" aria-hidden="true">IM</span>
-            <span class="rail-hot__id"><b>iago.martins</b><span>ATA · Goiânia/GO</span></span>
+            <span class="rail-hot__id"><b>Iago Martins</b><span>ATA · Goiânia/GO</span></span>
             <span class="rail-hot__idx" title="Índice da Comunidade">81</span>
           </div>
           <div class="rail-hot">
             <span class="rail-hot__av" aria-hidden="true">FA</span>
-            <span class="rail-hot__id"><b>felipe.andrade</b><span>MEI · Rio de Janeiro/RJ</span></span>
+            <span class="rail-hot__id"><b>Felipe Andrade</b><span>MEI · Rio de Janeiro/RJ</span></span>
             <span class="rail-hot__idx" title="Índice da Comunidade">79</span>
           </div>
         </div>
