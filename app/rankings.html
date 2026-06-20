@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rankings · ScoutX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Archivo+Expanded:wght@700;800;900&family=Space+Grotesk:wght@500;700&family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/app.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="app-bar">
+  <div class="container">
+    <a class="logo" href="../index.html" aria-label="ScoutX — início">
+      <svg class="logo__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <path d="M6 16 V6 H16 M32 6 H42 V16 M42 32 V42 H32 M16 42 H6 V32" stroke="#F2C964" stroke-opacity=".5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15 15 L33 33 M33 15 L15 33" stroke="#F2C964" stroke-width="7" stroke-linecap="round"/>
+      </svg>
+      Scout<span class="x">X</span>
+    </a>
+    <span class="app-ctx">Área do Olheiro</span>
+    <nav class="app-nav" aria-label="Navegação do olheiro">
+      <a href="catalogo.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg><span>Feed</span></a>
+      <a href="catalogo.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5"/></svg><span>Descobrir</span></a>
+      <a href="rankings.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20h4V10H4zM10 20h4V4h-4zM16 20h4v-7h-4z"/></svg><span>Rankings</span></a>
+      <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v11H8l-4 4z"/></svg><span>Mensagens</span></a>
+    </nav>
+    <div class="app-user">
+      <span class="plan-pill"><svg width="14" height="14" viewBox="0 0 24 20" fill="currentColor"><path d="M2 6l4 4 6-9 6 9 4-4-2 12H4z"/></svg> Plano Pro</span>
+      <span class="avatar" aria-hidden="true">RS</span>
+      <span class="who">Ricardo S.<small>Olheiro</small></span>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo" class="page">
+  <div class="container">
+    <div class="page-title"><h1>Rankings</h1></div>
+    <p class="lead" style="margin-bottom:var(--space-6)">Quem a comunidade está colocando em destaque — do Oiapoque ao Chuí. Filtre por <strong>categoria</strong>, <strong>região</strong> e <strong>período</strong>: cada talento pode liderar o seu recorte.</p>
+
+    <!-- Categorias -->
+    <div class="rank-tabs" role="tablist" aria-label="Categorias de ranking">
+      <button class="rank-tab" role="tab" aria-selected="true">🔥 Em alta · Índice</button>
+      <button class="rank-tab" role="tab" aria-selected="false">⚽ Artilheiros</button>
+      <button class="rank-tab" role="tab" aria-selected="false">🅰️ Garçons</button>
+      <button class="rank-tab" role="tab" aria-selected="false">🧤 Muralhas</button>
+      <button class="rank-tab" role="tab" aria-selected="false">✨ Revelações</button>
+    </div>
+
+    <!-- Filtros -->
+    <div class="rank-filters">
+      <span class="lbl">Filtrar:</span>
+      <select class="select" aria-label="Região"><option>Brasil — todas as regiões</option><option>Norte</option><option>Nordeste</option><option>Centro-Oeste</option><option>Sudeste</option><option>Sul</option></select>
+      <select class="select" aria-label="Categoria"><option>Todas as idades</option><option>Sub-13</option><option>Sub-15</option><option>Sub-17</option><option>Sub-20</option></select>
+      <select class="select" aria-label="Período"><option>Esta semana</option><option>Este mês</option><option>Temporada</option></select>
+    </div>
+
+    <!-- Pódio (top 3) -->
+    <section aria-label="Pódio — top 3 em alta">
+      <div class="podium">
+        <article class="pod pod--2">
+          <span class="pod__medal" aria-hidden="true">🥈</span>
+          <span class="pod__av" aria-hidden="true">LC</span>
+          <p class="pod__name">Luan Costa</p>
+          <p class="pod__meta">MEI · 15 anos · Belém/PA</p>
+          <p class="pod__metric">87<span>Índice</span></p>
+        </article>
+        <article class="pod pod--1">
+          <span class="pod__medal" aria-hidden="true">🥇</span>
+          <span class="pod__av" aria-hidden="true">GP</span>
+          <p class="pod__name">Gabriel Pereira</p>
+          <p class="pod__meta">ATA · 11 anos · Recife/PE</p>
+          <p class="pod__metric">92<span>Índice</span></p>
+        </article>
+        <article class="pod pod--3">
+          <span class="pod__medal" aria-hidden="true">🥉</span>
+          <span class="pod__av" aria-hidden="true">TL</span>
+          <p class="pod__name">Thiago Lima</p>
+          <p class="pod__meta">ZAG · 17 anos · Porto Alegre/RS</p>
+          <p class="pod__metric">85<span>Índice</span></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Lista do 4º em diante -->
+    <div class="ranklist">
+      <div class="rankrow">
+        <span class="rankrow__pos">4</span>
+        <span class="rankrow__av" aria-hidden="true">MR</span>
+        <span class="rankrow__id"><b>Mateus Rocha</b><span>GOL · 16 anos · Cuiabá/MT</span></span>
+        <span class="rankrow__delta up" aria-label="subiu 2 posições">▲ 2</span>
+        <span class="rankrow__metric">83<span>Índice</span></span>
+        <a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver</a>
+      </div>
+      <div class="rankrow">
+        <span class="rankrow__pos">5</span>
+        <span class="rankrow__av" aria-hidden="true">IM</span>
+        <span class="rankrow__id"><b>Iago Martins</b><span>ATA · 16 anos · Goiânia/GO</span></span>
+        <span class="rankrow__delta up" aria-label="subiu 5 posições">▲ 5</span>
+        <span class="rankrow__metric">81<span>Índice</span></span>
+        <a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver</a>
+      </div>
+      <div class="rankrow">
+        <span class="rankrow__pos">6</span>
+        <span class="rankrow__av" aria-hidden="true">DN</span>
+        <span class="rankrow__id"><b>Diego Nunes</b><span>MEI · 15 anos · São Paulo/SP</span></span>
+        <span class="rankrow__delta flat" aria-label="manteve a posição">= 0</span>
+        <span class="rankrow__metric">80<span>Índice</span></span>
+        <a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver</a>
+      </div>
+      <div class="rankrow">
+        <span class="rankrow__pos">7</span>
+        <span class="rankrow__av" aria-hidden="true">FA</span>
+        <span class="rankrow__id"><b>Felipe Andrade</b><span>MEI · 17 anos · Rio de Janeiro/RJ</span></span>
+        <span class="rankrow__delta down" aria-label="caiu 1 posição">▼ 1</span>
+        <span class="rankrow__metric">79<span>Índice</span></span>
+        <a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver</a>
+      </div>
+      <div class="rankrow">
+        <span class="rankrow__pos">8</span>
+        <span class="rankrow__av" aria-hidden="true">BA</span>
+        <span class="rankrow__id"><b>Bruno Alves</b><span>LAT · 16 anos · Florianópolis/SC</span></span>
+        <span class="rankrow__delta up" aria-label="subiu 3 posições">▲ 3</span>
+        <span class="rankrow__metric">77<span>Índice</span></span>
+        <a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver</a>
+      </div>
+      <div class="rankrow">
+        <span class="rankrow__pos">9</span>
+        <span class="rankrow__av" aria-hidden="true">KR</span>
+        <span class="rankrow__id"><b>Kauã Ribeiro</b><span>LAT · 14 anos · Salvador/BA</span></span>
+        <span class="rankrow__delta up" aria-label="subiu 4 posições">▲ 4</span>
+        <span class="rankrow__metric">76<span>Índice</span></span>
+        <a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver</a>
+      </div>
+      <div class="rankrow">
+        <span class="rankrow__pos">10</span>
+        <span class="rankrow__av" aria-hidden="true">PL</span>
+        <span class="rankrow__id"><b>Pedro Lopes</b><span>MEI · 15 anos · Manaus/AM</span></span>
+        <span class="rankrow__delta flat" aria-label="manteve a posição">= 0</span>
+        <span class="rankrow__metric">75<span>Índice</span></span>
+        <a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver</a>
+      </div>
+    </div>
+
+    <div class="alert alert--info" style="margin-top:var(--space-5)"><span aria-hidden="true">ℹ️</span><span style="font-size:var(--fs-sm)"><strong>Como o ranking é montado:</strong> o <strong>Índice da Comunidade</strong> combina o engajamento nos vídeos (curtidas, views, votos) com dados verificados (idade, região, nível de competição). Não há nota de IA — quem coloca o talento em destaque é a comunidade.</span></div>
+
+  </div>
+</main>
+
+</body>
+</html>

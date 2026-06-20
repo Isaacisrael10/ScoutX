@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Catálogo de talentos · Olheiro — ScoutX</title>
+<title>Feed · ScoutX</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Archivo+Expanded:wght@700;800;900&family=Space+Grotesk:wght@500;700&family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -27,10 +27,10 @@
     </a>
     <span class="app-ctx">Área do Olheiro</span>
     <nav class="app-nav" aria-label="Navegação do olheiro">
-      <a href="catalogo.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5"/></svg><span>Catálogo</span></a>
-      <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z"/></svg><span>Meus interesses</span></a>
+      <a href="catalogo.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg><span>Feed</span></a>
+      <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5"/></svg><span>Descobrir</span></a>
+      <a href="rankings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20h4V10H4zM10 20h4V4h-4zM16 20h4v-7h-4z"/></svg><span>Rankings</span></a>
       <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v11H8l-4 4z"/></svg><span>Mensagens</span></a>
-      <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg><span>Assinatura</span></a>
     </nav>
     <div class="app-user">
       <span class="plan-pill"><svg width="14" height="14" viewBox="0 0 24 20" fill="currentColor"><path d="M2 6l4 4 6-9 6 9 4-4-2 12H4z"/></svg> Plano Pro</span>
@@ -42,92 +42,207 @@
 
 <main id="conteudo" class="page">
   <div class="container">
-    <div class="page-title"><h1>Catálogo de talentos</h1></div>
-    <p class="lead" style="margin-bottom:var(--space-6)">Encontre o próximo craque por região, posição e score de IA — do Oiapoque ao Chuí. Para falar com um atleta, o contato é <strong>mediado pela Pelé Academia</strong>.</p>
+    <div class="discover">
 
-    <div class="catalog">
-      <!-- Filtros -->
-      <aside class="filters" aria-label="Filtros de busca">
-        <h3>Filtros <a href="#">Limpar</a></h3>
-        <div class="filter-group">
-          <span class="lbl">Buscar</span>
-          <input class="input" type="search" placeholder="Nome do atleta…">
-        </div>
-        <div class="filter-group">
-          <span class="lbl">Posição</span>
-          <div class="chip-set">
-            <button class="chip-toggle" aria-pressed="false">ATA</button>
-            <button class="chip-toggle" aria-pressed="false">MEI</button>
-            <button class="chip-toggle" aria-pressed="false">ZAG</button>
-            <button class="chip-toggle" aria-pressed="false">LAT</button>
-            <button class="chip-toggle" aria-pressed="false">GOL</button>
+      <!-- ============ FEED ============ -->
+      <div class="feed-col">
+
+        <article class="igpost">
+          <header class="igpost__head">
+            <span class="igpost__av" aria-hidden="true">GP</span>
+            <span class="igpost__id"><b>gabriel.pereira</b><span>Atacante · 11 anos · Recife/PE</span></span>
+            <button class="igpost__follow" aria-pressed="false">Seguir</button>
+          </header>
+          <div class="igpost__media">
+            <img src="../assets/img/craque-hero.jpg" alt="Vídeo de Gabriel Pereira: gol de fora da área">
+            <svg class="igpost__play" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,.4)"/><circle cx="12" cy="12" r="11" stroke="#fff" stroke-opacity=".75"/><path d="M10 8l6 4-6 4z" fill="#fff"/></svg>
+            <span class="igpost__pos"><span class="badge badge--gold">ATA</span></span>
+            <span class="idx"><b>92</b><span>Índice</span></span>
+            <span class="igpost__dur">0:38</span>
+          </div>
+          <div class="igbar">
+            <button class="like" aria-label="Curtir"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z"/></svg>18,2 mil</button>
+            <button class="cmt" aria-label="Comentários"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 01-8.5 8.5 8.5 8.5 0 01-3.8-.9L3 21l1.9-5.7a8.5 8.5 0 01-.9-3.8A8.4 8.4 0 0112.5 3 8.4 8.4 0 0121 11.5z"/></svg>212</button>
+            <button class="shr" aria-label="Compartilhar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></button>
+            <button class="save" aria-label="Salvar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></button>
+          </div>
+          <div class="igmeta">
+            <span class="igmeta__likes">18.243 curtidas · <span style="color:var(--ouro-dk)">3,4 mil votos</span></span>
+            <p class="igmeta__cap"><b>gabriel.pereira</b> Gol de fora da área no estadual sub-13 ⚽🔥</p>
+            <div class="igtags"><span class="tag-c tag-hot">🔥 Em alta</span><span class="tag-c">Finalizador</span><span class="tag-c">Veloz</span><span class="tag-c">Canhota</span></div>
+            <button class="igmeta__cmts">Ver todos os 212 comentários</button>
+            <span class="igmeta__time">há 3 horas</span>
+          </div>
+          <div class="igcta"><a class="btn btn--gold btn--sm" href="atleta-detalhe.html">Intermediar contato</a><a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver perfil</a></div>
+        </article>
+
+        <article class="igpost">
+          <header class="igpost__head">
+            <span class="igpost__av" aria-hidden="true">LC</span>
+            <span class="igpost__id"><b>luan.costa</b><span>Meia · 15 anos · Belém/PA</span></span>
+            <button class="igpost__follow" aria-pressed="false">Seguir</button>
+          </header>
+          <div class="igpost__media">
+            <img src="../assets/img/craque-celebra.jpg" alt="Vídeo de Luan Costa: assistência de letra">
+            <svg class="igpost__play" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,.4)"/><circle cx="12" cy="12" r="11" stroke="#fff" stroke-opacity=".75"/><path d="M10 8l6 4-6 4z" fill="#fff"/></svg>
+            <span class="igpost__pos"><span class="badge badge--gold">MEI</span></span>
+            <span class="idx"><b>87</b><span>Índice</span></span>
+            <span class="igpost__dur">0:45</span>
+          </div>
+          <div class="igbar">
+            <button class="like" aria-label="Curtir"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z"/></svg>9,7 mil</button>
+            <button class="cmt" aria-label="Comentários"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 01-8.5 8.5 8.5 8.5 0 01-3.8-.9L3 21l1.9-5.7a8.5 8.5 0 01-.9-3.8A8.4 8.4 0 0112.5 3 8.4 8.4 0 0121 11.5z"/></svg>148</button>
+            <button class="shr" aria-label="Compartilhar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></button>
+            <button class="save" aria-label="Salvar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></button>
+          </div>
+          <div class="igmeta">
+            <span class="igmeta__likes">9.712 curtidas · <span style="color:var(--ouro-dk)">1,9 mil votos</span></span>
+            <p class="igmeta__cap"><b>luan.costa</b> Assistência de letra pro gol da vitória 🎩</p>
+            <div class="igtags"><span class="tag-c tag-hot">🔥 Em alta</span><span class="tag-c">Visão de jogo</span><span class="tag-c">Passe</span><span class="tag-c">Drible</span></div>
+            <button class="igmeta__cmts">Ver todos os 148 comentários</button>
+            <span class="igmeta__time">há 6 horas</span>
+          </div>
+          <div class="igcta"><a class="btn btn--gold btn--sm" href="atleta-detalhe.html">Intermediar contato</a><a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver perfil</a></div>
+        </article>
+
+        <article class="igpost">
+          <header class="igpost__head">
+            <span class="igpost__av" aria-hidden="true">TL</span>
+            <span class="igpost__id"><b>thiago.lima</b><span>Zagueiro · 17 anos · Porto Alegre/RS</span></span>
+            <button class="igpost__follow" aria-pressed="false">Seguir</button>
+          </header>
+          <div class="igpost__media">
+            <img src="../assets/img/craque-varzea.jpg" alt="Vídeo de Thiago Lima: corte e saída de bola">
+            <svg class="igpost__play" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,.4)"/><circle cx="12" cy="12" r="11" stroke="#fff" stroke-opacity=".75"/><path d="M10 8l6 4-6 4z" fill="#fff"/></svg>
+            <span class="igpost__pos"><span class="badge badge--gold">ZAG</span></span>
+            <span class="idx"><b>85</b><span>Índice</span></span>
+            <span class="igpost__dur">0:52</span>
+          </div>
+          <div class="igbar">
+            <button class="like" aria-label="Curtir"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z"/></svg>6,1 mil</button>
+            <button class="cmt" aria-label="Comentários"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 01-8.5 8.5 8.5 8.5 0 01-3.8-.9L3 21l1.9-5.7a8.5 8.5 0 01-.9-3.8A8.4 8.4 0 0112.5 3 8.4 8.4 0 0121 11.5z"/></svg>93</button>
+            <button class="shr" aria-label="Compartilhar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></button>
+            <button class="save" aria-label="Salvar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></button>
+          </div>
+          <div class="igmeta">
+            <span class="igmeta__likes">6.108 curtidas · <span style="color:var(--ouro-dk)">1,2 mil votos</span></span>
+            <p class="igmeta__cap"><b>thiago.lima</b> Corte na entrada da área e saída jogando 🧱</p>
+            <div class="igtags"><span class="tag-c">Marcação</span><span class="tag-c">Cabeceio</span><span class="tag-c">Liderança</span></div>
+            <button class="igmeta__cmts">Ver todos os 93 comentários</button>
+            <span class="igmeta__time">há 9 horas</span>
+          </div>
+          <div class="igcta"><a class="btn btn--gold btn--sm" href="atleta-detalhe.html">Intermediar contato</a><a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver perfil</a></div>
+        </article>
+
+        <article class="igpost">
+          <header class="igpost__head">
+            <span class="igpost__av" aria-hidden="true">IM</span>
+            <span class="igpost__id"><b>iago.martins</b><span>Atacante · 16 anos · Goiânia/GO</span></span>
+            <button class="igpost__follow" aria-pressed="false">Seguir</button>
+          </header>
+          <div class="igpost__media">
+            <img src="../assets/img/craque-rooftop.jpg" alt="Vídeo de Iago Martins: pique e finalização">
+            <svg class="igpost__play" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,.4)"/><circle cx="12" cy="12" r="11" stroke="#fff" stroke-opacity=".75"/><path d="M10 8l6 4-6 4z" fill="#fff"/></svg>
+            <span class="igpost__pos"><span class="badge badge--gold">ATA</span></span>
+            <span class="idx"><b>81</b><span>Índice</span></span>
+            <span class="igpost__dur">0:41</span>
+          </div>
+          <div class="igbar">
+            <button class="like" aria-label="Curtir"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z"/></svg>7,2 mil</button>
+            <button class="cmt" aria-label="Comentários"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 01-8.5 8.5 8.5 8.5 0 01-3.8-.9L3 21l1.9-5.7a8.5 8.5 0 01-.9-3.8A8.4 8.4 0 0112.5 3 8.4 8.4 0 0121 11.5z"/></svg>117</button>
+            <button class="shr" aria-label="Compartilhar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></button>
+            <button class="save" aria-label="Salvar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></button>
+          </div>
+          <div class="igmeta">
+            <span class="igmeta__likes">7.231 curtidas · <span style="color:var(--ouro-dk)">1,1 mil votos</span></span>
+            <p class="igmeta__cap"><b>iago.martins</b> Pique do meio de campo e finaliza no canto 💨</p>
+            <div class="igtags"><span class="tag-c tag-hot">🔥 Em alta</span><span class="tag-c">Velocidade</span><span class="tag-c">Finalização</span></div>
+            <button class="igmeta__cmts">Ver todos os 117 comentários</button>
+            <span class="igmeta__time">há 12 horas</span>
+          </div>
+          <div class="igcta"><a class="btn btn--gold btn--sm" href="atleta-detalhe.html">Intermediar contato</a><a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver perfil</a></div>
+        </article>
+
+        <article class="igpost">
+          <header class="igpost__head">
+            <span class="igpost__av" aria-hidden="true">DN</span>
+            <span class="igpost__id"><b>diego.nunes</b><span>Meia · 15 anos · São Paulo/SP</span></span>
+            <button class="igpost__follow" aria-pressed="false">Seguir</button>
+          </header>
+          <div class="igpost__media">
+            <img src="../assets/img/craque-jovem.jpg" alt="Vídeo de Diego Nunes: lançamento preciso">
+            <svg class="igpost__play" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,.4)"/><circle cx="12" cy="12" r="11" stroke="#fff" stroke-opacity=".75"/><path d="M10 8l6 4-6 4z" fill="#fff"/></svg>
+            <span class="igpost__pos"><span class="badge badge--gold">MEI</span></span>
+            <span class="idx"><b>80</b><span>Índice</span></span>
+            <span class="igpost__dur">0:36</span>
+          </div>
+          <div class="igbar">
+            <button class="like" aria-label="Curtir"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z"/></svg>4,8 mil</button>
+            <button class="cmt" aria-label="Comentários"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 01-8.5 8.5 8.5 8.5 0 01-3.8-.9L3 21l1.9-5.7a8.5 8.5 0 01-.9-3.8A8.4 8.4 0 0112.5 3 8.4 8.4 0 0121 11.5z"/></svg>74</button>
+            <button class="shr" aria-label="Compartilhar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></button>
+            <button class="save" aria-label="Salvar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></button>
+          </div>
+          <div class="igmeta">
+            <span class="igmeta__likes">4.806 curtidas · <span style="color:var(--ouro-dk)">870 votos</span></span>
+            <p class="igmeta__cap"><b>diego.nunes</b> Lançamento de 40 metros no pé do atacante 🎯</p>
+            <div class="igtags"><span class="tag-c">Passe</span><span class="tag-c">Visão de jogo</span><span class="tag-c">Chute de média</span></div>
+            <button class="igmeta__cmts">Ver todos os 74 comentários</button>
+            <span class="igmeta__time">há 1 dia</span>
+          </div>
+          <div class="igcta"><a class="btn btn--gold btn--sm" href="atleta-detalhe.html">Intermediar contato</a><a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver perfil</a></div>
+        </article>
+
+      </div>
+
+      <!-- ============ TRILHO ============ -->
+      <aside class="rail" aria-label="Sugestões e filtros">
+        <div class="rail-card">
+          <h3>Em alta na comunidade <a href="#">Ver tudo</a></h3>
+          <div class="rail-hot">
+            <span class="rail-hot__av" aria-hidden="true">GP</span>
+            <span class="rail-hot__id"><b>gabriel.pereira</b><span>ATA · Recife/PE</span></span>
+            <span class="rail-hot__idx" title="Índice da Comunidade">92</span>
+          </div>
+          <div class="rail-hot">
+            <span class="rail-hot__av" aria-hidden="true">LC</span>
+            <span class="rail-hot__id"><b>luan.costa</b><span>MEI · Belém/PA</span></span>
+            <span class="rail-hot__idx" title="Índice da Comunidade">87</span>
+          </div>
+          <div class="rail-hot">
+            <span class="rail-hot__av" aria-hidden="true">IM</span>
+            <span class="rail-hot__id"><b>iago.martins</b><span>ATA · Goiânia/GO</span></span>
+            <span class="rail-hot__idx" title="Índice da Comunidade">81</span>
+          </div>
+          <div class="rail-hot">
+            <span class="rail-hot__av" aria-hidden="true">FA</span>
+            <span class="rail-hot__id"><b>felipe.andrade</b><span>MEI · Rio de Janeiro/RJ</span></span>
+            <span class="rail-hot__idx" title="Índice da Comunidade">79</span>
           </div>
         </div>
-        <div class="filter-group">
-          <span class="lbl">Região</span>
-          <select class="select"><option>Brasil — todas as regiões</option><option>Norte</option><option>Nordeste</option><option>Centro-Oeste</option><option>Sudeste</option><option>Sul</option></select>
-        </div>
-        <div class="filter-group">
-          <span class="lbl">Score mínimo de IA</span>
-          <div class="chip-set">
-            <button class="chip-toggle" aria-pressed="true">Todos</button>
-            <button class="chip-toggle" aria-pressed="false">70+</button>
-            <button class="chip-toggle" aria-pressed="false">80+</button>
-            <button class="chip-toggle" aria-pressed="false">90+</button>
+
+        <div class="rail-card">
+          <h3>Filtrar feed</h3>
+          <div class="filter-group" style="margin-bottom:var(--space-4)">
+            <span class="lbl">Posição</span>
+            <div class="rail-chips">
+              <button class="chip-toggle" aria-pressed="false">ATA</button>
+              <button class="chip-toggle" aria-pressed="false">MEI</button>
+              <button class="chip-toggle" aria-pressed="false">ZAG</button>
+              <button class="chip-toggle" aria-pressed="false">LAT</button>
+              <button class="chip-toggle" aria-pressed="false">GOL</button>
+            </div>
+          </div>
+          <div class="filter-group">
+            <span class="lbl">Região</span>
+            <select class="select"><option>Brasil — todas</option><option>Norte</option><option>Nordeste</option><option>Centro-Oeste</option><option>Sudeste</option><option>Sul</option></select>
           </div>
         </div>
-        <div class="filter-group">
-          <span class="lbl">Idade</span>
-          <select class="select"><option>Todas as categorias</option><option>Sub-13</option><option>Sub-15</option><option>Sub-17</option><option>Sub-20</option></select>
+
+        <div class="rail-card">
+          <p class="rail-note"><strong>Contato intermediado.</strong> Estilo Airbnb: a conversa passa pela plataforma e o atleta nunca recebe mensagem direta — o ScoutX controla o fluxo e protege o menor.</p>
         </div>
-        <label class="check"><input type="checkbox"> Apenas atletas em alta</label>
-        <label class="check"><input type="checkbox"> Disponíveis para contato</label>
       </aside>
 
-      <!-- Resultados -->
-      <div>
-        <div class="results-head">
-          <span class="count"><b>1.247</b> atletas em 26 estados</span>
-          <label class="row" style="gap:8px"><span class="muted" style="font-size:var(--fs-sm)">Ordenar:</span>
-            <select class="select" style="width:auto"><option>Maior score</option><option>Em alta</option><option>Mais novos</option><option>Menor valor</option></select>
-          </label>
-        </div>
-
-        <div class="scout-grid">
-          <article class="scout-card">
-            <div class="scout-card__media"><img src="../assets/img/craque-hero.jpg" alt="Gabriel Pereira"><span class="scout-card__score sc-high">92</span><span class="scout-card__pos"><span class="badge badge--gold">ATA</span></span><span class="scout-card__name">Gabriel Pereira<small>11 anos · Recife/PE · Nordeste</small></span></div>
-            <div class="scout-card__body"><div class="scout-card__attrs"><span class="mini-attr">FIN <b>94</b></span><span class="mini-attr">VEL <b>88</b></span><span class="mini-attr">VIS <b>81</b></span></div><p class="muted" style="font-size:var(--fs-xs)">Valor projetado: R$ 1,2 mi · <span style="color:var(--verde-dk);font-weight:600">▲ em alta</span></p><div class="scout-card__actions"><a class="btn btn--gold btn--sm" href="atleta-detalhe.html" style="flex:1">Iniciar conversa</a><a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver</a></div></div>
-          </article>
-          <article class="scout-card">
-            <div class="scout-card__media"><img src="../assets/img/craque-celebra.jpg" alt="Luan Costa"><span class="scout-card__score sc-high">87</span><span class="scout-card__pos"><span class="badge badge--gold">MEI</span></span><span class="scout-card__name">Luan Costa<small>15 anos · Belém/PA · Norte</small></span></div>
-            <div class="scout-card__body"><div class="scout-card__attrs"><span class="mini-attr">VIS <b>90</b></span><span class="mini-attr">PAS <b>86</b></span><span class="mini-attr">DRI <b>83</b></span></div><p class="muted" style="font-size:var(--fs-xs)">Valor projetado: R$ 880 mil · <span style="color:var(--verde-dk);font-weight:600">▲ em alta</span></p><div class="scout-card__actions"><a class="btn btn--gold btn--sm" href="atleta-detalhe.html" style="flex:1">Iniciar conversa</a><a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver</a></div></div>
-          </article>
-          <article class="scout-card">
-            <div class="scout-card__media"><img src="../assets/img/craque-varzea.jpg" alt="Thiago Lima"><span class="scout-card__score sc-high">85</span><span class="scout-card__pos"><span class="badge badge--gold">ZAG</span></span><span class="scout-card__name">Thiago Lima<small>17 anos · Porto Alegre/RS · Sul</small></span></div>
-            <div class="scout-card__body"><div class="scout-card__attrs"><span class="mini-attr">DEF <b>89</b></span><span class="mini-attr">FÍS <b>86</b></span><span class="mini-attr">VEL <b>75</b></span></div><p class="muted" style="font-size:var(--fs-xs)">Valor projetado: R$ 700 mil</p><div class="scout-card__actions"><a class="btn btn--gold btn--sm" href="atleta-detalhe.html" style="flex:1">Iniciar conversa</a><a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver</a></div></div>
-          </article>
-          <article class="scout-card">
-            <div class="scout-card__media"><img src="../assets/img/craque-goleiro.jpg" alt="Mateus Rocha"><span class="scout-card__score sc-mid">83</span><span class="scout-card__pos"><span class="badge badge--gold">GOL</span></span><span class="scout-card__name">Mateus Rocha<small>16 anos · Cuiabá/MT · Centro-Oeste</small></span></div>
-            <div class="scout-card__body"><div class="scout-card__attrs"><span class="mini-attr">REF <b>88</b></span><span class="mini-attr">POS <b>84</b></span><span class="mini-attr">DEF <b>80</b></span></div><p class="muted" style="font-size:var(--fs-xs)">Valor projetado: R$ 560 mil</p><div class="scout-card__actions"><a class="btn btn--gold btn--sm" href="atleta-detalhe.html" style="flex:1">Iniciar conversa</a><a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver</a></div></div>
-          </article>
-          <article class="scout-card">
-            <div class="scout-card__media"><img src="../assets/img/craque-rooftop.jpg" alt="Iago Martins"><span class="scout-card__score sc-mid">81</span><span class="scout-card__pos"><span class="badge badge--gold">ATA</span></span><span class="scout-card__name">Iago Martins<small>16 anos · Goiânia/GO · Centro-Oeste</small></span></div>
-            <div class="scout-card__body"><div class="scout-card__attrs"><span class="mini-attr">FIN <b>83</b></span><span class="mini-attr">VEL <b>85</b></span><span class="mini-attr">FÍS <b>78</b></span></div><p class="muted" style="font-size:var(--fs-xs)">Valor projetado: R$ 520 mil · <span style="color:var(--verde-dk);font-weight:600">▲ em alta</span></p><div class="scout-card__actions"><a class="btn btn--gold btn--sm" href="atleta-detalhe.html" style="flex:1">Iniciar conversa</a><a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver</a></div></div>
-          </article>
-          <article class="scout-card">
-            <div class="scout-card__media"><img src="../assets/img/craque-jovem.jpg" alt="Diego Nunes"><span class="scout-card__score sc-mid">80</span><span class="scout-card__pos"><span class="badge badge--gold">MEI</span></span><span class="scout-card__name">Diego Nunes<small>15 anos · São Paulo/SP · Sudeste</small></span></div>
-            <div class="scout-card__body"><div class="scout-card__attrs"><span class="mini-attr">PAS <b>84</b></span><span class="mini-attr">VIS <b>82</b></span><span class="mini-attr">DRI <b>77</b></span></div><p class="muted" style="font-size:var(--fs-xs)">Valor projetado: R$ 470 mil</p><div class="scout-card__actions"><a class="btn btn--gold btn--sm" href="atleta-detalhe.html" style="flex:1">Iniciar conversa</a><a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver</a></div></div>
-          </article>
-          <article class="scout-card">
-            <div class="scout-card__media"><img src="../assets/img/craque-embaixada.jpg" alt="Felipe Andrade"><span class="scout-card__score sc-mid">79</span><span class="scout-card__pos"><span class="badge badge--gold">MEI</span></span><span class="scout-card__name">Felipe Andrade<small>17 anos · Rio de Janeiro/RJ · Sudeste</small></span></div>
-            <div class="scout-card__body"><div class="scout-card__attrs"><span class="mini-attr">DRI <b>86</b></span><span class="mini-attr">VIS <b>80</b></span><span class="mini-attr">FIN <b>74</b></span></div><p class="muted" style="font-size:var(--fs-xs)">Valor projetado: R$ 430 mil</p><div class="scout-card__actions"><a class="btn btn--gold btn--sm" href="atleta-detalhe.html" style="flex:1">Iniciar conversa</a><a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver</a></div></div>
-          </article>
-          <article class="scout-card">
-            <div class="scout-card__media"><img src="../assets/img/craque-trofeu.jpg" alt="Bruno Alves"><span class="scout-card__score sc-mid">77</span><span class="scout-card__pos"><span class="badge badge--gold">LAT</span></span><span class="scout-card__name">Bruno Alves<small>16 anos · Florianópolis/SC · Sul</small></span></div>
-            <div class="scout-card__body"><div class="scout-card__attrs"><span class="mini-attr">VEL <b>84</b></span><span class="mini-attr">FÍS <b>79</b></span><span class="mini-attr">DEF <b>71</b></span></div><p class="muted" style="font-size:var(--fs-xs)">Valor projetado: R$ 380 mil</p><div class="scout-card__actions"><a class="btn btn--gold btn--sm" href="atleta-detalhe.html" style="flex:1">Iniciar conversa</a><a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver</a></div></div>
-          </article>
-        </div>
-      </div>
     </div>
   </div>
 </main>
