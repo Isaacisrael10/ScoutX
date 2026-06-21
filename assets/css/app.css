@@ -720,7 +720,7 @@ a.plan-pill{text-decoration:none}
   /* Rankings */
   .rank-tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
   .rank-tabs::-webkit-scrollbar{display:none}
-  .rank-tab{white-space:nowrap}
+  .rank-tab{white-space:nowrap;flex:0 0 auto}
 
   /* Mensagens: conversa em foco */
   .msg-list{max-height:200px}
