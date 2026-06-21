@@ -822,3 +822,10 @@ html,body{overflow-x:hidden;max-width:100%}
 .panel__head{align-items:flex-start}
 .panel__head h3{min-width:0}
 .panel__head a{white-space:nowrap;flex:none}
+
+@media (max-width:760px){
+  /* abas do feed rolam na horizontal (nao cortam) */
+  .feed-tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;gap:var(--space-5)}
+  .feed-tabs::-webkit-scrollbar{display:none}
+  .feed-tab{flex:0 0 auto;white-space:nowrap}
+}
