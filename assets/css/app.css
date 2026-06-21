@@ -637,3 +637,62 @@
 a.plan-pill{text-decoration:none}
 
 .auth-top__back{margin-left:auto}
+
+/* ===================== MOBILE (<=760px): experiência de app ===================== */
+@media (max-width:760px){
+  /* Top bar enxuto: só logo + avatar */
+  .app-bar .container{gap:var(--space-3)}
+  .app-ctx,.app-user .who,.bell,.plan-pill{display:none}
+  .app-user{margin-left:auto;padding-left:0;border-left:0;gap:0}
+  .app-bar .logo{font-size:1.25rem}
+
+  /* Navegação vira barra inferior fixa (padrão de app) */
+  .app-nav{position:fixed;left:0;right:0;bottom:0;z-index:200;margin:0;gap:0;background:#fff;
+    border-top:1px solid var(--paper-line);box-shadow:0 -4px 18px rgba(7,27,69,.12);
+    justify-content:space-around;padding:6px 2px}
+  .app-nav a{position:relative;flex:1;min-width:0;flex-direction:column;gap:3px;padding:7px 2px;border-radius:0;color:var(--ink-mute)}
+  .app-nav a span{display:block;font-size:9.5px;font-weight:var(--fw-bold);letter-spacing:.01em;line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+  .app-nav svg{width:21px;height:21px}
+  .app-nav a:hover,.app-nav a[aria-current="page"]{background:none;color:var(--navy)}
+  .app-nav a[aria-current="page"]::before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:30px;height:3px;border-radius:0 0 3px 3px;background:var(--ouro)}
+  .page{padding-bottom:78px}
+
+  /* Tipografia e espaçamento */
+  .container{padding-inline:var(--space-4)}
+  .page-title{flex-wrap:wrap;gap:var(--space-2)}
+  .page-title h1{font-size:var(--fs-xl)}
+  .lead{font-size:var(--fs-base)}
+  .section-label{font-size:var(--fs-xs)}
+
+  /* Feed */
+  .igpost__name{font-size:var(--fs-xl)}
+  .igpost__media{aspect-ratio:1/1}
+  .igbar{gap:var(--space-3);flex-wrap:wrap}
+
+  /* Rankings */
+  .rank-tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  .rank-tabs::-webkit-scrollbar{display:none}
+  .rank-tab{white-space:nowrap}
+
+  /* Mensagens: conversa em foco */
+  .msg-list{max-height:200px}
+  .msg-thread{height:540px}
+
+  /* Peneira destaque: gradiente vertical pra leitura */
+  .pen-feature{min-height:200px}
+  .pen-feature__ov{background:linear-gradient(180deg,rgba(7,27,69,.45),rgba(7,27,69,.94))}
+
+  /* Auth */
+  .auth-main{padding:var(--space-4)}
+  .auth-card{padding:var(--space-5)}
+  .auth-card h1{font-size:var(--fs-xl)}
+}
+
+@media (max-width:760px){
+  /* Auth no mobile: authwrap como flex-column fazia o max-width do card
+     esticar o eixo cruzado e estourar a largura — vira bloco simples */
+  html,body{overflow-x:hidden}
+  .authwrap{display:block}
+  .auth-main{display:block;padding:24px 14px 40px}
+  .auth-card,.auth-card--wide{max-width:100%}
+}
