@@ -673,7 +673,8 @@ a.plan-pill{text-decoration:none}
   .discover{display:block;max-width:100%;min-width:0}
   .feed-col{gap:var(--space-6);max-width:100%;min-width:0;margin:0 auto}
   .igcta{flex-wrap:wrap}
-  .igpost__media{aspect-ratio:auto;height:300px}
+  /* foto de ponta a ponta (fura o padding do container); texto/ações seguem com margem */
+  .igpost__media{aspect-ratio:auto;height:300px;margin-inline:calc(-1 * var(--space-4));max-width:none;width:auto;border-radius:0}
   .igpost__media img{object-position:center 22%}
   .igpost__name{font-size:var(--fs-base)}
   .igpost__loc,.igpost__kick{font-size:var(--fs-xs)}
