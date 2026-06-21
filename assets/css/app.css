@@ -380,10 +380,17 @@
 
 /* ===================== Feed estilo rede social (Instagram-like) ===================== */
 .discover{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:var(--space-7);max-width:880px;margin:0 auto;align-items:start}
-.feed-col{width:100%;max-width:500px;margin:0 auto;display:flex;flex-direction:column;gap:var(--space-6)}
+.feed-col{width:100%;max-width:500px;margin:0 auto;display:flex;flex-direction:column;gap:0}
+.feed-tabs{margin-bottom:var(--space-4)}
+.destaques{margin-bottom:var(--space-5)}
 
-.igpost{background:#fff;border:1px solid var(--paper-line);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md)}
-.igpost:focus-within{border-color:var(--ouro)}
+/* Feed contínuo: os posts formam UM painel branco único, separados por uma linha fina
+   (não cartões soltos) — passa a sensação de feed infinito, como IG/TikTok */
+.igpost{background:#fff;overflow:hidden;border-inline:1px solid var(--paper-line)}
+.igpost + .igpost{border-top:1px solid var(--paper-line)}
+.igpost:first-of-type{border-top:1px solid var(--paper-line);border-radius:var(--radius-lg) var(--radius-lg) 0 0}
+.igpost:last-of-type{border-bottom:1px solid var(--paper-line);border-radius:0 0 var(--radius-lg) var(--radius-lg)}
+.igpost:focus-within{position:relative;z-index:1;box-shadow:inset 0 0 0 2px var(--ouro)}
 /* herói: filmagem com identidade sobreposta */
 .igpost__media{position:relative;aspect-ratio:4/5;background:var(--navy-900);overflow:hidden}
 .igpost__media img{width:100%;height:100%;object-fit:cover;object-position:center 16%;filter:grayscale(.5) contrast(1.08)}
@@ -664,11 +671,10 @@ a.plan-pill{text-decoration:none}
   .lead{font-size:var(--fs-base)}
   .section-label{font-size:var(--fs-xs)}
 
-  /* Feed compacto no celular: capa baixa (altura fixa), card limpo */
+  /* Feed compacto no celular: capa baixa (altura fixa), painel contínuo */
   .discover{display:block;max-width:100%;min-width:0}
-  .feed-col{gap:var(--space-4);max-width:100%;min-width:0;margin:0 auto}
+  .feed-col{gap:0;max-width:100%;min-width:0;margin:0 auto}
   .igcta{flex-wrap:wrap}
-  .igpost{border:0;box-shadow:none;border-radius:14px;overflow:hidden}
   .igpost__media{aspect-ratio:auto;height:300px}
   .igpost__media img{object-position:center 22%}
   .igpost__name{font-size:var(--fs-base)}
