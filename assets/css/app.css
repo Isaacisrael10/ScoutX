@@ -407,7 +407,7 @@
 .ig-head__idx b{font-family:var(--stat);font-weight:var(--fw-black);font-size:var(--fs-base);color:var(--ouro-dk)}
 .ig-head__follow{flex:0 0 auto;font-family:var(--ui);font-weight:var(--fw-bold);font-size:var(--fs-sm);color:var(--navy);background:0;border:0;cursor:pointer;padding:6px 2px}
 .ig-head__follow:hover{color:var(--ouro-dk)}
-.igpost__play{position:absolute;left:50%;top:40%;transform:translate(-50%,-50%);z-index:2;width:58px;height:58px;opacity:.92}
+.igpost__play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;width:58px;height:58px;opacity:.92}
 .igpost__scope{position:absolute;inset:12px;z-index:2;pointer-events:none;opacity:.9;
   background:
     linear-gradient(#F2C964,#F2C964) top left/20px 2.5px no-repeat,
