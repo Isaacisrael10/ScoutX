@@ -448,9 +448,12 @@
 .post-cap{font-size:var(--fs-sm);color:var(--ink-soft);line-height:1.5}
 .post-cap b{color:var(--ink);font-weight:var(--fw-bold)}
 .igtags{display:flex;flex-wrap:wrap;gap:2px 0;align-items:center}
-.tag-c{font-family:var(--ui);font-weight:var(--fw-semibold);font-size:var(--fs-xs);color:var(--ink-mute);background:0;border:0;padding:0}
-.tag-c:not(:last-child)::after{content:"·";margin:0 7px;color:var(--paper-line)}
-.tag-hot{color:var(--ouro-dk)}
+.tag-c{font-family:var(--ui);font-weight:var(--fw-semibold);font-size:var(--fs-xs);color:var(--navy);background:var(--ouro-soft);border:1px solid #ecdcb4;padding:3px 9px;border-radius:99px}
+.tag-hot{color:var(--ouro-lt);background:var(--navy);border-color:var(--navy-line)}
+/* no feed as caracteristicas sao sutis (texto, nao chip) */
+.igtags .tag-c{color:var(--ink-mute);background:0;border:0;padding:0}
+.igtags .tag-c:not(:last-child)::after{content:"·";margin:0 7px;color:var(--paper-line)}
+.igtags .tag-hot{color:var(--ouro-dk);background:0}
 .post-analises{font-family:var(--ui);font-weight:var(--fw-semibold);font-size:var(--fs-sm);color:var(--navy);background:0;border:0;padding:0;cursor:pointer;text-align:left;align-self:flex-start}
 .igcta{display:flex;align-items:center;gap:var(--space-4);padding-top:var(--space-1)}
 .igcta .btn{flex:1}
@@ -761,4 +764,24 @@ html,body{overflow-x:hidden;max-width:100%}
 @media (max-width:760px){
   /* nada dentro da página pode exceder a largura do pai (mata vazamentos) */
   .page *{min-width:0;max-width:100%}
+}
+
+@media (max-width:760px){
+  /* Perfil do atleta no celular */
+  .profile-head{padding:var(--space-5) var(--space-4)}
+  .selos{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;gap:8px}
+  .selos::-webkit-scrollbar{display:none}
+  .selo{flex:0 0 auto;white-space:nowrap;font-size:var(--fs-xs);padding:7px 12px}
+  .grid-2{grid-template-columns:1fr}
+  .visib{flex-direction:column;align-items:flex-start;gap:var(--space-3)}
+  .msg{flex-wrap:wrap}
+  .profile-head .row .btn{flex:1 1 100%}
+  .viz-head{flex-wrap:wrap;gap:6px}
+}
+
+@media (max-width:760px){
+  /* hero do perfil: progresso empilha, KPIs centralizam e cabem */
+  .progress__label{flex-direction:column;align-items:center;gap:2px;text-align:center}
+  .profile-head__row{gap:var(--space-3) var(--space-5);justify-content:center}
+  .bio{margin-inline:auto}
 }
