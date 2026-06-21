@@ -125,9 +125,9 @@
 .msg + .msg{margin-top:var(--space-3)}
 .msg__club{flex:none;width:46px;height:46px;border-radius:12px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:var(--fw-extra);font-size:var(--fs-sm)}
 .msg__body{flex:1;min-width:0}
-.msg__body b{font-family:var(--ui);font-weight:var(--fw-bold);color:var(--ink)}
-.msg__body p{font-size:var(--fs-sm);color:var(--ink-mute)}
-.msg__med{display:inline-flex;align-items:center;gap:6px;font-size:var(--fs-xs);color:var(--verde-dk);font-weight:var(--fw-semibold);margin-top:5px}
+.msg__body b{display:block;font-family:var(--ui);font-weight:var(--fw-bold);color:var(--ink);line-height:1.25;margin-bottom:3px}
+.msg__body p{font-size:var(--fs-sm);color:var(--ink-mute);line-height:1.4}
+.msg__med{display:flex;align-items:center;gap:6px;font-size:var(--fs-xs);color:var(--verde-dk);font-weight:var(--fw-semibold);margin-top:6px}
 .msg__med svg{width:14px;height:14px}
 
 /* ---------- Catálogo do olheiro ---------- */
@@ -774,7 +774,8 @@ html,body{overflow-x:hidden;max-width:100%}
   .selo{flex:0 0 auto;white-space:nowrap;font-size:var(--fs-xs);padding:7px 12px}
   .grid-2{grid-template-columns:1fr}
   .visib{flex-direction:column;align-items:flex-start;gap:var(--space-3)}
-  .msg{flex-wrap:wrap}
+  .msg{flex-wrap:wrap;align-items:flex-start}
+  .msg .btn{flex:1 1 100%;margin-top:var(--space-1)}
   .profile-head .row .btn{flex:1 1 100%}
   .viz-head{flex-wrap:wrap;gap:6px}
 }
