@@ -722,9 +722,11 @@ a.plan-pill{text-decoration:none}
   .rank-tabs::-webkit-scrollbar{display:none}
   .rank-tab{white-space:nowrap;flex:0 0 auto}
 
-  /* Mensagens: conversa em foco */
-  .msg-list{max-height:200px}
-  .msg-thread{height:540px}
+  /* Mensagens no celular: mostra só a conversa aberta (esconde a lista),
+     altura natural e bolhas fluindo com a página (sem rolagem aninhada) */
+  .msg-list{display:none}
+  .msg-thread{height:auto}
+  .msg-body{overflow:visible}
 
   /* Peneira destaque: gradiente vertical pra leitura */
   .pen-feature{min-height:200px}
