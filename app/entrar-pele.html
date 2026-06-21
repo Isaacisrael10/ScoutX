@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Entrar · ScoutX</title>
+<title>Entrar — Recrutador Pelé · ScoutX</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Archivo+Expanded:wght@700;800;900&family=Space+Grotesk:wght@500;700&family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -29,13 +29,13 @@
 
   <main id="conteudo" class="auth-main">
     <div class="auth-card">
-      <p class="eyebrow" style="color:var(--ouro-dk);margin-bottom:6px">Área do Atleta</p>
-      <h1>Entrar como atleta</h1>
-      <p class="sub">Acesse sua conta na ScoutX — a rede social do futebol de base.</p>
+      <p class="eyebrow" style="color:var(--ouro-dk);margin-bottom:6px">Pelé Academia · acesso interno</p>
+      <h1>Entrar como recrutador Pelé</h1>
+      <p class="sub">Área interna da equipe de recrutamento da Pelé Academia.</p>
 
       <div class="auth-field">
-        <label for="email">E-mail</label>
-        <input class="input" id="email" type="email" placeholder="voce@email.com">
+        <label for="email">E-mail institucional</label>
+        <input class="input" id="email" type="email" placeholder="voce@peleacademia.org">
       </div>
       <div class="auth-field">
         <label for="senha">Senha</label>
@@ -43,10 +43,14 @@
       </div>
       <div style="text-align:right;margin-bottom:var(--space-5)"><a href="#" style="font-size:var(--fs-sm);color:var(--navy);font-weight:600">Esqueci minha senha</a></div>
 
-      <a class="btn btn--gold btn--block btn--lg" href="atleta-feed.html">Entrar</a>
+      <a class="btn btn--gold btn--block btn--lg" href="gestor-dashboard.html">Entrar</a>
 
-      <p class="auth-foot">Novo por aqui? <a href="cadastro.html">Criar conta de atleta</a></p>
-      <p class="auth-foot" style="margin-top:6px;font-size:var(--fs-xs)">Não é atleta? <a href="entrar-olheiro.html">Entrar como olheiro</a> · <a href="entrar-pele.html">Recrutador Pelé</a></p>
+      <div class="auth-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        <span>Acesso restrito à equipe da Pelé Academia. Novas contas são criadas por convite — não há cadastro público.</span>
+      </div>
+
+      <p class="auth-foot" style="margin-top:var(--space-5)">Não é da Pelé? <a href="entrar.html">Entrar como atleta</a> · <a href="entrar-olheiro.html">Olheiro</a></p>
     </div>
   </main>
 </div>
