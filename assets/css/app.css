@@ -722,11 +722,13 @@ a.plan-pill{text-decoration:none}
   .rank-tabs::-webkit-scrollbar{display:none}
   .rank-tab{white-space:nowrap;flex:0 0 auto}
 
-  /* Mensagens no celular: lista (caixa de entrada) em cima, conversa aberta
-     embaixo, com separação clara — alturas naturais, sem rolagem aninhada */
-  .msg-list{height:auto;max-height:none;margin-bottom:var(--space-5)}
-  .msg-thread{height:auto}
-  .msg-body{overflow:visible}
+  /* Mensagens no celular = estilo WhatsApp (CSS :target, sem JS):
+     abre na LISTA; tocar numa conversa abre a conversa em tela cheia; voltar = botão ‹ */
+  .msg-list{height:auto;max-height:none}
+  .msg-thread{display:none}
+  .msg-thread:target{display:flex;position:fixed;inset:0;z-index:300;border:0;border-radius:0;background:#fff}
+  .msg-thread:target .msg-body{flex:1;overflow-y:auto}
+  .msg-back{display:inline-flex}
 
   /* Peneira destaque: gradiente vertical pra leitura */
   .pen-feature{min-height:200px}
@@ -831,3 +833,9 @@ html,body{overflow-x:hidden;max-width:100%}
   .feed-tabs::-webkit-scrollbar{display:none}
   .feed-tab{flex:0 0 auto;white-space:nowrap}
 }
+
+/* botão voltar da conversa (só no celular, via :target) */
+.msg-back{flex:0 0 auto;align-items:center;justify-content:center;width:34px;height:34px;margin-left:-6px;border-radius:50%;color:var(--navy);text-decoration:none}
+.msg-back svg{width:22px;height:22px}
+@media (min-width:761px){.msg-back{display:none}}
+.msg-back:hover{background:var(--paper)}

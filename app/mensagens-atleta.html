@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="../assets/css/tokens.css">
 <link rel="stylesheet" href="../assets/css/base.css">
 <link rel="stylesheet" href="../assets/css/components.css">
-<link rel="stylesheet" href="../assets/css/app.css?v=34">
+<link rel="stylesheet" href="../assets/css/app.css?v=36">
 </head>
 <body>
 <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -46,19 +46,19 @@
 
     <div class="msgs">
       <!-- Lista de conversas -->
-      <aside class="msg-list" aria-label="Conversas">
+      <aside id="conversas" class="msg-list" aria-label="Conversas">
         <p class="msg-list__h">Conversas</p>
-        <a class="msg-list__item msg-list__item--active" href="#">
+        <a class="msg-list__item msg-list__item--active" href="#conversa">
           <span class="msg-list__av" aria-hidden="true">RS</span>
           <span class="msg-list__info"><b>Ricardo S. <small style="font-weight:600;color:var(--ink-mute)">· olheiro</small></b><p>Você: Pode mandar os detalhes da peneira.</p></span>
           <span class="msg-list__t">agora</span>
         </a>
-        <a class="msg-list__item" href="#">
+        <a class="msg-list__item" href="#conversa">
           <span class="msg-list__av" aria-hidden="true">PA</span>
           <span class="msg-list__info"><b>Pelé Academia</b><p>Convite: Peneira Nacional Sub-13.</p></span>
           <span class="msg-list__dot" aria-label="não lida"></span>
         </a>
-        <a class="msg-list__item" href="#">
+        <a class="msg-list__item" href="#conversa">
           <span class="msg-list__av" aria-hidden="true">BF</span>
           <span class="msg-list__info"><b>Base FC <small style="font-weight:600;color:var(--ink-mute)">· clube parceiro</small></b><p>Olheiro: Acompanho seu desempenho há semanas.</p></span>
           <span class="msg-list__t">2 d</span>
@@ -66,8 +66,9 @@
       </aside>
 
       <!-- Conversa aberta -->
-      <section class="msg-thread" aria-label="Conversa com Ricardo S.">
+      <section id="conversa" class="msg-thread" aria-label="Conversa com Ricardo S.">
         <div class="msg-thread__head">
+          <a class="msg-back" href="#conversas" aria-label="Voltar para conversas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></a>
           <span class="msg-thread__av" aria-hidden="true">RS</span>
           <span class="msg-thread__id"><b>Ricardo S.</b><span>Olheiro · responsável Maria Pereira acompanha</span></span>
           <a class="msg-thread__open" href="#" style="color:var(--vermelho-dk)">Denunciar</a>
