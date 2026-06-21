@@ -839,3 +839,7 @@ html,body{overflow-x:hidden;max-width:100%}
 .msg-back svg{width:22px;height:22px}
 @media (min-width:761px){.msg-back{display:none}}
 .msg-back:hover{background:var(--paper)}
+
+/* avatar placeholder (sem foto): silhueta padrão de rede social */
+.avatar--ph{background:var(--navy-700)}
+.avatar--ph svg{width:25px;height:25px;color:#fff;flex:0 0 auto}
