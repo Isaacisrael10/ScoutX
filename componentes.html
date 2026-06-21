@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design System · Componentes · ScoutX</title>
+<meta name="description" content="Vitrine dos componentes do ScoutX e seus estados (default, hover, focus, active, disabled, error).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Archivo+Expanded:wght@700;800;900&family=Space+Grotesk:wght@500;700&family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/app.css?v=40">
+<style>
+  /* utilidades só desta página-vitrine */
+  .ds-grid{display:grid;gap:var(--space-5)}
+  .ds-card{background:#fff;border:1px solid var(--paper-line);border-radius:var(--radius-lg);padding:var(--space-5);box-shadow:var(--shadow-sm)}
+  .ds-row{display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center}
+  .ds-state{display:flex;flex-direction:column;gap:8px}
+  .ds-state > .lbl{font-family:var(--stat);font-weight:var(--fw-bold);text-transform:uppercase;letter-spacing:.1em;font-size:11px;color:var(--ink-mute)}
+  .ds-note{background:var(--ouro-soft);border:1px solid #f0dcae;border-radius:var(--radius-md);padding:var(--space-3) var(--space-4);font-size:var(--fs-sm);color:var(--ouro-dk);line-height:1.5}
+  .ds-sec{margin-top:var(--space-7)}
+  .ds-sec > p.lead{margin-bottom:var(--space-4)}
+  .ds-legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:var(--space-3)}
+  .ds-legend span{font-family:var(--ui);font-weight:var(--fw-bold);font-size:var(--fs-xs);background:#fff;border:1px solid var(--paper-line);border-radius:var(--radius-pill);padding:5px 12px;color:var(--ink-soft)}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="app-bar">
+  <div class="container">
+    <a class="logo" href="index.html" aria-label="ScoutX, início">
+      <svg class="logo__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <path d="M6 16 V6 H16 M32 6 H42 V16 M42 32 V42 H32 M16 42 H6 V32" stroke="#F2C964" stroke-opacity=".5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15 15 L33 33 M33 15 L15 33" stroke="#F2C964" stroke-width="7" stroke-linecap="round"/>
+      </svg>
+      Scout<span class="x">X</span>
+    </a>
+    <span class="app-ctx">Design System</span>
+    <a class="auth-top__back" href="index.html" style="margin-left:auto">Voltar ao site</a>
+  </div>
+</header>
+
+<main id="conteudo" class="page">
+  <div class="container">
+    <p class="eyebrow" style="margin-bottom:6px">Sprint 2 · Frontend Design</p>
+    <div class="page-title"><h1>Componentes &amp; estados</h1></div>
+    <p class="lead">Os componentes do design system do ScoutX, cada um com seus <strong>seis estados</strong>. Os estados interativos (hover, focus, active) são reais: passe o mouse, use <kbd>Tab</kbd> e clique para vê-los na tela.</p>
+    <div class="ds-legend">
+      <span>default</span><span>hover</span><span>focus</span><span>active</span><span>disabled</span><span>error</span>
+    </div>
+
+    <!-- 1. BOTÃO -->
+    <section class="ds-sec" aria-labelledby="c-btn">
+      <h2 class="section-label" id="c-btn">1 · Botão</h2>
+      <p class="lead">Componente de ação. Variações: primário (navy), dourado (destaque), contorno, fantasma e perigo.</p>
+      <div class="ds-card">
+        <div class="ds-row">
+          <div class="ds-state"><span class="lbl">Default</span><button class="btn">Enviar vídeo</button></div>
+          <div class="ds-state"><span class="lbl">Dourado</span><button class="btn btn--gold">Criar conta</button></div>
+          <div class="ds-state"><span class="lbl">Contorno</span><button class="btn btn--outline">Ver perfil</button></div>
+          <div class="ds-state"><span class="lbl">Perigo</span><button class="btn btn--danger">Denunciar</button></div>
+          <div class="ds-state"><span class="lbl">Disabled</span><button class="btn" disabled>Indisponível</button></div>
+          <div class="ds-state"><span class="lbl">Carregando</span><button class="btn is-loading">Enviando</button></div>
+        </div>
+        <div class="ds-note" style="margin-top:var(--space-4)"><strong>Interativos:</strong> hover escurece e eleva (sombra); <strong>focus</strong> mostra um anel visível (outline dourado de 3px — nunca removido sem substituto); active afunda 1px ao clicar.</div>
+      </div>
+    </section>
+
+    <!-- 2. CAMPO DE TEXTO -->
+    <section class="ds-sec" aria-labelledby="c-input">
+      <h2 class="section-label" id="c-input">2 · Campo de texto</h2>
+      <p class="lead">Entrada de dados com rótulo, dica e mensagem de erro.</p>
+      <div class="ds-card">
+        <div class="ds-grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+          <div class="field">
+            <label class="field__label" for="i-default">E-mail <span class="req">*</span></label>
+            <input class="input" id="i-default" type="email" placeholder="voce@email.com">
+            <span class="field__hint">Default / focus (clique ou Tab) / hover.</span>
+          </div>
+          <div class="field">
+            <label class="field__label" for="i-disabled">Campo desativado</label>
+            <input class="input" id="i-disabled" type="text" value="Não editável" disabled>
+            <span class="field__hint">Disabled.</span>
+          </div>
+          <div class="field field--error">
+            <label class="field__label" for="i-error">E-mail</label>
+            <input class="input" id="i-error" type="email" value="email-invalido" aria-invalid="true" aria-describedby="i-error-msg">
+            <span class="field__error" id="i-error-msg">Digite um e-mail válido.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SELEÇÃO -->
+    <section class="ds-sec" aria-labelledby="c-select">
+      <h2 class="section-label" id="c-select">3 · Seleção</h2>
+      <p class="lead">Lista suspensa para filtros e formulários.</p>
+      <div class="ds-card">
+        <div class="ds-grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+          <div class="field">
+            <label class="field__label" for="s-default">Posição</label>
+            <select class="select" id="s-default"><option>Atacante</option><option>Meia</option><option>Zagueiro</option><option>Goleiro</option></select>
+            <span class="field__hint">Default / focus / hover.</span>
+          </div>
+          <div class="field">
+            <label class="field__label" for="s-disabled">Categoria</label>
+            <select class="select" id="s-disabled" disabled><option>Sub-13</option></select>
+            <span class="field__hint">Disabled.</span>
+          </div>
+          <div class="field field--error">
+            <label class="field__label" for="s-error">Região</label>
+            <select class="select" id="s-error" aria-invalid="true" aria-describedby="s-error-msg"><option>Selecione…</option></select>
+            <span class="field__error" id="s-error-msg">Escolha uma região.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. CARD -->
+    <section class="ds-sec" aria-labelledby="c-card">
+      <h2 class="section-label" id="c-card">4 · Card</h2>
+      <p class="lead">Bloco de conteúdo. A variação clicável reage a hover e a foco do teclado (focus-within).</p>
+      <div class="ds-row" style="align-items:stretch">
+        <article class="card" style="max-width:300px">
+          <span class="card__num">01</span>
+          <h3 class="card__title">Card estático</h3>
+          <p class="muted">Usado para agrupar informação. Estado default, com sombra suave.</p>
+        </article>
+        <a href="#c-card" class="card card--hover" style="max-width:300px;text-decoration:none">
+          <span class="card__num">02</span>
+          <h3 class="card__title">Card clicável</h3>
+          <p class="muted">Passe o mouse ou use Tab: eleva, ganha sombra e contorno dourado no foco.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- 5. COMPONENTE COMPOSTO -->
+    <section class="ds-sec" aria-labelledby="c-carta">
+      <h2 class="section-label" id="c-carta">5 · Componente composto · Carta do Atleta</h2>
+      <p class="lead">O componente-assinatura do ScoutX: foto, Índice da Comunidade, identidade e estatísticas verificadas. Reúne tipografia, cor, dados e a versão clicável (hover/focus).</p>
+      <div class="ds-row" style="align-items:flex-start">
+        <a href="#c-carta" class="carta carta--link" style="--w:260px" aria-label="Carta do atleta Gabriel Pereira">
+          <div class="carta__inner">
+            <img class="carta__photo" src="assets/img/craque-hero.jpg" alt="">
+            <div class="carta__navy"></div><div class="carta__gold"></div><div class="carta__shade"></div>
+            <span class="carta__reg">REGISTRO 047 · PELÉ ACADEMIA</span>
+            <div class="carta__top">
+              <div class="carta__rating"><b>92</b><span>ÍNDICE · ATA</span></div>
+              <span class="carta__elite"><svg viewBox="0 0 24 20"><path d="M2 6l4 4 6-9 6 9 4-4-2 12H4z"/></svg> Em alta</span>
+            </div>
+            <div class="carta__id">
+              <span class="flag-br"><i></i></span>
+              <span class="carta__name">Gabriel Pereira<small>Atacante · 11 anos</small></span>
+            </div>
+            <div class="carta__stats">
+              <div><b>18</b><span>GOL</span></div><div><b>7</b><span>AST</span></div><div><b>14</b><span>JOG</span></div><div><b>12k</b><span>SEG</span></div><div><b>3,4k</b><span>VOT</span></div>
+            </div>
+          </div>
+        </a>
+        <div class="ds-note" style="max-width:360px">Passe o mouse na carta: ela sobe levemente. Use <kbd>Tab</kbd>: aparece um anel de foco azul. É um exemplo de <strong>componente composto</strong> com estados interativos.</div>
+      </div>
+    </section>
+
+    <!-- Apoio: badges e alertas -->
+    <section class="ds-sec" aria-labelledby="c-apoio">
+      <h2 class="section-label" id="c-apoio">Apoio · Selos e avisos</h2>
+      <div class="ds-card">
+        <div class="ds-row" style="margin-bottom:var(--space-4)">
+          <span class="badge badge--navy">Navy</span>
+          <span class="badge badge--gold">Dourado</span>
+          <span class="badge badge--success">Verificado</span>
+          <span class="badge badge--danger">Atenção</span>
+        </div>
+        <div class="ds-grid">
+          <div class="alert alert--info"><span>Aviso informativo: contato sempre intermediado pela plataforma.</span></div>
+          <div class="alert alert--success"><span>Sucesso: vídeo enviado e disponível no seu perfil.</span></div>
+          <div class="alert alert--warning"><span>Atenção: a conta do menor só é ativada após o responsável confirmar.</span></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+</body>
+</html>
