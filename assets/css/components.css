@@ -84,8 +84,8 @@
 .carta__navy{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,27,69,.55),rgba(7,27,69,.2));mix-blend-mode:multiply}
 .carta__gold{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(224,169,46,.35));mix-blend-mode:overlay}
 .carta__shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,27,69,.12) 35%,rgba(7,27,69,.94) 100%)}
-.carta__reg{position:absolute;top:8px;left:50%;transform:translateX(-50%);z-index:4;font-family:var(--stat);font-size:10px;letter-spacing:.2em;color:rgba(255,255,255,.5)}
-.carta__top{position:absolute;top:14px;left:15px;right:15px;z-index:4;display:flex;justify-content:space-between;align-items:flex-start}
+.carta__reg{position:absolute;top:9px;left:50%;transform:translateX(-50%);z-index:4;font-family:var(--stat);font-size:9px;letter-spacing:.12em;white-space:nowrap;color:rgba(255,255,255,.5)}
+.carta__top{position:absolute;top:30px;left:15px;right:15px;z-index:4;display:flex;justify-content:space-between;align-items:flex-start}
 .carta__rating{font-family:var(--stat);line-height:.78;text-align:center;text-shadow:0 2px 10px rgba(0,0,0,.6)}
 .carta__rating b{font-size:calc(var(--w)*.18);display:block;color:#fff}
 .carta__rating span{font-size:calc(var(--w)*.06);letter-spacing:.14em;color:var(--ouro-lt)}
