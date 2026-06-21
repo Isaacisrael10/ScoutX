@@ -635,3 +635,5 @@
 @media (max-width:860px){.plans{grid-template-columns:1fr}}
 
 a.plan-pill{text-decoration:none}
+
+.auth-top__back{margin-left:auto}
