@@ -664,10 +664,14 @@ a.plan-pill{text-decoration:none}
   .lead{font-size:var(--fs-base)}
   .section-label{font-size:var(--fs-xs)}
 
-  /* Feed */
-  .igpost__name{font-size:var(--fs-xl)}
-  .igpost__media{aspect-ratio:1/1}
+  /* Feed — mais compacto no celular */
+  .feed-col{gap:var(--space-4)}
+  .igpost__name{font-size:var(--fs-lg)}
+  .igpost__media{aspect-ratio:4/3}
+  .igpost__media img{object-position:center 12%}
   .igbar{gap:var(--space-3);flex-wrap:wrap}
+  .stories{gap:var(--space-3)}
+  .story__av{width:54px;height:54px}
 
   /* Rankings */
   .rank-tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
