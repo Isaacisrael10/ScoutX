@@ -664,16 +664,19 @@ a.plan-pill{text-decoration:none}
   .lead{font-size:var(--fs-base)}
   .section-label{font-size:var(--fs-xs)}
 
-  /* Feed estilo Instagram no celular: card limpo, capa 4:5 vertical */
+  /* Feed compacto no celular: capa baixa (altura fixa), card limpo */
   .discover{max-width:100%}
-  .feed-col{gap:var(--space-5);max-width:100%}
+  .feed-col{gap:var(--space-4);max-width:100%}
   .igpost{border:0;box-shadow:none;border-radius:14px;overflow:hidden}
-  .igpost__media{aspect-ratio:4/5}
-  .igpost__media img{object-position:center 14%}
-  .igpost__name{font-size:var(--fs-lg)}
-  .igbar{gap:var(--space-3);flex-wrap:wrap}
+  .igpost__media{aspect-ratio:auto;height:300px}
+  .igpost__media img{object-position:center 22%}
+  .igpost__name{font-size:var(--fs-base)}
+  .igpost__loc,.igpost__kick{font-size:var(--fs-xs)}
+  .idx{transform:scale(.85);transform-origin:top right}
+  .igbar{gap:var(--space-3);flex-wrap:wrap;padding:10px 14px}
   .stories{gap:var(--space-3)}
-  .story__av{width:56px;height:56px}
+  .story__av{width:52px;height:52px}
+  .feed-h{font-size:var(--fs-base)}
 
   /* Rankings */
   .rank-tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
