@@ -64,16 +64,18 @@ Legenda: ✅ atendido no código · 🔎 verificar com ferramenta · 📹 evidê
 
 ---
 
-## 3. Tabela de violações [RODAR]
+## 3. Tabela de violações
 
-Preencher após rodar Lighthouse + axe. Modelo:
+Resultado da 1ª rodada (Lighthouse + axe-core 4.11 sobre `index.html`):
 
-| # | Ferramenta | Tela | Violação (regra WCAG) | Gravidade | Status | Correção / Justificativa |
+- **Lighthouse · Acessibilidade: 95** (mínimo exigido: 90 ✅).
+- **axe DevTools:** 1 issue — 0 críticas, **1 séria**, 0 moderadas, 0 menores.
+
+| # | Ferramenta | Tela | Violação (WCAG) | Gravidade | Status | Correção / Justificativa |
 |---|---|---|---|---|---|---|
-| 1 | axe | … | … | crítica/séria/moderada | corrigido / aberto | … |
-| 2 | Lighthouse | … | … | … | … | … |
+| 1 | axe / Lighthouse | `index.html` | `[aria-hidden="true"]` em elemento focável (checkbox do menu mobile) — *ARIA hidden element must not be focusable* (WCAG 4.1.2) | Séria | ✅ Corrigido | O checkbox do menu deixou de ser `aria-hidden`: virou controle com nome (`aria-label="Abrir menu de navegação"`), a label do hambúrguer ficou decorativa (`aria-hidden`) e foi adicionado **foco visível** na label. |
 
-> Violações não corrigidas são aceitas **com justificativa** (ex.: limitação de protótipo estático sem backend).
+> Após a correção, re-rodar em aba anônima: a violação deve sair (0 issues) e a nota do Lighthouse subir (≥95). Violações não corrigidas são aceitas **com justificativa** (ex.: limitação de protótipo estático sem backend).
 
 ---
 
