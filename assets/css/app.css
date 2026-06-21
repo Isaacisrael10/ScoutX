@@ -722,9 +722,9 @@ a.plan-pill{text-decoration:none}
   .rank-tabs::-webkit-scrollbar{display:none}
   .rank-tab{white-space:nowrap;flex:0 0 auto}
 
-  /* Mensagens no celular: mostra só a conversa aberta (esconde a lista),
-     altura natural e bolhas fluindo com a página (sem rolagem aninhada) */
-  .msg-list{display:none}
+  /* Mensagens no celular: lista (caixa de entrada) em cima, conversa aberta
+     embaixo, com separação clara — alturas naturais, sem rolagem aninhada */
+  .msg-list{height:auto;max-height:none;margin-bottom:var(--space-5)}
   .msg-thread{height:auto}
   .msg-body{overflow:visible}
 
