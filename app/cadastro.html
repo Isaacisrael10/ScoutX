@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Criar conta de atleta · ScoutX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Archivo+Expanded:wght@700;800;900&family=Space+Grotesk:wght@500;700&family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/app.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="authwrap">
+  <header class="auth-top">
+    <a class="logo" href="../index.html" aria-label="ScoutX — início">
+      <svg class="logo__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <path d="M6 16 V6 H16 M32 6 H42 V16 M42 32 V42 H32 M16 42 H6 V32" stroke="#F2C964" stroke-opacity=".5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15 15 L33 33 M33 15 L15 33" stroke="#F2C964" stroke-width="7" stroke-linecap="round"/>
+      </svg>
+      Scout<span class="x">X</span>
+    </a>
+    <a class="auth-top__back" href="../index.html">← Voltar ao site</a>
+  </header>
+
+  <main id="conteudo" class="auth-main">
+    <div class="auth-card auth-card--wide">
+      <h1>Criar conta de atleta</h1>
+      <p class="sub">É grátis, pra sempre. Por se tratar de menor de idade, a conta só é ativada com a <strong>autorização do responsável legal</strong>.</p>
+
+      <div class="auth-sec" style="border-top:0;margin-top:0;padding-top:0">
+        <p class="auth-sec__h">O atleta</p>
+        <div class="auth-field">
+          <label for="nome">Nome completo</label>
+          <input class="input" id="nome" type="text" placeholder="Nome do atleta">
+        </div>
+        <div class="field-row">
+          <div class="auth-field"><label for="nasc">Data de nascimento</label><input class="input" id="nasc" type="date"></div>
+          <div class="auth-field"><label for="pos">Posição</label><select class="select" id="pos"><option>Atacante</option><option>Meia</option><option>Zagueiro</option><option>Lateral</option><option>Goleiro</option></select></div>
+        </div>
+        <div class="auth-field">
+          <label for="cidade">Cidade / UF</label>
+          <input class="input" id="cidade" type="text" placeholder="Ex.: Recife/PE">
+        </div>
+      </div>
+
+      <div class="auth-sec">
+        <p class="auth-sec__h">Responsável legal</p>
+        <div class="auth-field">
+          <label for="resp">Nome do responsável</label>
+          <input class="input" id="resp" type="text" placeholder="Nome de quem autoriza">
+        </div>
+        <div class="field-row">
+          <div class="auth-field"><label for="parentesco">Parentesco</label><select class="select" id="parentesco"><option>Mãe</option><option>Pai</option><option>Avó/Avô</option><option>Tutor legal</option><option>Outro</option></select></div>
+          <div class="auth-field"><label for="respmail">E-mail do responsável</label><input class="input" id="respmail" type="email" placeholder="responsavel@email.com"></div>
+        </div>
+        <label class="auth-check"><input type="checkbox"> Sou o responsável legal (ou tenho autorização dele) e li e aceito os <a href="#" style="color:var(--navy);font-weight:600">Termos de Uso</a> e a <a href="#" style="color:var(--navy);font-weight:600">Política de Privacidade</a> (LGPD/ECA).</label>
+        <div class="auth-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          <span>A conta do menor só é ativada depois que o responsável confirmar por e-mail. Nenhum olheiro fala direto com o atleta — todo contato é intermediado.</span>
+        </div>
+      </div>
+
+      <a class="btn btn--gold btn--block btn--lg" href="atleta-feed.html" style="margin-top:var(--space-5)">Criar conta</a>
+      <p class="auth-foot">Já tem conta? <a href="entrar.html">Entrar</a></p>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>

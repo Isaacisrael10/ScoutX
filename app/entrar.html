@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entrar · ScoutX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Archivo+Expanded:wght@700;800;900&family=Space+Grotesk:wght@500;700&family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/app.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="authwrap">
+  <header class="auth-top">
+    <a class="logo" href="../index.html" aria-label="ScoutX — início">
+      <svg class="logo__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <path d="M6 16 V6 H16 M32 6 H42 V16 M42 32 V42 H32 M16 42 H6 V32" stroke="#F2C964" stroke-opacity=".5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15 15 L33 33 M33 15 L15 33" stroke="#F2C964" stroke-width="7" stroke-linecap="round"/>
+      </svg>
+      Scout<span class="x">X</span>
+    </a>
+    <a class="auth-top__back" href="../index.html">← Voltar ao site</a>
+  </header>
+
+  <main id="conteudo" class="auth-main">
+    <div class="auth-card">
+      <h1>Entrar</h1>
+      <p class="sub">Acesse sua conta na ScoutX — a rede social do futebol de base.</p>
+
+      <div class="auth-field">
+        <label for="email">E-mail</label>
+        <input class="input" id="email" type="email" placeholder="voce@email.com">
+      </div>
+      <div class="auth-field">
+        <label for="senha">Senha</label>
+        <input class="input" id="senha" type="password" placeholder="••••••••">
+      </div>
+      <div style="text-align:right;margin-bottom:var(--space-5)"><a href="#" style="font-size:var(--fs-sm);color:var(--navy);font-weight:600">Esqueci minha senha</a></div>
+
+      <a class="btn btn--gold btn--block btn--lg" href="atleta-feed.html">Entrar como atleta</a>
+      <p style="text-align:center;font-size:var(--fs-xs);color:var(--ink-mute);margin:var(--space-4) 0 var(--space-3)">ou acesse como</p>
+      <div class="row" style="gap:8px">
+        <a class="btn btn--outline" href="catalogo.html" style="flex:1">Olheiro</a>
+        <a class="btn btn--outline" href="gestor-dashboard.html" style="flex:1">Pelé Academia</a>
+      </div>
+
+      <p class="auth-foot">Novo por aqui? <a href="cadastro.html">Criar conta de atleta grátis</a></p>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>
