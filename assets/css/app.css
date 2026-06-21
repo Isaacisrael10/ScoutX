@@ -664,14 +664,16 @@ a.plan-pill{text-decoration:none}
   .lead{font-size:var(--fs-base)}
   .section-label{font-size:var(--fs-xs)}
 
-  /* Feed — mais compacto no celular */
-  .feed-col{gap:var(--space-4)}
+  /* Feed estilo Instagram no celular: card limpo, capa 4:5 vertical */
+  .discover{max-width:100%}
+  .feed-col{gap:var(--space-5);max-width:100%}
+  .igpost{border:0;box-shadow:none;border-radius:14px;overflow:hidden}
+  .igpost__media{aspect-ratio:4/5}
+  .igpost__media img{object-position:center 14%}
   .igpost__name{font-size:var(--fs-lg)}
-  .igpost__media{aspect-ratio:4/3}
-  .igpost__media img{object-position:center 12%}
   .igbar{gap:var(--space-3);flex-wrap:wrap}
   .stories{gap:var(--space-3)}
-  .story__av{width:54px;height:54px}
+  .story__av{width:56px;height:56px}
 
   /* Rankings */
   .rank-tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
