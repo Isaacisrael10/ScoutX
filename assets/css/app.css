@@ -418,7 +418,7 @@
 .igpost__follow{flex:0 0 auto;align-self:flex-end;font-family:var(--ui);font-weight:var(--fw-bold);font-size:var(--fs-xs);padding:7px 15px;border-radius:99px;border:1.5px solid var(--ouro);background:rgba(7,27,69,.4);color:var(--ouro-lt);cursor:pointer;transition:all var(--transition-base);white-space:nowrap}
 .igpost__follow:hover{background:var(--ouro);color:var(--navy)}
 /* barra de ações estilo IG: ícones agrupados numa linha + contagem logo abaixo */
-.igbar{display:flex;flex-wrap:wrap;align-items:center;gap:2px;padding:var(--space-3) 0 0;margin-left:-7px}
+.igbar{display:flex;flex-wrap:wrap;align-items:center;gap:2px;padding:var(--space-1) 0 0;margin-left:-7px}
 .igbar .igact{order:1}
 .igbar .igact:last-of-type{margin-left:auto}
 .igbar__metric{order:2;flex:1 0 100%;display:flex;gap:var(--space-3);margin:var(--space-2) 0 0;padding-left:7px;align-items:baseline}
@@ -681,7 +681,7 @@ a.plan-pill{text-decoration:none}
   .igpost__name{font-size:var(--fs-base)}
   .igpost__loc,.igpost__kick{font-size:var(--fs-xs)}
   .idx{transform:scale(.85);transform-origin:top right}
-  .igbar{gap:var(--space-3);flex-wrap:wrap;padding:10px 2px 0}
+  .igbar{gap:2px;flex-wrap:wrap;padding:var(--space-1) 0 0}
   .stories{gap:var(--space-3)}
   .story{width:62px}
   .story__ring{width:52px;height:52px}
