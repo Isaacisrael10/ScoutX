@@ -726,8 +726,8 @@ a.plan-pill{text-decoration:none}
      abre na LISTA; tocar numa conversa abre a conversa em tela cheia; voltar = botão ‹ */
   .msg-list{height:auto;max-height:none}
   .msg-thread{display:none}
-  .msg-thread:target{display:flex;position:fixed;inset:0;z-index:300;border:0;border-radius:0;background:#fff}
-  .msg-thread:target .msg-body{flex:1;overflow-y:auto}
+  .msg-thread:target{display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100%;height:100dvh;z-index:1000;border:0;border-radius:0;background:#fff;max-height:none}
+  .msg-thread:target .msg-body{flex:1;min-height:0;overflow-y:auto}
   .msg-back{display:inline-flex}
 
   /* Peneira destaque: gradiente vertical pra leitura */
