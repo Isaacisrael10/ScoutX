@@ -523,7 +523,19 @@
 .rankrow__delta.up{color:var(--verde-dk)} .rankrow__delta.flat{color:var(--ink-mute)} .rankrow__delta.down{color:var(--vermelho)}
 .rankrow__metric{font-family:var(--stat);font-weight:var(--fw-extra);font-size:var(--fs-xl);color:var(--navy);flex:0 0 auto;text-align:right;min-width:60px}
 .rankrow__metric span{display:block;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute);font-weight:var(--fw-bold)}
-@media (max-width:760px){.podium{grid-template-columns:1fr;gap:var(--space-3)}.pod--1{order:-1}.rankrow__delta{display:none}}
+@media (max-width:760px){
+  .rankrow__delta{display:none}
+  /* pódio compacto: cada top-3 vira um cartão horizontal (medalha · foto · nome/meta · índice) */
+  .podium{grid-template-columns:1fr;gap:var(--space-2);align-items:stretch}
+  .pod--1{order:-1}
+  .pod,.pod--1{display:grid;grid-template-columns:22px 44px 1fr auto;grid-template-areas:"m a n v" "m a t v";align-items:center;column-gap:var(--space-3);text-align:left;padding:var(--space-3) var(--space-4)}
+  .pod__medal{grid-area:m;font-size:var(--fs-md);font-family:var(--stat);font-weight:var(--fw-extra);color:var(--ouro-lt)}
+  .pod__av,.pod--1 .pod__av{grid-area:a;width:44px;height:44px;margin:0}
+  .pod__name{grid-area:n;align-self:end;font-size:var(--fs-base)}
+  .pod__meta{grid-area:t;align-self:start;margin-top:1px}
+  .pod__metric{grid-area:v;align-self:center;margin:0;font-size:var(--fs-xl);text-align:right}
+  .pod__metric span{margin-top:1px}
+}
 
 /* ===================== Feed: abas, destaques, vozes, composer ===================== */
 /* abas do feed */
