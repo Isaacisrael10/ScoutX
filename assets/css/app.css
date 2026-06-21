@@ -785,3 +785,12 @@ html,body{overflow-x:hidden;max-width:100%}
   .profile-head__row{gap:var(--space-3) var(--space-5);justify-content:center}
   .bio{margin-inline:auto}
 }
+
+@media (max-width:760px){
+  /* carta do perfil: rating e selo "Em alta" menores no celular */
+  .profile-head .carta__top{top:24px}
+  .profile-head .carta__rating b{font-size:30px}
+  .profile-head .carta__rating span{font-size:9px}
+  .profile-head .carta__elite{font-size:9px;padding:3px 7px}
+  .profile-head .carta__elite svg{width:12px;height:10px}
+}
