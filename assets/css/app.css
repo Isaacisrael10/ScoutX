@@ -802,3 +802,11 @@ html,body{overflow-x:hidden;max-width:100%}
   .rank-filters .lbl{flex:1 0 100%;margin-bottom:2px}
   .rank-filters .select{flex:1 1 100%;width:100%}
 }
+
+/* polimento mobile: links de canto nao quebram/cortam */
+.msg-thread__head{align-items:flex-start}
+.msg-thread__id{flex:1;min-width:0}
+.msg-thread__open{white-space:nowrap;flex:none}
+.panel__head{align-items:flex-start}
+.panel__head h3{min-width:0}
+.panel__head a{white-space:nowrap;flex:none}
