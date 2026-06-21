@@ -710,3 +710,33 @@ a.plan-pill{text-decoration:none}
 
 /* trava global: nada vaza horizontalmente */
 html,body{overflow-x:hidden;max-width:100%}
+
+@media (max-width:760px){
+  /* Travar grids/conteúdo que vazavam a tela no celular (mesmo bug do feed) */
+  .kpi-band,.kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kpi-band .kpi{min-width:0;padding-left:0;border-left:0}
+  .kpi-band b{font-size:var(--fs-xl)}
+  .kpi-band .lab,.kpi-card .lab{font-size:var(--fs-xs)}
+  .kpi-card{padding:var(--space-4);min-width:0}
+  .kpi-card .big{font-size:var(--fs-xl)}
+  .msgs{grid-template-columns:minmax(0,1fr)}
+  .msg-list,.msg-thread{min-width:0}
+  .profile-head,.profile-head > *{min-width:0;max-width:100%}
+  .eyebrow{white-space:normal;overflow-wrap:anywhere}
+  .statgrid b{font-size:var(--fs-lg)}
+}
+
+@media (max-width:760px){
+  /* grids de topo viram bloco no celular (mesma correção do feed) — nada vaza */
+  .dash,.msgs,.profile-head{display:block}
+  .dash > *{margin-bottom:var(--space-5);min-width:0}
+  .dash > *:last-child{margin-bottom:0}
+  .msg-list{margin-bottom:var(--space-4)}
+  .profile-head{text-align:center}
+  .profile-head .carta{margin:0 auto}
+}
+
+@media (max-width:760px){
+  /* nada dentro da página pode exceder a largura do pai (mata vazamentos) */
+  .page *{min-width:0;max-width:100%}
+}
