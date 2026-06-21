@@ -395,7 +395,7 @@
 .igpost__media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.18),transparent 26%,transparent 100%)}
 
 /* Cabeçalho do post (estilo IG): avatar + nome + meta + índice + seguir */
-.ig-head{display:flex;align-items:center;gap:10px;padding:0 2px var(--space-2)}
+.ig-head{display:flex;align-items:center;gap:10px;padding:0 0 var(--space-2)}
 .ig-head__av{flex:0 0 auto;width:42px;height:42px;border-radius:50%;overflow:hidden;background:var(--navy-900);border:2px solid var(--ouro)}
 .ig-head__av img{width:100%;height:100%;object-fit:cover;object-position:center 18%}
 .ig-head__id{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:1px;text-decoration:none}
@@ -432,10 +432,10 @@
 .igpost__follow{flex:0 0 auto;align-self:flex-end;font-family:var(--ui);font-weight:var(--fw-bold);font-size:var(--fs-xs);padding:7px 15px;border-radius:99px;border:1.5px solid var(--ouro);background:rgba(7,27,69,.4);color:var(--ouro-lt);cursor:pointer;transition:all var(--transition-base);white-space:nowrap}
 .igpost__follow:hover{background:var(--ouro);color:var(--navy)}
 /* barra de ações estilo IG: ícones agrupados numa linha + contagem logo abaixo */
-.igbar{display:flex;flex-wrap:wrap;align-items:center;gap:2px;padding:var(--space-1) 0 0;margin-left:-7px}
+.igbar{display:flex;flex-wrap:wrap;align-items:center;gap:2px;padding:var(--space-1) 0 0;margin-left:-9px}
 .igbar .igact{order:1}
-.igbar .igact:last-of-type{margin-left:auto}
-.igbar__metric{order:2;flex:1 0 100%;display:flex;gap:var(--space-3);margin:var(--space-2) 0 0;padding-left:7px;align-items:baseline}
+.igbar .igact:last-of-type{margin-left:auto;margin-right:-9px}
+.igbar__metric{order:2;flex:1 0 100%;display:flex;gap:var(--space-3);margin:var(--space-2) 0 0 9px;align-items:baseline}
 .igbar__metric span{font-family:var(--stat);font-weight:var(--fw-semibold);font-size:var(--fs-sm);color:var(--ink-mute);display:inline-flex;align-items:baseline;gap:5px}
 .igbar__metric b{font-family:var(--stat);font-weight:var(--fw-extra);font-size:var(--fs-base);color:var(--ink)}
 .igact{background:0;border:0;cursor:pointer;color:var(--ink-soft);display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;transition:all var(--transition-fast)}
@@ -444,7 +444,7 @@
 .igact--vote{color:var(--ouro-dk)}
 .igact--vote:hover{background:var(--ouro-soft)}
 /* corpo: legenda + voz + CTA */
-.post-body{padding:var(--space-2) 2px 0;display:flex;flex-direction:column;gap:9px}
+.post-body{padding:var(--space-2) 0 0;display:flex;flex-direction:column;gap:9px}
 .post-cap{font-size:var(--fs-sm);color:var(--ink-soft);line-height:1.5}
 .post-cap b{color:var(--ink);font-weight:var(--fw-bold)}
 .igtags{display:flex;gap:6px;flex-wrap:wrap}
