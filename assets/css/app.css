@@ -665,8 +665,9 @@ a.plan-pill{text-decoration:none}
   .section-label{font-size:var(--fs-xs)}
 
   /* Feed compacto no celular: capa baixa (altura fixa), card limpo */
-  .discover{max-width:100%}
-  .feed-col{gap:var(--space-4);max-width:100%}
+  .discover{display:block;max-width:100%;min-width:0}
+  .feed-col{gap:var(--space-4);max-width:100%;min-width:0;margin:0 auto}
+  .igcta{flex-wrap:wrap}
   .igpost{border:0;box-shadow:none;border-radius:14px;overflow:hidden}
   .igpost__media{aspect-ratio:auto;height:300px}
   .igpost__media img{object-position:center 22%}
