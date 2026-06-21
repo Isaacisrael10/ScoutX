@@ -380,17 +380,15 @@
 
 /* ===================== Feed estilo rede social (Instagram-like) ===================== */
 .discover{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:var(--space-7);max-width:880px;margin:0 auto;align-items:start}
-.feed-col{width:100%;max-width:500px;margin:0 auto;display:flex;flex-direction:column;gap:0}
-.feed-tabs{margin-bottom:var(--space-4)}
-.destaques{margin-bottom:var(--space-5)}
+.feed-col{width:100%;max-width:500px;margin:0 auto;display:flex;flex-direction:column;gap:var(--space-7)}
+.feed-tabs{margin-bottom:var(--space-2)}
+.destaques{margin-bottom:var(--space-2)}
 
-/* Feed contínuo: os posts formam UM painel branco único, separados por uma linha fina
-   (não cartões soltos) — passa a sensação de feed infinito, como IG/TikTok */
-.igpost{background:#fff;overflow:hidden;border-inline:1px solid var(--paper-line)}
-.igpost + .igpost{border-top:1px solid var(--paper-line)}
-.igpost:first-of-type{border-top:1px solid var(--paper-line);border-radius:var(--radius-lg) var(--radius-lg) 0 0}
-.igpost:last-of-type{border-bottom:1px solid var(--paper-line);border-radius:0 0 var(--radius-lg) var(--radius-lg)}
-.igpost:focus-within{position:relative;z-index:1;box-shadow:inset 0 0 0 2px var(--ouro)}
+/* Feed integrado (estilo IG): nenhum cartão branco. Só a FOTO é um elemento
+   contido e arredondado; cabeçalho, ações e legenda ficam direto sobre o fundo. */
+.igpost{background:transparent}
+.igpost__media{border-radius:var(--radius-lg)}
+.igpost:focus-within .igpost__media{box-shadow:0 0 0 2px var(--ouro)}
 /* herói: filmagem com identidade sobreposta */
 .igpost__media{position:relative;aspect-ratio:4/5;background:var(--navy-900);overflow:hidden}
 .igpost__media img{width:100%;height:100%;object-fit:cover;object-position:center 16%;filter:grayscale(.5) contrast(1.08)}
@@ -420,7 +418,7 @@
 .igpost__follow{flex:0 0 auto;align-self:flex-end;font-family:var(--ui);font-weight:var(--fw-bold);font-size:var(--fs-xs);padding:7px 15px;border-radius:99px;border:1.5px solid var(--ouro);background:rgba(7,27,69,.4);color:var(--ouro-lt);cursor:pointer;transition:all var(--transition-base);white-space:nowrap}
 .igpost__follow:hover{background:var(--ouro);color:var(--navy)}
 /* barra secundária: métricas + ações */
-.igbar{display:flex;align-items:center;gap:var(--space-2);padding:var(--space-3) var(--space-4);border-bottom:1px solid var(--paper-line)}
+.igbar{display:flex;align-items:center;gap:var(--space-2);padding:var(--space-3) 2px 0}
 .igbar__metric{display:flex;gap:var(--space-5);margin-right:auto}
 .igbar__metric span{font-family:var(--stat);font-weight:var(--fw-semibold);font-size:var(--fs-base);color:var(--ink-mute);display:inline-flex;align-items:baseline;gap:5px}
 .igbar__metric b{font-family:var(--stat);font-weight:var(--fw-extra);font-size:var(--fs-lg);color:var(--navy)}
@@ -430,7 +428,7 @@
 .igact--vote{color:var(--ouro-dk)}
 .igact--vote:hover{background:var(--ouro-soft)}
 /* corpo: legenda + voz + CTA */
-.post-body{padding:var(--space-4);display:flex;flex-direction:column;gap:9px}
+.post-body{padding:var(--space-2) 2px 0;display:flex;flex-direction:column;gap:9px}
 .post-cap{font-size:var(--fs-sm);color:var(--ink-soft);line-height:1.5}
 .post-cap b{color:var(--ink);font-weight:var(--fw-bold)}
 .igtags{display:flex;gap:6px;flex-wrap:wrap}
@@ -673,14 +671,14 @@ a.plan-pill{text-decoration:none}
 
   /* Feed compacto no celular: capa baixa (altura fixa), painel contínuo */
   .discover{display:block;max-width:100%;min-width:0}
-  .feed-col{gap:0;max-width:100%;min-width:0;margin:0 auto}
+  .feed-col{gap:var(--space-6);max-width:100%;min-width:0;margin:0 auto}
   .igcta{flex-wrap:wrap}
   .igpost__media{aspect-ratio:auto;height:300px}
   .igpost__media img{object-position:center 22%}
   .igpost__name{font-size:var(--fs-base)}
   .igpost__loc,.igpost__kick{font-size:var(--fs-xs)}
   .idx{transform:scale(.85);transform-origin:top right}
-  .igbar{gap:var(--space-3);flex-wrap:wrap;padding:10px 14px}
+  .igbar{gap:var(--space-3);flex-wrap:wrap;padding:10px 2px 0}
   .stories{gap:var(--space-3)}
   .story{width:62px}
   .story__ring{width:52px;height:52px}
