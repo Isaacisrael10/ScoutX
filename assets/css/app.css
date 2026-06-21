@@ -675,7 +675,8 @@ a.plan-pill{text-decoration:none}
   .idx{transform:scale(.85);transform-origin:top right}
   .igbar{gap:var(--space-3);flex-wrap:wrap;padding:10px 14px}
   .stories{gap:var(--space-3)}
-  .story__av{width:52px;height:52px}
+  .story{width:62px}
+  .story__ring{width:52px;height:52px}
   .feed-h{font-size:var(--fs-base)}
 
   /* Rankings */
@@ -705,3 +706,6 @@ a.plan-pill{text-decoration:none}
   .auth-main{display:block;padding:24px 14px 40px}
   .auth-card,.auth-card--wide{max-width:100%}
 }
+
+/* trava global: nada vaza horizontalmente */
+html,body{overflow-x:hidden;max-width:100%}
