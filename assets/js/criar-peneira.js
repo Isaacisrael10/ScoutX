@@ -16,7 +16,7 @@
                  "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"];
 
   function dataFmt(v) {
-    if (!v) return "—";
+    if (!v) return "a definir";
     const p = v.split("-");
     return parseInt(p[2], 10) + " de " + (meses[parseInt(p[1], 10) - 1] || "");
   }
