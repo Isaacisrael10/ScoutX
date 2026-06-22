@@ -1,4 +1,4 @@
-# ScoutX · a rede social do futebol de base
+# ScoutX · descoberta de talentos do futebol de base
 
 **Challenge Pelé Academia · FIAP · 1º ano de Engenharia de Software · 2026**
 Entrega de **Frontend Design (FED)**: protótipo de alta fidelidade em **HTML + CSS** (a interatividade em JavaScript é tratada na disciplina de Web Development).
@@ -10,7 +10,7 @@ Entrega de **Frontend Design (FED)**: protótipo de alta fidelidade em **HTML + 
 
 ## 1. O que é o ScoutX
 
-Rede social que dá visibilidade nacional a jovens do futebol de base. A própria comunidade descobre e valoriza os talentos pelo engajamento, traduzido no **Índice da Comunidade**. Como os atletas são menores de idade, todo contato é **intermediado pela plataforma** e o responsável legal é sempre avisado. A operação é da Pelé Academia.
+Plataforma da Pelé Academia que **descentraliza a descoberta de talentos** do futebol de base e dá **visibilidade nacional** a jovens de todas as regiões. A própria comunidade descobre e valoriza os talentos pelo engajamento, traduzido no **Índice da Comunidade**. Como os atletas são menores de idade, todo contato é **intermediado pela plataforma** e o responsável legal é sempre avisado.
 
 ## 2. Usuários e fluxos principais
 
