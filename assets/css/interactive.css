@@ -57,8 +57,7 @@
 /* ---- feed: votar / seguir ---- */
 .igact--vote.is-voted{color:var(--ouro-dk)}
 .igact--vote.is-voted svg{fill:var(--ouro)}
-.ig-head__follow.is-following{color:var(--ink-mute)}
-.ig-head__follow.is-following:hover{color:var(--vermelho-dk)}
+/* "Seguindo" mantém o mesmo estilo do botão "Seguir" (só muda o texto) */
 
 /* ---- mensagens: campo de envio ---- */
 input.msg-compose__in{flex:1;min-width:0;border:0;background:transparent;font:inherit;color:var(--ink);outline:none}
