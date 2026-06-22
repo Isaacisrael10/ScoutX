@@ -73,3 +73,10 @@ input.msg-compose__in::placeholder{color:var(--ink-mute)}
 .tag-c.is-votable.is-confirmed .tag-c__n{opacity:1}
 .vote-plus{position:absolute;top:-8px;right:6px;font-family:var(--stat);font-weight:800;font-size:14px;color:var(--verde-dk);pointer-events:none;animation:vote-up .9s ease forwards}
 @keyframes vote-up{0%{opacity:0;transform:translateY(4px)}20%{opacity:1}100%{opacity:0;transform:translateY(-18px)}}
+
+/* ---- adicionar ao radar (catalogo) ---- */
+.igact.is-radar{color:var(--ouro-dk)}
+.igact.is-radar svg{stroke:var(--ouro-dk)}
+/* ---- inscrito na peneira ---- */
+.btn.is-enrolled{background:var(--verde);border-color:var(--verde);color:#fff}
+.btn.is-enrolled:hover{background:var(--verde-dk)}

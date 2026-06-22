@@ -56,6 +56,16 @@
     });
   });
 
+  // ---- ADICIONAR AO RADAR (feed do olheiro) ---------------------------
+  feed.querySelectorAll('.igact[aria-label="Adicionar ao radar"]').forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const noRadar = btn.getAttribute("aria-pressed") === "true";
+      btn.setAttribute("aria-pressed", noRadar ? "false" : "true");
+      btn.classList.toggle("is-radar", !noRadar);
+      ScoutX.toast(noRadar ? "Removido do radar." : "Adicionado ao seu radar.", noRadar ? "alert" : "ok", 1600);
+    });
+  });
+
   // ---- FILTROS (abas + posição + região) ------------------------------
   const abas = Array.from(feed.querySelectorAll(".feed-tab"));
   const discover = feed.closest(".discover") || document;

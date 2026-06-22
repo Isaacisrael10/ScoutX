@@ -90,10 +90,18 @@ Onde clicar e o que esperar de cada simulação em JavaScript. Os scripts são m
 - Clique no **ícone de votar** (estrela) → a contagem de votos do lance sobe (+1) e o ícone fica dourado; clique de novo para desfazer.
 - Clique em **"Seguir"** no cabeçalho do post → vira **"Seguindo"**.
 - Use as **abas** (Para você / Seguindo / Em alta / Minha região). No feed do olheiro, a **lateral** ainda filtra por **posição** (chips) e **região** (select), tudo combinável.
+- No feed do olheiro, clique no ícone **"Adicionar ao radar"** (alvo) de um post → salva no seu radar (toast); clique de novo para remover.
 
 **4. Mensagens intermediadas** · `app/mensagens.html` e `app/mensagens-atleta.html` (`messages.js`)
 - Escreva no campo e clique em **enviar** (ou tecle **Enter**) → sua mensagem aparece na conversa e o **responsável responde** após ~1,6s (`setTimeout`), com um toast.
 - Tente enviar um **telefone ou rede social** (ex.: `meu zap 11 99999-8888`) → um **alerta nativo do navegador** bloqueia, pois o contato é intermediado.
+
+**5. Criar peneira (prévia ao vivo)** · `app/criar-peneira.html` e `app/criar-peneira-olheiro.html` (`criar-peneira.js`)
+- Edite o **nome, categoria, chips** (posição/formato/alcance), **data**, **vagas** ou envie uma **capa** → o **card de prévia** à direita atualiza na hora. "Publicar peneira" dá um toast de confirmação.
+
+**6. Página da peneira** · `app/peneira.html` (`peneira.js`)
+- O **prazo** mostra uma **contagem regressiva ao vivo** (dias/horas/min/seg, `setInterval`).
+- Clique em **"Inscrever-se"** → confirma (modal), o nº de **inscritos sobe**, as **vagas baixam** e o botão vira **"Inscrito ✓"**.
 
 > Notificações (toast) e o destaque ao vivo são criados dinamicamente no DOM por `assets/js/ui.js`.
 
@@ -110,7 +118,7 @@ ScoutX/
 ├── app/                    # Telas internas (atleta, olheiro, recrutador Pelé)
 ├── assets/
 │   ├── css/                # tokens, base, components, landing, app, interactive
-│   ├── js/                 # ui, validation, filters, feed, messages (Web Development)
+│   ├── js/                 # ui, validation, filters, feed, votes, messages, criar-peneira, peneira (Web Development)
 │   └── img/                # imagens
 └── docs/                   # PDF de entrega e prints da auditoria
 ```
