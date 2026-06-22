@@ -12,3 +12,8 @@ zz-*.png
 
 # node (para quando o WD adicionar JS/tooling)
 node_modules/
+
+# prints/capturas soltos na raiz
+Captura de tela*.png
+*_n_.jpeg
+WhatsApp*
