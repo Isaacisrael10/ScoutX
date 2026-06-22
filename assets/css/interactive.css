@@ -1,0 +1,52 @@
+/* =====================================================================
+   ScoutX · interactive.css  (Web Development)
+   Estilos das interações em JavaScript: estados de erro de validação,
+   toast (notificação) e destaques de simulação ao vivo.
+   ===================================================================== */
+
+/* ---- validação dos formulários de acesso ---- */
+.auth-field.invalid .input,
+.auth-field.invalid .select {
+  border-color: var(--vermelho);
+  box-shadow: 0 0 0 3px var(--vermelho-soft);
+}
+.auth-err {
+  display: block;
+  color: var(--vermelho-dk);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  margin-top: 6px;
+}
+.auth-err::before { content: "⚠ "; }
+.auth-check.invalid { color: var(--vermelho-dk); }
+
+/* ---- toast (notificação não-bloqueante) ---- */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--navy-900);
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .32);
+  font-family: var(--ui);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  max-width: 90vw;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease, transform .3s ease;
+  z-index: 3000;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+.toast--ok    { border-left: 4px solid var(--verde); }
+.toast--alert { border-left: 4px solid var(--ouro); }
+
+/* ---- destaque quando um valor muda ao vivo (feed/dashboard) ---- */
+@keyframes scoutx-pulse {
+  0%   { background: var(--ouro-soft); }
+  100% { background: transparent; }
+}
+.is-live-update { animation: scoutx-pulse 1s ease; }
