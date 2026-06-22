@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
-<title>ScoutX · Entrega Sprint 2 — Frontend Design</title>
+<title>ScoutX · Entrega Sprint 2 · Frontend Design</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Archivo+Expanded:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -57,14 +57,15 @@
   </svg>
   <h1>Scout<span class="x">X</span></h1>
   <p class="sub">A rede social do futebol de base · Challenge Pelé Academia</p>
-  <p class="disc">Sprint 2 — Frontend Design · FIAP · 2026</p>
+  <p class="disc">Sprint 2 · Frontend Design · FIAP · 2026</p>
   <table>
     <thead><tr><th>Integrante</th><th>RM</th></tr></thead>
     <tbody>
-      <tr><td>Isaac Israel</td><td>570072</td></tr>
-      <tr><td><span class="ph">PREENCHER — nome completo</span></td><td><span class="ph">RM</span></td></tr>
-      <tr><td><span class="ph">PREENCHER — nome completo</span></td><td><span class="ph">RM</span></td></tr>
-      <tr><td><span class="ph">PREENCHER — nome completo</span></td><td><span class="ph">RM</span></td></tr>
+      <tr><td>Isaac Israel Rosa Coimbra</td><td>570072</td></tr>
+      <tr><td>Henrique Nunes Mororó</td><td>574073</td></tr>
+      <tr><td>Bernardo de Paula Rodrigues</td><td>572376</td></tr>
+      <tr><td>Heitor Anacleto Araújo</td><td>573599</td></tr>
+      <tr><td>Matheus Henrique Pedersen Guerra</td><td>571197</td></tr>
     </tbody>
   </table>
 </section>
@@ -76,11 +77,11 @@
   <table>
     <tr><th style="width:42mm">Protótipo publicado</th><td><a href="https://isaacisrael10.github.io/ScoutX/">https://isaacisrael10.github.io/ScoutX/</a> (GitHub Pages)</td></tr>
     <tr><th>Repositório (código + README)</th><td><a href="https://github.com/Isaacisrael10/ScoutX">https://github.com/Isaacisrael10/ScoutX</a></td></tr>
-    <tr><th>Vídeo demonstrativo (≤3 min)</th><td><span class="ph">PREENCHER — link do YouTube (não listado) ou Google Drive (permissão aberta)</span></td></tr>
+    <tr><th>Vídeo demonstrativo (≤3 min)</th><td><span class="ph">PREENCHER: link do YouTube (não listado) ou Google Drive (permissão aberta)</span></td></tr>
     <tr><th>Vitrine de componentes</th><td><a href="https://isaacisrael10.github.io/ScoutX/componentes.html">…/componentes.html</a> (design system com os 6 estados)</td></tr>
-    <tr><th>Figma</th><td class="muted">Não utilizado — a Sprint 1 (moodboard, decisões e componentes base) foi produzida diretamente em código/HTML e segue anexada nesta entrega.</td></tr>
+    <tr><th>Figma</th><td class="muted">Não utilizado. A Sprint 1 (moodboard, decisões e componentes base) foi produzida diretamente em código/HTML e segue anexada nesta entrega.</td></tr>
   </table>
-  <div class="note"><strong>Como executar (resumo do README):</strong> não há etapa de build — abrir <code>index.html</code> no navegador, ou servir a pasta com um servidor estático (ex.: extensão "Live Server" do VS Code). Detalhes no README do repositório.</div>
+  <div class="note"><strong>Como executar (resumo do README):</strong> não há etapa de build: basta abrir <code>index.html</code> no navegador, ou servir a pasta com um servidor estático (ex.: extensão "Live Server" do VS Code). Detalhes no README do repositório.</div>
 </section>
 
 <!-- ===================== CRITÉRIO 1 ===================== -->
@@ -89,17 +90,17 @@
   <h2>Fluxos e Arquitetura</h2>
   <p>O ScoutX tem três personas com áreas próprias, cada uma correspondendo a um <strong>fluxo principal</strong>. A entrada de todos é a <strong>landing</strong> (<code>index.html</code>), que direciona para a autenticação de cada perfil. Princípio transversal: todo contato com o atleta é <strong>intermediado pela plataforma</strong>, com o responsável legal sempre avisado.</p>
 
-  <h3>Fluxo 1 — Atleta: "ser descoberto com segurança"</h3>
-  <p><strong>Perfil:</strong> jovem de 11–17 anos da base, menor de idade, acompanhado do responsável; acessa pelo celular. <strong>Tarefa:</strong> criar perfil (com o responsável), publicar vídeos e entrar no radar de olheiros/peneiras.</p>
+  <h3>Fluxo 1 · Atleta: "ser descoberto com segurança"</h3>
+  <p><strong>Perfil:</strong> jovem de 11 a 17 anos da base, menor de idade, acompanhado do responsável; acessa pelo celular. <strong>Tarefa:</strong> criar perfil (com o responsável), publicar vídeos e entrar no radar de olheiros/peneiras.</p>
   <p><strong>Caminho principal:</strong> landing → "Sou Atleta" → <code>cadastro.html</code> (dados do atleta + responsável + aceite LGPD/ECA) → <code>atleta-feed.html</code> → <code>atleta-perfil.html</code> (Carta, enviar vídeo) → <code>peneiras.html</code>/<code>peneira.html</code> → <code>mensagens-atleta.html</code> (interesse intermediado).</p>
   <p><strong>Alternativos:</strong> quem já tem conta entra por <code>entrar.html</code>; barra de navegação circula entre feed/peneiras/mensagens; no celular, abrir conversa abre o chat em tela cheia. <strong>Pontos de falha:</strong> campos/aceite obrigatórios não preenchidos → estado de erro do campo; conta de menor não confirmada pelo responsável → inativa; tentativa de contato direto → bloqueada (só canal intermediado).</p>
 
-  <h3>Fluxo 2 — Olheiro: "descobrir e iniciar contato"</h3>
+  <h3>Fluxo 2 · Olheiro: "descobrir e iniciar contato"</h3>
   <p><strong>Perfil:</strong> recrutador/clube externo, assinante; desktop e celular. <strong>Tarefa:</strong> encontrar atleta, abrir o perfil detalhado e enviar mensagem intermediada.</p>
   <p><strong>Caminho principal:</strong> landing → "Sou Olheiro" → <code>entrar-olheiro.html</code> (ou <code>cadastro-olheiro.html</code>, com verificação) → <code>catalogo.html</code> (Feed) → <code>atleta-detalhe.html</code> → "Enviar mensagem" (modal <code>:target</code>) → <code>mensagens.html</code>. Apoio: <code>rankings.html</code> e <code>criar-peneira-olheiro.html</code>.</p>
   <p><strong>Alternativos:</strong> cabeçalho do post e "Ver" do ranking levam ao detalhe. <strong>Pontos de falha:</strong> olheiro não verificado navega o catálogo mas não fala com atletas; troca de contato pessoal é bloqueada.</p>
 
-  <h3>Fluxo 3 — Recrutador Pelé: "operar a descoberta e as peneiras"</h3>
+  <h3>Fluxo 3 · Recrutador Pelé: "operar a descoberta e as peneiras"</h3>
   <p><strong>Perfil:</strong> equipe interna da Pelé Academia, acesso por convite. <strong>Tarefa:</strong> acompanhar tendências e criar peneiras.</p>
   <p><strong>Caminho principal:</strong> landing → "painel do recrutador" → <code>entrar-pele.html</code> → <code>gestor-dashboard.html</code> (KPIs, radar, intermediação, receita) → <code>criar-peneira.html</code>. <strong>Pontos de falha:</strong> acesso sem convite (sem cadastro público); receita sempre sem taxa por participação.</p>
 
@@ -139,7 +140,7 @@
     <tr><td>Campo de texto (<code>.input</code>)</td><td>default · hover (borda) · focus (borda + box-shadow, substituto visível do outline) · disabled · error (<code>.field--error</code> + <code>.field__error</code> + <code>aria-invalid</code>)</td></tr>
     <tr><td>Seleção (<code>.select</code>)</td><td>default · hover · focus · disabled · error</td></tr>
     <tr><td>Card (<code>.card</code>)</td><td>default · <code>.card--hover</code> (hover eleva) · focus-within (contorno dourado)</td></tr>
-    <tr><td>Composto (<code>.carta</code> — Carta do Atleta)</td><td>default · <code>.carta--link</code> hover (eleva) · focus-visible (anel azul) — reúne tipografia, cor, dados e foto</td></tr>
+    <tr><td>Composto (<code>.carta</code> · Carta do Atleta)</td><td>default · <code>.carta--link</code> hover (eleva) · focus-visible (anel azul). Reúne tipografia, cor, dados e foto</td></tr>
   </table>
   <div class="note"><strong>Foco nunca removido sem substituto:</strong> há <code>:focus-visible</code> global (outline 3px) no <code>base.css</code>; o único <code>outline:none</code> (nos campos) tem <code>box-shadow</code> como substituto visível.</div>
 </section>
@@ -157,16 +158,16 @@
     <tr><td>Depois da correção</td><td class="ok">100</td><td class="ok">0 issues</td></tr>
   </table>
   <div class="grid2">
-    <div><p class="muted" style="font-size:8.5pt;margin:0">Lighthouse — antes (95)</p><img class="print" src="docs/prints/lighthouse-antes.png" alt="Lighthouse 95 antes"></div>
-    <div><p class="muted" style="font-size:8.5pt;margin:0">Lighthouse — depois (100)</p><img class="print" src="docs/prints/lighthouse-depois.png" alt="Lighthouse 100 depois"></div>
-    <div><p class="muted" style="font-size:8.5pt;margin:0">axe — antes (1 issue)</p><img class="print" src="docs/prints/axe-antes.png" alt="axe 1 issue antes"></div>
-    <div><p class="muted" style="font-size:8.5pt;margin:0">axe — depois (0 issues)</p><img class="print" src="docs/prints/axe-depois.png" alt="axe 0 issues depois"></div>
+    <div><p class="muted" style="font-size:8.5pt;margin:0">Lighthouse · antes (95)</p><img class="print" src="docs/prints/lighthouse-antes.png" alt="Lighthouse 95 antes"></div>
+    <div><p class="muted" style="font-size:8.5pt;margin:0">Lighthouse · depois (100)</p><img class="print" src="docs/prints/lighthouse-depois.png" alt="Lighthouse 100 depois"></div>
+    <div><p class="muted" style="font-size:8.5pt;margin:0">axe · antes (1 issue)</p><img class="print" src="docs/prints/axe-antes.png" alt="axe 1 issue antes"></div>
+    <div><p class="muted" style="font-size:8.5pt;margin:0">axe · depois (0 issues)</p><img class="print" src="docs/prints/axe-depois.png" alt="axe 0 issues depois"></div>
   </div>
 
   <h3>Tabela de violações (status de correção)</h3>
   <table>
     <tr><th>#</th><th>Ferramenta</th><th>Tela</th><th>Violação (WCAG)</th><th>Gravidade</th><th>Status</th><th>Correção</th></tr>
-    <tr><td>1</td><td>axe / Lighthouse</td><td><code>index.html</code></td><td>Elemento <code>aria-hidden</code> focável (checkbox do menu) — WCAG 4.1.2</td><td>Séria</td><td class="ok">Corrigido</td><td>Checkbox virou controle nomeado (sem <code>aria-hidden</code>), label decorativa, foco visível.</td></tr>
+    <tr><td>1</td><td>axe / Lighthouse</td><td><code>index.html</code></td><td>Elemento <code>aria-hidden</code> focável (checkbox do menu) · WCAG 4.1.2</td><td>Séria</td><td class="ok">Corrigido</td><td>Checkbox virou controle nomeado (sem <code>aria-hidden</code>), label decorativa, foco visível.</td></tr>
   </table>
 
   <h3>Checklist WCAG 2.1 AA (resumo)</h3>
@@ -190,7 +191,16 @@
   <p>Navegação completa sem mouse (Tab/Shift+Tab/Enter/Espaço/Esc), com foco sempre visível e ordem lógica. Demonstrado no <strong>vídeo</strong> (trecho exclusivo de teclado). Verificado: skip-link, percorrer campos do cadastro, abrir <code>select</code>, navegar a barra e abrir/voltar de uma conversa.</p>
 
   <h3>Teste com leitor de tela</h3>
-  <p><span class="ph">PREENCHER (ou confirmar): relato do teste com NVDA/VoiceOver em 1 tela (ex.: perfil do atleta). Verificar: landmarks anunciados (cabeçalho/navegação/principal), estrutura por headings (h1→h2→h3), imagens decorativas ignoradas e informativas descritas, campos anunciando rótulo/obrigatoriedade/erro, e o skip-link.</span></p>
+  <p>Teste com o <strong>NVDA</strong> (leitor de tela do Windows) na tela "Meu perfil" (<code>atleta-perfil.html</code>). Observações:</p>
+  <ul>
+    <li>Os marcos (landmarks) são anunciados: banner (cabeçalho), navegação ("Navegação do atleta") e conteúdo principal, permitindo pular entre regiões.</li>
+    <li>A estrutura por títulos é coerente: h1 "Gabriel Pereira" (o nome segue acessível mesmo oculto visualmente) e as seções "Características e números", "Interesse e mensagens" e "Meus vídeos" como h2.</li>
+    <li>Imagens decorativas (carta, ícones) são ignoradas (alt vazio / aria-hidden); as informativas têm descrição.</li>
+    <li>O selo de Índice e as estatísticas são lidos com o rótulo (ex.: "18, Gols").</li>
+    <li>O link "Pular para o conteúdo" é o primeiro item e funciona.</li>
+    <li>Links e botões anunciam nome e função; a barra de navegação é lida como lista de links.</li>
+  </ul>
+  <p>Não foram encontradas barreiras impeditivas: a navegação é compreensível apenas pelo áudio.</p>
 </section>
 
 <!-- ===================== SPRINT 1 ===================== -->
@@ -211,7 +221,7 @@
     <li>Moodboard / direção visual: <a href="https://isaacisrael10.github.io/ScoutX/moodboard.html">…/moodboard.html</a></li>
     <li>Componentes base (com estados): <a href="https://isaacisrael10.github.io/ScoutX/componentes.html">…/componentes.html</a></li>
   </ul>
-  <p class="muted" style="font-size:9pt">Observação: a Sprint 1 não utilizou Figma — moodboard, decisões e componentes base foram produzidos diretamente em código/HTML e seguem nesta entrega.</p>
+  <p class="muted" style="font-size:9pt">Observação: a Sprint 1 não utilizou Figma: moodboard, decisões e componentes base foram produzidos diretamente em código/HTML e seguem nesta entrega.</p>
 </section>
 
 </body>
