@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="../assets/css/base.css">
 <link rel="stylesheet" href="../assets/css/components.css">
 <link rel="stylesheet" href="../assets/css/app.css?v=40">
+<link rel="stylesheet" href="../assets/css/interactive.css">
 </head>
 <body>
 <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -67,7 +68,7 @@
     <h2 class="section-label" style="margin-top:var(--space-7)">Todas as peneiras</h2>
     <div class="grid grid-3">
 
-      <article class="peneira">
+      <article class="peneira" data-filter-item data-formato="Presencial" data-cat="Sub-13" data-regiao="">
         <div class="peneira__top"><span class="peneira__date">28<span>JUN</span></span><span class="badge badge--navy">Presencial</span></div>
         <h3>Peneira Nacional Sub-13</h3>
         <p class="peneira__meta">Sub-13 · Atacantes e meias</p>
@@ -75,7 +76,7 @@
         <a class="btn btn--gold btn--block" href="peneira.html" style="margin-top:auto">Ver e inscrever-se</a>
       </article>
 
-      <article class="peneira">
+      <article class="peneira" data-filter-item data-formato="Presencial" data-cat="Sub-13 Sub-15 Sub-17" data-regiao="Nordeste">
         <div class="peneira__top"><span class="peneira__date">05<span>JUL</span></span><span class="badge badge--navy">Presencial</span></div>
         <h3>Seletiva Pelé Academia · Recife</h3>
         <p class="peneira__meta">Sub-13 a Sub-17 · Todas as posições</p>
@@ -83,7 +84,7 @@
         <a class="btn btn--outline btn--block" href="peneira.html" style="margin-top:auto">Ver detalhes</a>
       </article>
 
-      <article class="peneira">
+      <article class="peneira" data-filter-item data-formato="Online" data-cat="Sub-13 Sub-15" data-regiao="">
         <div class="peneira__top"><span class="peneira__date">19<span>JUL</span></span><span class="badge badge--success">Online</span></div>
         <h3>Desafio de Finalização</h3>
         <p class="peneira__meta">Sub-13 a Sub-15 · Atacantes</p>
@@ -91,7 +92,7 @@
         <a class="btn btn--outline btn--block" href="peneira.html" style="margin-top:auto">Ver detalhes</a>
       </article>
 
-      <article class="peneira">
+      <article class="peneira" data-filter-item data-formato="Presencial" data-cat="Sub-15" data-regiao="Sul">
         <div class="peneira__top"><span class="peneira__date">26<span>JUL</span></span><span class="badge badge--navy">Presencial</span></div>
         <h3>Seletiva Base FC <span style="font-weight:600;color:var(--ouro-dk);font-size:var(--fs-xs)">· parceiro</span></h3>
         <p class="peneira__meta">Sub-15 · Todas as posições</p>
@@ -99,7 +100,7 @@
         <a class="btn btn--outline btn--block" href="peneira.html" style="margin-top:auto">Ver detalhes</a>
       </article>
 
-      <article class="peneira">
+      <article class="peneira" data-filter-item data-formato="Online" data-cat="Sub-13 Sub-15 Sub-17" data-regiao="">
         <div class="peneira__top"><span class="peneira__date">02<span>AGO</span></span><span class="badge badge--success">Online</span></div>
         <h3>Olho de Goleiro</h3>
         <p class="peneira__meta">Sub-13 a Sub-17 · Goleiros</p>
@@ -107,7 +108,7 @@
         <a class="btn btn--outline btn--block" href="peneira.html" style="margin-top:auto">Ver detalhes</a>
       </article>
 
-      <article class="peneira">
+      <article class="peneira" data-filter-item data-formato="Presencial" data-cat="Sub-17" data-regiao="Nordeste">
         <div class="peneira__top"><span class="peneira__date">09<span>AGO</span></span><span class="badge badge--navy">Presencial</span></div>
         <h3>Seletiva Nordeste Sub-17</h3>
         <p class="peneira__meta">Sub-17 · Todas as posições</p>
@@ -119,5 +120,7 @@
   </div>
 </main>
 
+<script src="../assets/js/ui.js" defer></script>
+<script src="../assets/js/filters.js" defer></script>
 </body>
 </html>

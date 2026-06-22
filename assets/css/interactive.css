@@ -50,3 +50,6 @@
   100% { background: transparent; }
 }
 .is-live-update { animation: scoutx-pulse 1s ease; }
+
+/* ---- filtros: nenhum resultado ---- */
+.filter-empty{padding:var(--space-6);text-align:center;color:var(--ink-mute);font-style:italic}

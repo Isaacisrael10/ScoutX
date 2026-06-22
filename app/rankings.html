@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="../assets/css/base.css">
 <link rel="stylesheet" href="../assets/css/components.css">
 <link rel="stylesheet" href="../assets/css/app.css?v=40">
+<link rel="stylesheet" href="../assets/css/interactive.css">
 </head>
 <body>
 <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -90,7 +91,7 @@
 
     <!-- Lista do 4º em diante -->
     <div class="ranklist">
-      <div class="rankrow">
+      <div class="rankrow" data-filter-item data-cat="Sub-17" data-regiao="Centro-Oeste">
         <span class="rankrow__pos">4</span>
         <span class="rankrow__av"><img src="../assets/img/craque-goleiro.jpg" alt="Mateus Rocha"></span>
         <span class="rankrow__id"><b>Mateus Rocha</b><span>GOL · 16 anos · Cuiabá/MT</span></span>
@@ -98,7 +99,7 @@
         <span class="rankrow__metric">83<span>Índice</span></span>
         <a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver</a>
       </div>
-      <div class="rankrow">
+      <div class="rankrow" data-filter-item data-cat="Sub-17" data-regiao="Centro-Oeste">
         <span class="rankrow__pos">5</span>
         <span class="rankrow__av"><img src="../assets/img/craque-rooftop.jpg" alt="Iago Martins"></span>
         <span class="rankrow__id"><b>Iago Martins</b><span>ATA · 16 anos · Goiânia/GO</span></span>
@@ -106,7 +107,7 @@
         <span class="rankrow__metric">81<span>Índice</span></span>
         <a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver</a>
       </div>
-      <div class="rankrow">
+      <div class="rankrow" data-filter-item data-cat="Sub-15" data-regiao="Sudeste">
         <span class="rankrow__pos">6</span>
         <span class="rankrow__av"><img src="../assets/img/craque-jovem.jpg" alt="Diego Nunes"></span>
         <span class="rankrow__id"><b>Diego Nunes</b><span>MEI · 15 anos · São Paulo/SP</span></span>
@@ -114,7 +115,7 @@
         <span class="rankrow__metric">80<span>Índice</span></span>
         <a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver</a>
       </div>
-      <div class="rankrow">
+      <div class="rankrow" data-filter-item data-cat="Sub-17" data-regiao="Sudeste">
         <span class="rankrow__pos">7</span>
         <span class="rankrow__av"><img src="../assets/img/craque-embaixada.jpg" alt="Felipe Andrade"></span>
         <span class="rankrow__id"><b>Felipe Andrade</b><span>MEI · 17 anos · Rio de Janeiro/RJ</span></span>
@@ -122,7 +123,7 @@
         <span class="rankrow__metric">79<span>Índice</span></span>
         <a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver</a>
       </div>
-      <div class="rankrow">
+      <div class="rankrow" data-filter-item data-cat="Sub-17" data-regiao="Sul">
         <span class="rankrow__pos">8</span>
         <span class="rankrow__av"><img src="../assets/img/craque-trofeu.jpg" alt="Bruno Alves"></span>
         <span class="rankrow__id"><b>Bruno Alves</b><span>LAT · 16 anos · Florianópolis/SC</span></span>
@@ -130,7 +131,7 @@
         <span class="rankrow__metric">77<span>Índice</span></span>
         <a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver</a>
       </div>
-      <div class="rankrow">
+      <div class="rankrow" data-filter-item data-cat="Sub-15" data-regiao="Nordeste">
         <span class="rankrow__pos">9</span>
         <span class="rankrow__av"><img src="../assets/img/craque-13.jpg" alt="Kauã Ribeiro"></span>
         <span class="rankrow__id"><b>Kauã Ribeiro</b><span>LAT · 14 anos · Salvador/BA</span></span>
@@ -138,7 +139,7 @@
         <span class="rankrow__metric">76<span>Índice</span></span>
         <a class="btn btn--outline btn--sm" href="atleta-detalhe.html">Ver</a>
       </div>
-      <div class="rankrow">
+      <div class="rankrow" data-filter-item data-cat="Sub-15" data-regiao="Norte">
         <span class="rankrow__pos">10</span>
         <span class="rankrow__av"><img src="../assets/img/craque-perfil.jpg" alt="Pedro Lopes"></span>
         <span class="rankrow__id"><b>Pedro Lopes</b><span>MEI · 15 anos · Manaus/AM</span></span>
@@ -153,5 +154,7 @@
   </div>
 </main>
 
+<script src="../assets/js/ui.js" defer></script>
+<script src="../assets/js/filters.js" defer></script>
 </body>
 </html>
