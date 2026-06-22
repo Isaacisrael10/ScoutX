@@ -53,3 +53,8 @@
 
 /* ---- filtros: nenhum resultado ---- */
 .filter-empty{padding:var(--space-6);text-align:center;color:var(--ink-mute);font-style:italic}
+
+/* ---- feed: votar / seguir ---- */
+.igact--vote.is-voted{color:var(--ouro-dk)}
+.igact--vote.is-voted svg{fill:var(--ouro)}
+.ig-head__follow.is-following{background:var(--navy);color:#fff;border-color:var(--navy)}
