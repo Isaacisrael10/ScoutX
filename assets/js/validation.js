@@ -41,7 +41,7 @@
     el.removeAttribute("aria-invalid");
   }
 
-  // Calcula idade a partir de uma data (yyyy-mm-dd) — usada na regra do menor
+  // Calcula idade a partir de uma data (yyyy-mm-dd), usada na regra do menor
   function idade(dateStr) {
     const d = new Date(dateStr), now = new Date();
     let a = now.getFullYear() - d.getFullYear();
