@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>ScoutX · Entrega Sprint 2 — Frontend Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Archivo+Expanded:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0B2A6B;--navy900:#071B45;--ouro:#E0A92E;--ourodk:#A6781B;--ink:#16120B;--mute:#5b5446;--line:#e4ddcd;--paper:#F4EFE3}
+  *{box-sizing:border-box}
+  @page{size:A4;margin:18mm 16mm}
+  body{font-family:'Inter',sans-serif;color:var(--ink);font-size:10.5pt;line-height:1.5;margin:0}
+  h1,h2,h3{font-family:'Archivo Expanded','Archivo',sans-serif;color:var(--navy);line-height:1.15;letter-spacing:-.4px}
+  h2{font-size:17pt;margin:0 0 4mm;padding-bottom:2mm;border-bottom:2px solid var(--ouro)}
+  h3{font-size:12pt;margin:5mm 0 2mm;color:var(--navy900)}
+  p{margin:0 0 2.5mm}
+  ul,ol{margin:0 0 3mm;padding-left:5mm}
+  li{margin-bottom:1.2mm}
+  a{color:var(--navy);word-break:break-all}
+  strong{color:var(--navy900)}
+  table{width:100%;border-collapse:collapse;margin:2mm 0 4mm;font-size:9.5pt}
+  th,td{border:1px solid var(--line);padding:2mm 2.5mm;text-align:left;vertical-align:top}
+  th{background:var(--paper);font-family:'Archivo';font-weight:700;color:var(--navy)}
+  code{font-family:ui-monospace,monospace;font-size:9pt;background:var(--paper);padding:1px 4px;border-radius:3px}
+  .sec{page-break-before:always}
+  .eyebrow{font-family:'Archivo';font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:8.5pt;color:var(--ourodk);margin-bottom:1mm}
+  .muted{color:var(--mute)}
+  .ok{color:#1c7c46;font-weight:700}
+  .print{width:100%;border:1px solid var(--line);border-radius:6px;margin:2mm 0;display:block}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+  .note{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--ouro);border-radius:4px;padding:3mm 4mm;margin:3mm 0}
+  .ph{background:#fff7e0;border:1px dashed var(--ourodk);color:var(--ourodk);padding:1px 5px;border-radius:3px;font-weight:600}
+  /* CAPA */
+  .cover{height:247mm;display:flex;flex-direction:column;justify-content:center;text-align:center;page-break-after:always}
+  .cover .mark{width:64px;height:64px;margin:0 auto 6mm}
+  .cover h1{font-size:34pt;color:var(--navy);margin:0}
+  .cover .x{color:var(--ouro)}
+  .cover .sub{font-size:13pt;color:var(--mute);margin-top:3mm}
+  .cover .disc{margin-top:10mm;font-family:'Archivo';font-weight:700;color:var(--navy900)}
+  .cover table{max-width:120mm;margin:8mm auto 0}
+  /* fluxograma */
+  .flow{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin:3mm 0}
+  .flow .col{border:1px solid var(--line);border-radius:6px;overflow:hidden}
+  .flow .col h4{background:var(--navy);color:#fff;margin:0;padding:2mm;font-family:'Archivo';font-size:9.5pt;text-align:center}
+  .flow .col ol{margin:2mm;padding-left:4mm;font-size:8.7pt}
+  .flow .col li{margin-bottom:1mm}
+</style>
+</head>
+<body>
+
+<!-- ===================== CAPA ===================== -->
+<section class="cover">
+  <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+    <path d="M6 16 V6 H16 M32 6 H42 V16 M42 32 V42 H32 M16 42 H6 V32" stroke="#A6781B" stroke-opacity=".6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M15 15 L33 33 M33 15 L15 33" stroke="#E0A92E" stroke-width="7" stroke-linecap="round"/>
+  </svg>
+  <h1>Scout<span class="x">X</span></h1>
+  <p class="sub">A rede social do futebol de base · Challenge Pelé Academia</p>
+  <p class="disc">Sprint 2 — Frontend Design · FIAP · 2026</p>
+  <table>
+    <thead><tr><th>Integrante</th><th>RM</th></tr></thead>
+    <tbody>
+      <tr><td>Isaac Israel</td><td>570072</td></tr>
+      <tr><td><span class="ph">PREENCHER — nome completo</span></td><td><span class="ph">RM</span></td></tr>
+      <tr><td><span class="ph">PREENCHER — nome completo</span></td><td><span class="ph">RM</span></td></tr>
+      <tr><td><span class="ph">PREENCHER — nome completo</span></td><td><span class="ph">RM</span></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ===================== LINKS ===================== -->
+<section>
+  <p class="eyebrow">Entrega</p>
+  <h2>Links do projeto</h2>
+  <table>
+    <tr><th style="width:42mm">Protótipo publicado</th><td><a href="https://isaacisrael10.github.io/ScoutX/">https://isaacisrael10.github.io/ScoutX/</a> (GitHub Pages)</td></tr>
+    <tr><th>Repositório (código + README)</th><td><a href="https://github.com/Isaacisrael10/ScoutX">https://github.com/Isaacisrael10/ScoutX</a></td></tr>
+    <tr><th>Vídeo demonstrativo (≤3 min)</th><td><span class="ph">PREENCHER — link do YouTube (não listado) ou Google Drive (permissão aberta)</span></td></tr>
+    <tr><th>Vitrine de componentes</th><td><a href="https://isaacisrael10.github.io/ScoutX/componentes.html">…/componentes.html</a> (design system com os 6 estados)</td></tr>
+    <tr><th>Figma</th><td class="muted">Não utilizado — a Sprint 1 (moodboard, decisões e componentes base) foi produzida diretamente em código/HTML e segue anexada nesta entrega.</td></tr>
+  </table>
+  <div class="note"><strong>Como executar (resumo do README):</strong> não há etapa de build — abrir <code>index.html</code> no navegador, ou servir a pasta com um servidor estático (ex.: extensão "Live Server" do VS Code). Detalhes no README do repositório.</div>
+</section>
+
+<!-- ===================== CRITÉRIO 1 ===================== -->
+<section class="sec">
+  <p class="eyebrow">Critério 1</p>
+  <h2>Fluxos e Arquitetura</h2>
+  <p>O ScoutX tem três personas com áreas próprias, cada uma correspondendo a um <strong>fluxo principal</strong>. A entrada de todos é a <strong>landing</strong> (<code>index.html</code>), que direciona para a autenticação de cada perfil. Princípio transversal: todo contato com o atleta é <strong>intermediado pela plataforma</strong>, com o responsável legal sempre avisado.</p>
+
+  <h3>Fluxo 1 — Atleta: "ser descoberto com segurança"</h3>
+  <p><strong>Perfil:</strong> jovem de 11–17 anos da base, menor de idade, acompanhado do responsável; acessa pelo celular. <strong>Tarefa:</strong> criar perfil (com o responsável), publicar vídeos e entrar no radar de olheiros/peneiras.</p>
+  <p><strong>Caminho principal:</strong> landing → "Sou Atleta" → <code>cadastro.html</code> (dados do atleta + responsável + aceite LGPD/ECA) → <code>atleta-feed.html</code> → <code>atleta-perfil.html</code> (Carta, enviar vídeo) → <code>peneiras.html</code>/<code>peneira.html</code> → <code>mensagens-atleta.html</code> (interesse intermediado).</p>
+  <p><strong>Alternativos:</strong> quem já tem conta entra por <code>entrar.html</code>; barra de navegação circula entre feed/peneiras/mensagens; no celular, abrir conversa abre o chat em tela cheia. <strong>Pontos de falha:</strong> campos/aceite obrigatórios não preenchidos → estado de erro do campo; conta de menor não confirmada pelo responsável → inativa; tentativa de contato direto → bloqueada (só canal intermediado).</p>
+
+  <h3>Fluxo 2 — Olheiro: "descobrir e iniciar contato"</h3>
+  <p><strong>Perfil:</strong> recrutador/clube externo, assinante; desktop e celular. <strong>Tarefa:</strong> encontrar atleta, abrir o perfil detalhado e enviar mensagem intermediada.</p>
+  <p><strong>Caminho principal:</strong> landing → "Sou Olheiro" → <code>entrar-olheiro.html</code> (ou <code>cadastro-olheiro.html</code>, com verificação) → <code>catalogo.html</code> (Feed) → <code>atleta-detalhe.html</code> → "Enviar mensagem" (modal <code>:target</code>) → <code>mensagens.html</code>. Apoio: <code>rankings.html</code> e <code>criar-peneira-olheiro.html</code>.</p>
+  <p><strong>Alternativos:</strong> cabeçalho do post e "Ver" do ranking levam ao detalhe. <strong>Pontos de falha:</strong> olheiro não verificado navega o catálogo mas não fala com atletas; troca de contato pessoal é bloqueada.</p>
+
+  <h3>Fluxo 3 — Recrutador Pelé: "operar a descoberta e as peneiras"</h3>
+  <p><strong>Perfil:</strong> equipe interna da Pelé Academia, acesso por convite. <strong>Tarefa:</strong> acompanhar tendências e criar peneiras.</p>
+  <p><strong>Caminho principal:</strong> landing → "painel do recrutador" → <code>entrar-pele.html</code> → <code>gestor-dashboard.html</code> (KPIs, radar, intermediação, receita) → <code>criar-peneira.html</code>. <strong>Pontos de falha:</strong> acesso sem convite (sem cadastro público); receita sempre sem taxa por participação.</p>
+
+  <h3>Fluxograma de navegação</h3>
+  <div class="flow">
+    <div class="col"><h4>Atleta</h4><ol><li>index (landing)</li><li>cadastro / entrar</li><li>atleta-feed</li><li>atleta-perfil · peneiras → peneira</li><li>mensagens-atleta</li></ol></div>
+    <div class="col"><h4>Olheiro</h4><ol><li>index (landing)</li><li>entrar-olheiro / cadastro-olheiro</li><li>catalogo (feed)</li><li>atleta-detalhe · rankings</li><li>mensagens · criar-peneira-olheiro</li></ol></div>
+    <div class="col"><h4>Recrutador Pelé</h4><ol><li>index (landing)</li><li>entrar-pele</li><li>gestor-dashboard</li><li>criar-peneira</li><li>(radar → atleta-detalhe)</li></ol></div>
+  </div>
+  <p class="muted" style="font-size:9pt">A landing distribui para as 3 entradas; dentro de cada área, a barra de navegação (inferior no mobile, superior no desktop) circula entre as telas. Versão com diagrama Mermaid no arquivo <code>docs/FLUXOS-E-ARQUITETURA.md</code>.</p>
+
+  <h3>Componentes por página (nomenclatura do design system)</h3>
+  <p class="muted" style="font-size:9pt">Base: <code>.app-bar/.app-nav</code>, <code>.btn</code> (+ <code>--gold/--outline/--ghost/--danger</code>), <code>.input/.select/.textarea/.field</code>, <code>.card</code>, <code>.carta</code> (composto), <code>.badge</code>, <code>.alert</code>, <code>.chip-toggle</code>, <code>.avatar</code>, <code>.skip-link</code>.</p>
+  <table>
+    <tr><th style="width:48mm">Página</th><th>Componentes</th></tr>
+    <tr><td><code>index.html</code></td><td>masthead, <code>.btn--gold/--ghost</code>, <code>.carta</code> (hero), <code>.chip-feat</code>, <code>.portal</code>, <code>.step</code>, <code>.selo</code></td></tr>
+    <tr><td><code>cadastro(-olheiro).html</code></td><td><code>.app-bar</code>, <code>.auth-card</code>, <code>.field</code>+<code>.input/.select</code>, <code>.chip-toggle</code>, <code>.auth-check</code>, <code>.auth-note</code>, <code>.btn--gold</code></td></tr>
+    <tr><td><code>atleta-feed.html</code></td><td><code>.app-bar/.app-nav</code>, <code>.weekbar</code>, <code>.composer</code>, <code>.feed-tabs</code>, <code>.stories/.story</code>, <code>.igpost</code>, <code>.igtags</code>, <code>.rail-card</code></td></tr>
+    <tr><td><code>atleta-perfil.html</code></td><td><code>.profile-head</code>+<code>.carta</code>, <code>.kpi</code>, <code>.progress</code>, <code>.selos</code>, <code>.viz-card</code>, <code>.tagcloud</code>, <code>.statgrid</code>, <code>.media-grid</code>, <code>.msg</code></td></tr>
+    <tr><td><code>catalogo.html</code></td><td><code>.discover</code>, <code>.feed-tabs</code>, <code>.stories</code>, <code>.igpost</code>, <code>.igbar/.igact</code>, <code>.rail-card</code>, <code>.plan-pill</code></td></tr>
+    <tr><td><code>atleta-detalhe.html</code></td><td><code>.profile-head</code>+<code>.carta</code>, <code>.detail-cta</code>+<code>.btn</code>, <code>.viz-card</code>, <code>.statgrid</code>, <code>.modal</code> (<code>:target</code>), <code>.flow-step</code></td></tr>
+    <tr><td><code>rankings.html</code></td><td><code>.rank-tabs/.rank-tab</code>, <code>.rank-filters</code>+<code>.select</code>, <code>.podium/.pod</code>, <code>.ranklist/.rankrow</code></td></tr>
+    <tr><td><code>mensagens(-atleta).html</code></td><td><code>.msgs</code>, <code>.msg-list</code>, <code>.msg-thread</code> (<code>:target</code> no mobile), <code>.msg-safe</code>, <code>.bubble</code>, <code>.msg-compose</code></td></tr>
+    <tr><td><code>criar-peneira(-olheiro).html</code></td><td><code>.create-grid</code>, <code>.form-section</code>, <code>.field</code>+<code>.input/.select</code>, <code>.chip-toggle</code>, <code>.upload-cover</code>, prévia, <code>.btn--gold</code></td></tr>
+    <tr><td><code>gestor-dashboard.html</code></td><td><code>.kpi-band/.kpi</code>, <code>.panel</code> (+<code>--alert</code>), <code>.list-row</code>, <code>.ret-val</code>, <code>.btn</code>, <code>.rev-total</code></td></tr>
+  </table>
+</section>
+
+<!-- ===================== CRITÉRIO 3 ===================== -->
+<section class="sec">
+  <p class="eyebrow">Critério 3</p>
+  <h2>Componentes com estados</h2>
+  <p>Todos os componentes do design system foram implementados com os <strong>seis estados</strong> exigidos: <strong>default, hover, focus, active, disabled, error</strong>. A página <a href="https://isaacisrael10.github.io/ScoutX/componentes.html"><code>componentes.html</code></a> reúne a vitrine completa (estados interativos são reais: hover/focus/active na tela).</p>
+  <table>
+    <tr><th style="width:40mm">Componente</th><th>Estados implementados</th></tr>
+    <tr><td>Botão (<code>.btn</code>)</td><td>default · hover (escurece + sombra) · focus-visible (outline 3px) · active (afunda 1px) · disabled · variações (gold/outline/ghost/danger) e loading</td></tr>
+    <tr><td>Campo de texto (<code>.input</code>)</td><td>default · hover (borda) · focus (borda + box-shadow, substituto visível do outline) · disabled · error (<code>.field--error</code> + <code>.field__error</code> + <code>aria-invalid</code>)</td></tr>
+    <tr><td>Seleção (<code>.select</code>)</td><td>default · hover · focus · disabled · error</td></tr>
+    <tr><td>Card (<code>.card</code>)</td><td>default · <code>.card--hover</code> (hover eleva) · focus-within (contorno dourado)</td></tr>
+    <tr><td>Composto (<code>.carta</code> — Carta do Atleta)</td><td>default · <code>.carta--link</code> hover (eleva) · focus-visible (anel azul) — reúne tipografia, cor, dados e foto</td></tr>
+  </table>
+  <div class="note"><strong>Foco nunca removido sem substituto:</strong> há <code>:focus-visible</code> global (outline 3px) no <code>base.css</code>; o único <code>outline:none</code> (nos campos) tem <code>box-shadow</code> como substituto visível.</div>
+</section>
+
+<!-- ===================== CRITÉRIO 4 ===================== -->
+<section class="sec">
+  <p class="eyebrow">Critério 4</p>
+  <h2>Auditoria de acessibilidade (WCAG 2.1 AA)</h2>
+  <p>Auditoria combinando ferramentas automatizadas (<strong>Lighthouse</strong> e <strong>axe DevTools 4.11</strong>) e testes manuais (teclado, leitor de tela, contraste), sobre o site publicado.</p>
+
+  <h3>Resultado e correção (antes → depois)</h3>
+  <table>
+    <tr><th>Momento</th><th>Lighthouse (Acessibilidade)</th><th>axe DevTools</th></tr>
+    <tr><td>Antes</td><td>95</td><td>1 issue séria</td></tr>
+    <tr><td>Depois da correção</td><td class="ok">100</td><td class="ok">0 issues</td></tr>
+  </table>
+  <div class="grid2">
+    <div><p class="muted" style="font-size:8.5pt;margin:0">Lighthouse — antes (95)</p><img class="print" src="docs/prints/lighthouse-antes.png" alt="Lighthouse 95 antes"></div>
+    <div><p class="muted" style="font-size:8.5pt;margin:0">Lighthouse — depois (100)</p><img class="print" src="docs/prints/lighthouse-depois.png" alt="Lighthouse 100 depois"></div>
+    <div><p class="muted" style="font-size:8.5pt;margin:0">axe — antes (1 issue)</p><img class="print" src="docs/prints/axe-antes.png" alt="axe 1 issue antes"></div>
+    <div><p class="muted" style="font-size:8.5pt;margin:0">axe — depois (0 issues)</p><img class="print" src="docs/prints/axe-depois.png" alt="axe 0 issues depois"></div>
+  </div>
+
+  <h3>Tabela de violações (status de correção)</h3>
+  <table>
+    <tr><th>#</th><th>Ferramenta</th><th>Tela</th><th>Violação (WCAG)</th><th>Gravidade</th><th>Status</th><th>Correção</th></tr>
+    <tr><td>1</td><td>axe / Lighthouse</td><td><code>index.html</code></td><td>Elemento <code>aria-hidden</code> focável (checkbox do menu) — WCAG 4.1.2</td><td>Séria</td><td class="ok">Corrigido</td><td>Checkbox virou controle nomeado (sem <code>aria-hidden</code>), label decorativa, foco visível.</td></tr>
+  </table>
+
+  <h3>Checklist WCAG 2.1 AA (resumo)</h3>
+  <table>
+    <tr><th>Critério</th><th>Status</th></tr>
+    <tr><td>1.1.1 Conteúdo não textual (alt em todas as imagens)</td><td class="ok">Atendido</td></tr>
+    <tr><td>1.3.1 Informação e relações (HTML semântico, labels, landmarks, headings)</td><td class="ok">Atendido</td></tr>
+    <tr><td>1.4.3 Contraste mínimo</td><td class="ok">Atendido (Lighthouse 100)</td></tr>
+    <tr><td>1.4.10 Reflow até 360px sem rolagem horizontal</td><td class="ok">Atendido</td></tr>
+    <tr><td>2.1.1 Operável por teclado / 2.1.2 sem armadilha</td><td class="ok">Atendido</td></tr>
+    <tr><td>2.4.1 Pular blocos (skip-link)</td><td class="ok">Atendido</td></tr>
+    <tr><td>2.4.2 Título de página · 2.4.3 ordem de foco · 2.4.4 finalidade do link</td><td class="ok">Atendido</td></tr>
+    <tr><td>2.4.7 Foco visível (outline global)</td><td class="ok">Atendido</td></tr>
+    <tr><td>3.1.1 Idioma da página (<code>lang="pt-br"</code>)</td><td class="ok">Atendido</td></tr>
+    <tr><td>3.2.3/3.2.4 Navegação e identificação consistentes</td><td class="ok">Atendido</td></tr>
+    <tr><td>3.3.1/3.3.2 Identificação de erro e rótulos</td><td class="ok">Atendido</td></tr>
+    <tr><td>4.1.2 Nome, função, valor (ARIA correto)</td><td class="ok">Atendido</td></tr>
+  </table>
+
+  <h3>Teste por teclado</h3>
+  <p>Navegação completa sem mouse (Tab/Shift+Tab/Enter/Espaço/Esc), com foco sempre visível e ordem lógica. Demonstrado no <strong>vídeo</strong> (trecho exclusivo de teclado). Verificado: skip-link, percorrer campos do cadastro, abrir <code>select</code>, navegar a barra e abrir/voltar de uma conversa.</p>
+
+  <h3>Teste com leitor de tela</h3>
+  <p><span class="ph">PREENCHER (ou confirmar): relato do teste com NVDA/VoiceOver em 1 tela (ex.: perfil do atleta). Verificar: landmarks anunciados (cabeçalho/navegação/principal), estrutura por headings (h1→h2→h3), imagens decorativas ignoradas e informativas descritas, campos anunciando rótulo/obrigatoriedade/erro, e o skip-link.</span></p>
+</section>
+
+<!-- ===================== SPRINT 1 ===================== -->
+<section class="sec">
+  <p class="eyebrow">Anexo (incremental)</p>
+  <h2>Material da Sprint 1 (versão atual)</h2>
+  <p>A fundação conceitual e visual produzida na Sprint 1, atualizada com os refinamentos da implementação.</p>
+  <h3>Conceito e decisões de design</h3>
+  <ul>
+    <li><strong>Conceito:</strong> rede social de descoberta de talentos da base, com <strong>proteção ao menor</strong> e contato sempre intermediado, operada pela Pelé Academia.</li>
+    <li><strong>Direção visual ("Carta do Atleta"):</strong> azul-marinho + dourado, tipografia condensada para números, sobriedade (sem gamificação de coleção).</li>
+    <li><strong>Métrica central:</strong> <strong>Índice da Comunidade</strong> (engajamento + dados verificados), no lugar de qualquer nota automática.</li>
+    <li><strong>Paleta/tipografia/espaçamento:</strong> definidos como design tokens em <code>tokens.css</code>.</li>
+  </ul>
+  <h3>Moodboard e componentes base</h3>
+  <p>Versões publicadas e atualizadas:</p>
+  <ul>
+    <li>Moodboard / direção visual: <a href="https://isaacisrael10.github.io/ScoutX/moodboard.html">…/moodboard.html</a></li>
+    <li>Componentes base (com estados): <a href="https://isaacisrael10.github.io/ScoutX/componentes.html">…/componentes.html</a></li>
+  </ul>
+  <p class="muted" style="font-size:9pt">Observação: a Sprint 1 não utilizou Figma — moodboard, decisões e componentes base foram produzidos diretamente em código/HTML e seguem nesta entrega.</p>
+</section>
+
+</body>
+</html>
