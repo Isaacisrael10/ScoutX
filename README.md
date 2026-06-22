@@ -85,10 +85,11 @@ Onde clicar e o que esperar de cada simulação em JavaScript. Os scripts são m
 - Mude os **selects** (Formato / Categoria / Região) → a lista filtra na hora e um toast mostra **quantos resultados** sobraram.
 - Combine filtros sem resultado → aparece **"Nenhum resultado para esses filtros."**
 
-**3. Feed do atleta** · `app/atleta-feed.html` (`feed.js`)
-- Clique no **ícone de votar** (estrela) de um post → a contagem de votos sobe (+1) e o ícone fica **dourado**; toast confirma o voto. Clique de novo para desfazer.
-- Clique em **"Seguir"** no cabeçalho do post → vira **"Seguindo"** (azul).
-- Use as **abas**: **"Seguindo"** mostra só os atletas que você seguiu; **"Em alta"** mostra só os posts em destaque; **"Para você"** mostra todos.
+**3. Feed do atleta e do olheiro** · `app/atleta-feed.html` e `app/catalogo.html` (`feed.js`, `votes.js`)
+- **Confirmar característica** (o coração do ScoutX): clique numa tag do post (ex.: "Finalizador", "Passe") → ela fica **dourada**, o contador da comunidade sobe e um **"+1"** aparece, alimentando os dados do atleta. As mesmas características aparecem no perfil (`atleta-perfil.html` / `atleta-detalhe.html`). *Não altera o Índice, que é calculado.*
+- Clique no **ícone de votar** (estrela) → a contagem de votos do lance sobe (+1) e o ícone fica dourado; clique de novo para desfazer.
+- Clique em **"Seguir"** no cabeçalho do post → vira **"Seguindo"**.
+- Use as **abas** (Para você / Seguindo / Em alta / Minha região). No feed do olheiro, a **lateral** ainda filtra por **posição** (chips) e **região** (select), tudo combinável.
 
 **4. Mensagens intermediadas** · `app/mensagens.html` e `app/mensagens-atleta.html` (`messages.js`)
 - Escreva no campo e clique em **enviar** (ou tecle **Enter**) → sua mensagem aparece na conversa e o **responsável responde** após ~1,6s (`setTimeout`), com um toast.

@@ -62,3 +62,14 @@
 /* ---- mensagens: campo de envio ---- */
 input.msg-compose__in{flex:1;min-width:0;border:0;background:transparent;font:inherit;color:var(--ink);outline:none}
 input.msg-compose__in::placeholder{color:var(--ink-mute)}
+
+/* ---- confirmação de características (votes.js) ---- */
+.tag-c.is-votable{cursor:pointer;position:relative;user-select:none}
+.igtags .tag-c.is-votable{background:#fff;border:1px solid var(--paper-line);border-radius:var(--radius-pill);padding:3px 10px;color:var(--ink-soft)}
+.igtags .tag-c.is-votable::after{content:none}
+.tag-c.is-votable:hover{border-color:var(--ouro)}
+.tag-c.is-votable.is-confirmed{background:var(--ouro-soft);border-color:var(--ouro-dk);color:var(--ouro-dk)}
+.tag-c__n{font-family:var(--stat);font-weight:700;opacity:.65;margin-left:3px}
+.tag-c.is-votable.is-confirmed .tag-c__n{opacity:1}
+.vote-plus{position:absolute;top:-8px;right:6px;font-family:var(--stat);font-weight:800;font-size:14px;color:var(--verde-dk);pointer-events:none;animation:vote-up .9s ease forwards}
+@keyframes vote-up{0%{opacity:0;transform:translateY(4px)}20%{opacity:1}100%{opacity:0;transform:translateY(-18px)}}
