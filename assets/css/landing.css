@@ -1,5 +1,5 @@
 /* =====================================================================
-   ScoutX · LANDING (específico da página inicial) — direção final
+   ScoutX · LANDING (específico da página inicial) · direção final
    ===================================================================== */
 
 /* ---------- Masthead ---------- */
@@ -64,7 +64,7 @@
 /* número editorial removido para aliviar a seção */
 .camada__ic{width:54px;height:54px;border-radius:14px;background:linear-gradient(160deg,var(--navy),var(--navy-900));color:var(--ouro-lt);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-sm)}
 .camada__ic svg{width:28px;height:28px}
-/* fundo texturizado nas seções claras — cards brancos saltam */
+/* fundo texturizado nas seções claras · cards brancos saltam */
 .section.bg-paper{background:var(--paper-2);position:relative;overflow:hidden}
 .section.bg-paper::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.38;
   background-image:radial-gradient(var(--paper-line) 1.1px,transparent 1.2px);background-size:26px 26px}

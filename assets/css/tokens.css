@@ -1,14 +1,14 @@
 /* =====================================================================
-   ScoutX · Design System — TOKENS  (direção final: "A Carta do Atleta")
+   ScoutX · Design System · TOKENS  (direção final: "A Carta do Atleta")
    Navy-marinho dominante (marca Pelé) + dourado (legado) + papel (leitura).
    Tipografia: Archivo Expanded (display) · Saira Condensed (números) · Inter (corpo).
    Contrastes texto/fundo conferidos para WCAG 2.1 AA.
    ===================================================================== */
 :root{
   /* ---------- Navy (marca, dominante) ---------- */
-  --navy-900:#071B45;  /* navy profundo — fundos escuros, interior da carta */
+  --navy-900:#071B45;  /* navy profundo · fundos escuros, interior da carta */
   --navy-800:#0a2356;
-  --navy:#0B2A6B;      /* navy-marinho — COR DOMINANTE */
+  --navy:#0B2A6B;      /* navy-marinho · COR DOMINANTE */
   --navy-700:#0e3a86;
   --navy-line:#1b3f86; /* fios/bordas sobre navy */
   --navy-soft:#13357d;

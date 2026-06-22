@@ -582,7 +582,7 @@
 .weekbar__stat span{font-size:var(--fs-xs);color:var(--mist)}
 @media (max-width:600px){.weekbar{gap:var(--space-4) var(--space-3)}.weekbar__hi{flex:1 0 100%;margin-bottom:var(--space-2)}.weekbar__stat{flex:1 1 42%}}
 
-/* ===================== Catálogo de peneiras — card de destaque ===================== */
+/* ===================== Catálogo de peneiras · card de destaque ===================== */
 .pen-feature{display:block;position:relative;border-radius:var(--radius-lg);overflow:hidden;min-height:230px;text-decoration:none;border:2px solid var(--ouro);margin-bottom:var(--space-6);box-shadow:var(--shadow-md);transition:transform var(--transition-base),box-shadow var(--transition-base)}
 .pen-feature:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
 .pen-feature:focus-visible{outline:3px solid var(--ouro);outline-offset:3px}
@@ -742,7 +742,7 @@ a.plan-pill{text-decoration:none}
 
 @media (max-width:760px){
   /* Auth no mobile: authwrap como flex-column fazia o max-width do card
-     esticar o eixo cruzado e estourar a largura — vira bloco simples */
+     esticar o eixo cruzado e estourar a largura · vira bloco simples */
   html,body{overflow-x:hidden}
   .authwrap{display:block}
   .auth-main{display:block;padding:24px 14px 40px}
@@ -768,7 +768,7 @@ html,body{overflow-x:hidden;max-width:100%}
 }
 
 @media (max-width:760px){
-  /* grids de topo viram bloco no celular (mesma correção do feed) — nada vaza */
+  /* grids de topo viram bloco no celular (mesma correção do feed) · nada vaza */
   .dash,.msgs,.profile-head{display:block}
   .dash > *{margin-bottom:var(--space-5);min-width:0}
   .dash > *:last-child{margin-bottom:0}
