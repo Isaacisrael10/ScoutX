@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="../assets/css/base.css">
 <link rel="stylesheet" href="../assets/css/components.css">
 <link rel="stylesheet" href="../assets/css/app.css?v=40">
+<link rel="stylesheet" href="../assets/css/interactive.css">
 </head>
 <body>
 <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -86,7 +87,7 @@
           <div class="bubble bubble--out"><b>Maria (sua responsável)</b><br>Obrigada! Ele vai amar. Pode mandar os detalhes da peneira.<span class="bubble__t">Hoje · 09:21</span></div>
         </div>
         <div class="msg-compose">
-          <span class="msg-compose__in">Escreva uma mensagem… (sua responsável acompanha)</span>
+          <input class="msg-compose__in" type="text" placeholder="Escreva uma mensagem…" aria-label="Escreva uma mensagem">
           <button class="msg-compose__send" aria-label="Enviar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></button>
         </div>
       </section>
@@ -94,5 +95,7 @@
   </div>
 </main>
 
+<script src="../assets/js/ui.js" defer></script>
+<script src="../assets/js/messages.js" defer></script>
 </body>
 </html>

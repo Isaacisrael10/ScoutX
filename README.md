@@ -6,6 +6,8 @@ Entrega de **Frontend Design (FED)**: protótipo de alta fidelidade em **HTML + 
 > Repositório: https://github.com/Isaacisrael10/ScoutX
 > Protótipo publicado: https://isaacisrael10.github.io/ScoutX/
 
+> **Web Development (interatividade):** este branch `web-development` adiciona a camada de **JavaScript** sobre o protótipo. O FED estático (sem JS) permanece no branch `main`. Os scripts ficam em `assets/js/`. Veja o **Manual de Interatividade** abaixo.
+
 ---
 
 ## 1. O que é o ScoutX
@@ -69,6 +71,40 @@ Layout fluido com breakpoints em **1000px**, **900px**, **760px** e **600px**, c
 - Hierarquia de headings consistente e `lang="pt-br"`.
 - Auditoria: **Lighthouse Acessibilidade 100** e **axe DevTools sem violações** (evidências em `docs/`).
 
+## Manual de Interatividade (Web Development)
+
+Onde clicar e o que esperar de cada simulação em JavaScript. Os scripts são modulares (`assets/js/`) e usam aprimoramento progressivo: o conteúdo estático continua funcionando, e o JS adiciona a camada viva.
+
+**1. Validação dos formulários** · `app/cadastro.html`, `app/entrar.html`, `app/cadastro-olheiro.html`, `app/entrar-olheiro.html`, `app/entrar-pele.html` (`validation.js`)
+- Clique em **"Criar conta"** ou **"Entrar"** com campos vazios → os campos ficam vermelhos com "⚠ Campo obrigatório" e aparece um aviso (toast).
+- Digite um **e-mail inválido** → "Digite um e-mail válido."; senha com menos de 6 caracteres → erro.
+- No cadastro, coloque uma **data de nascimento fora da faixa da base** (maior de 17) → erro explicando a regra do menor.
+- Preencha tudo certo + aceite os termos → toast **"Tudo certo! Entrando…"** e redireciona após ~1,2s (`setTimeout`).
+
+**2. Filtros funcionais** · `app/peneiras.html` e `app/rankings.html` (`filters.js`)
+- Mude os **selects** (Formato / Categoria / Região) → a lista filtra na hora e um toast mostra **quantos resultados** sobraram.
+- Combine filtros sem resultado → aparece **"Nenhum resultado para esses filtros."**
+
+**3. Feed do atleta e do olheiro** · `app/atleta-feed.html` e `app/catalogo.html` (`feed.js`, `votes.js`)
+- **Confirmar característica** (o coração do ScoutX): clique numa tag do post (ex.: "Finalizador", "Passe") → ela fica **dourada**, o contador da comunidade sobe e um **"+1"** aparece, alimentando os dados do atleta. As mesmas características aparecem no perfil (`atleta-perfil.html` / `atleta-detalhe.html`). *Não altera o Índice, que é calculado.*
+- Clique no **ícone de votar** (estrela) → a contagem de votos do lance sobe (+1) e o ícone fica dourado; clique de novo para desfazer.
+- Clique em **"Seguir"** no cabeçalho do post → vira **"Seguindo"**.
+- Use as **abas** (Para você / Seguindo / Em alta / Minha região). No feed do olheiro, a **lateral** ainda filtra por **posição** (chips) e **região** (select), tudo combinável.
+- No feed do olheiro, clique no ícone **"Adicionar ao radar"** (alvo) de um post → salva no seu radar (toast); clique de novo para remover.
+
+**4. Mensagens intermediadas** · `app/mensagens.html` e `app/mensagens-atleta.html` (`messages.js`)
+- Escreva no campo e clique em **enviar** (ou tecle **Enter**) → sua mensagem aparece na conversa e o **responsável responde** após ~1,6s (`setTimeout`), com um toast.
+- Tente enviar um **telefone ou rede social** (ex.: `meu zap 11 99999-8888`) → um **alerta nativo do navegador** bloqueia, pois o contato é intermediado.
+
+**5. Criar peneira (prévia ao vivo)** · `app/criar-peneira.html` e `app/criar-peneira-olheiro.html` (`criar-peneira.js`)
+- Edite o **nome, categoria, chips** (posição/formato/alcance), **data**, **vagas** ou envie uma **capa** → o **card de prévia** à direita atualiza na hora. "Publicar peneira" dá um toast de confirmação.
+
+**6. Página da peneira** · `app/peneira.html` (`peneira.js`)
+- O **prazo** mostra uma **contagem regressiva ao vivo** (dias/horas/min/seg, `setInterval`).
+- Clique em **"Inscrever-se"** → confirma (modal), o nº de **inscritos sobe**, as **vagas baixam** e o botão vira **"Inscrito ✓"**.
+
+> Notificações (toast) e o destaque ao vivo são criados dinamicamente no DOM por `assets/js/ui.js`.
+
 ## 8. Estrutura do repositório
 
 ```
@@ -78,9 +114,11 @@ ScoutX/
 ├── moodboard.html          # Moodboard e direção visual (Sprint 1)
 ├── entrega-sprint2.html    # Documento de entrega (fonte do PDF)
 ├── README.md
+├── integrantes.txt         # identificação da equipe (nomes + RM)
 ├── app/                    # Telas internas (atleta, olheiro, recrutador Pelé)
 ├── assets/
-│   ├── css/                # tokens, base, components, landing, app
+│   ├── css/                # tokens, base, components, landing, app, interactive
+│   ├── js/                 # ui, validation, filters, feed, votes, messages, criar-peneira, peneira (Web Development)
 │   └── img/                # imagens
 └── docs/                   # PDF de entrega e prints da auditoria
 ```

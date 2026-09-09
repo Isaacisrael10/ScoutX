@@ -1,0 +1,82 @@
+/* =====================================================================
+   ScoutX · interactive.css  (Web Development)
+   Estilos das interações em JavaScript: estados de erro de validação,
+   toast (notificação) e destaques de simulação ao vivo.
+   ===================================================================== */
+
+/* ---- validação dos formulários de acesso ---- */
+.auth-field.invalid .input,
+.auth-field.invalid .select {
+  border-color: var(--vermelho);
+  box-shadow: 0 0 0 3px var(--vermelho-soft);
+}
+.auth-err {
+  display: block;
+  color: var(--vermelho-dk);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  margin-top: 6px;
+}
+.auth-err::before { content: "⚠ "; }
+.auth-check.invalid { color: var(--vermelho-dk); }
+
+/* ---- toast (notificação não-bloqueante) ---- */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--navy-900);
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .32);
+  font-family: var(--ui);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  max-width: 90vw;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease, transform .3s ease;
+  z-index: 3000;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+.toast--ok    { border-left: 4px solid var(--verde); }
+.toast--alert { border-left: 4px solid var(--ouro); }
+
+/* ---- destaque quando um valor muda ao vivo (feed/dashboard) ---- */
+@keyframes scoutx-pulse {
+  0%   { background: var(--ouro-soft); }
+  100% { background: transparent; }
+}
+.is-live-update { animation: scoutx-pulse 1s ease; }
+
+/* ---- filtros: nenhum resultado ---- */
+.filter-empty{padding:var(--space-6);text-align:center;color:var(--ink-mute);font-style:italic}
+
+/* ---- feed: votar / seguir ---- */
+.igact--vote.is-voted{color:var(--ouro-dk)}
+.igact--vote.is-voted svg{fill:var(--ouro)}
+/* "Seguindo" mantém o mesmo estilo do botão "Seguir" (só muda o texto) */
+
+/* ---- mensagens: campo de envio ---- */
+input.msg-compose__in{flex:1;min-width:0;border:0;background:transparent;font:inherit;color:var(--ink);outline:none}
+input.msg-compose__in::placeholder{color:var(--ink-mute)}
+
+/* ---- confirmação de características (votes.js) ---- */
+.tag-c.is-votable{cursor:pointer;position:relative;user-select:none}
+.igtags .tag-c.is-votable{background:#fff;border:1px solid var(--paper-line);border-radius:var(--radius-pill);padding:3px 10px;color:var(--ink-soft)}
+.igtags .tag-c.is-votable::after{content:none}
+.tag-c.is-votable:hover{border-color:var(--ouro)}
+.tag-c.is-votable.is-confirmed{background:var(--ouro-soft);border-color:var(--ouro-dk);color:var(--ouro-dk)}
+.tag-c__n{font-family:var(--stat);font-weight:700;opacity:.65;margin-left:3px}
+.tag-c.is-votable.is-confirmed .tag-c__n{opacity:1}
+.vote-plus{position:absolute;top:-8px;right:6px;font-family:var(--stat);font-weight:800;font-size:14px;color:var(--verde-dk);pointer-events:none;animation:vote-up .9s ease forwards}
+@keyframes vote-up{0%{opacity:0;transform:translateY(4px)}20%{opacity:1}100%{opacity:0;transform:translateY(-18px)}}
+
+/* ---- adicionar ao radar (catalogo) ---- */
+.igact.is-radar{color:var(--ouro-dk)}
+.igact.is-radar svg{stroke:var(--ouro-dk)}
+/* ---- inscrito na peneira ---- */
+.btn.is-enrolled{background:var(--verde);border-color:var(--verde);color:#fff}
+.btn.is-enrolled:hover{background:var(--verde-dk)}
