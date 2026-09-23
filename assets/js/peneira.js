@@ -12,7 +12,7 @@
     .find((v) => /encerra/i.test(v.textContent));
 
   if (prazoEl) {
-    const alvo = new Date(2026, 5, 27, 23, 59, 59); // 27/06/2026 (mês 5 = junho)
+    const alvo = new Date(Date.now() + 6 * 86400000); // sempre 6 dias a partir de agora
     let timer;
     function tick() {
       const diff = alvo - new Date();
