@@ -90,6 +90,7 @@ input.msg-compose__in::placeholder{color:var(--ink-mute)}
 }
 
 /* ---- story--add (carrossel de destaques): abre o modal de novo lance ---- */
+.story--add .story__av{display:flex;align-items:center;justify-content:center}
 .story--add:hover .story__ring,.story--add:focus-visible .story__ring{transform:scale(1.05)}
 
 /* ---- criar post (novo lance): modal estilo Instagram ---- */
