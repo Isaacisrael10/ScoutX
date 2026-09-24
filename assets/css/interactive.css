@@ -80,3 +80,22 @@ input.msg-compose__in::placeholder{color:var(--ink-mute)}
 /* ---- inscrito na peneira ---- */
 .btn.is-enrolled{background:var(--verde);border-color:var(--verde);color:#fff}
 .btn.is-enrolled:hover{background:var(--verde-dk)}
+
+/* ---- criar post (novo lance): modal estilo Instagram ---- */
+.modal.js-closed{display:none!important}
+.modal__dialog--post{max-width:480px;max-height:88vh;overflow-y:auto}
+.cp-drop{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border:2px dashed var(--paper-line);border-radius:var(--radius-lg);padding:38px 16px;cursor:pointer;text-align:center;color:var(--ink-mute);transition:border-color var(--transition-fast),background var(--transition-fast)}
+.cp-drop[hidden]{display:none}
+.cp-drop:hover,.cp-drop:focus-visible{border-color:var(--ouro);background:var(--ouro-soft)}
+.cp-drop__ic{width:46px;height:46px;border-radius:50%;background:var(--navy-900);color:var(--ouro-lt);display:flex;align-items:center;justify-content:center}
+.cp-drop__ic svg{width:22px;height:22px}
+.cp-drop__txt{font-family:var(--ui);font-weight:var(--fw-bold);font-size:var(--fs-sm);color:var(--ink-soft)}
+.cp-drop__txt small{display:block;margin-top:3px;font-weight:400;color:var(--ink-mute)}
+.cp-preview{position:relative;border-radius:var(--radius-lg);overflow:hidden;margin-bottom:var(--space-4);background:#000}
+.cp-preview video{width:100%;max-height:320px;display:block}
+.cp-preview__swap{position:absolute;top:10px;right:10px;background:rgba(7,27,69,.72);color:#fff;border:0;border-radius:var(--radius-pill);padding:6px 12px;font-family:var(--ui);font-weight:var(--fw-bold);font-size:var(--fs-xs);cursor:pointer}
+.cp-caption{width:100%;border:1px solid var(--paper-line);border-radius:var(--radius-md);padding:10px 12px;font:400 var(--fs-sm)/1.5 var(--body);color:var(--ink);resize:vertical;margin:var(--space-4) 0;min-height:52px}
+.cp-caption:focus-visible{outline:2px solid var(--ouro);outline-offset:1px}
+.cp-label{font-family:var(--ui);font-weight:var(--fw-bold);font-size:var(--fs-xs);letter-spacing:.03em;text-transform:uppercase;color:var(--ink-mute);margin:0 0 8px}
+#cp-tags{margin-bottom:var(--space-2)}
+#cp-submit:disabled{opacity:.45;cursor:not-allowed}

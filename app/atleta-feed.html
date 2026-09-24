@@ -57,11 +57,11 @@
         </div>
 
         <!-- Composer -->
-        <div class="composer">
+        <a class="composer" href="#criar-post" style="text-decoration:none">
           <span class="composer__av"><img src="../assets/img/craque-hero.jpg" alt="Foto de Gabriel Pereira"></span>
           <span class="composer__prompt">Mostre seus lances, Gabriel…</span>
-          <a class="btn btn--gold" href="atleta-perfil.html#videos"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg> Enviar vídeo</a>
-        </div>
+          <span class="btn btn--gold"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg> Enviar vídeo</span>
+        </a>
 
         <div class="feed-tabs" role="tablist" aria-label="Filtrar feed">
           <button class="feed-tab" role="tab" aria-selected="true">Para você</button>
@@ -242,8 +242,43 @@
   </div>
 </main>
 
+<!-- ============ MODAL: novo lance (criar post) ============ -->
+<div class="modal" id="criar-post" role="dialog" aria-modal="true" aria-labelledby="cp-title">
+  <a class="modal__overlay" href="#" aria-label="Fechar"></a>
+  <div class="modal__dialog modal__dialog--post">
+    <a class="modal__close" href="#" aria-label="Fechar">×</a>
+    <h2 id="cp-title" style="font-size:var(--fs-xl)">Novo lance</h2>
+
+    <label class="cp-drop" id="cp-drop" for="cp-file">
+      <input type="file" id="cp-file" accept="video/*" hidden>
+      <span class="cp-drop__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></span>
+      <span class="cp-drop__txt">Toque pra escolher um vídeo<br><small>até 90s · seu melhor lance</small></span>
+    </label>
+
+    <div class="cp-preview" id="cp-preview" hidden>
+      <video id="cp-video" playsinline muted loop autoplay controls></video>
+      <button type="button" class="cp-preview__swap" id="cp-swap">Trocar vídeo</button>
+    </div>
+
+    <textarea class="cp-caption" id="cp-caption" placeholder="Escreva sobre o lance..." rows="2"></textarea>
+
+    <p class="cp-label">O que rolou nesse lance?</p>
+    <div class="chip-set" id="cp-tags">
+      <button type="button" class="chip-toggle" aria-pressed="false">Finalização</button>
+      <button type="button" class="chip-toggle" aria-pressed="false">Drible</button>
+      <button type="button" class="chip-toggle" aria-pressed="false">Passe</button>
+      <button type="button" class="chip-toggle" aria-pressed="false">Visão de jogo</button>
+      <button type="button" class="chip-toggle" aria-pressed="false">Velocidade</button>
+      <button type="button" class="chip-toggle" aria-pressed="false">Marcação</button>
+    </div>
+
+    <button type="button" class="btn btn--gold btn--block" id="cp-submit" disabled style="margin-top:var(--space-5)">Postar</button>
+  </div>
+</div>
+
 <script src="../assets/js/ui.js" defer></script>
 <script src="../assets/js/feed.js" defer></script>
 <script src="../assets/js/votes.js" defer></script>
+<script src="../assets/js/criar-post.js" defer></script>
 </body>
 </html>
