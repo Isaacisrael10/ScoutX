@@ -81,6 +81,14 @@ input.msg-compose__in::placeholder{color:var(--ink-mute)}
 .btn.is-enrolled{background:var(--verde);border-color:var(--verde);color:#fff}
 .btn.is-enrolled:hover{background:var(--verde-dk)}
 
+/* ---- "Criar" na navegação (abre o modal de novo lance) ---- */
+.app-nav a.nav-create{color:var(--ouro-lt)}
+.app-nav a.nav-create:hover{background:rgba(224,169,46,.16);color:var(--ouro-lt)}
+@media (max-width:900px){
+  .app-nav a.nav-create{color:var(--ouro-dk)}
+  .app-nav a.nav-create svg{background:var(--ouro);color:var(--navy-900);border-radius:8px;padding:2px}
+}
+
 /* ---- gatilho do composer (barra "Postar um novo lance") ---- */
 .cp-trigger{text-decoration:none;cursor:pointer;transition:border-color var(--transition-fast),box-shadow var(--transition-fast)}
 .cp-trigger:hover,.cp-trigger:focus-visible{border-color:var(--ouro);box-shadow:0 0 0 3px var(--ouro-soft);text-decoration:none}
