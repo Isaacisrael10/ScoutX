@@ -89,15 +89,8 @@ input.msg-compose__in::placeholder{color:var(--ink-mute)}
   .app-nav a.nav-create svg{background:var(--ouro);color:var(--navy-900);border-radius:8px;padding:2px}
 }
 
-/* ---- gatilho do composer (barra "Postar um novo lance") ---- */
-.cp-trigger{text-decoration:none;cursor:pointer;transition:border-color var(--transition-fast),box-shadow var(--transition-fast)}
-.cp-trigger:hover,.cp-trigger:focus-visible{border-color:var(--ouro);box-shadow:0 0 0 3px var(--ouro-soft);text-decoration:none}
-.cp-trigger__txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
-.cp-trigger__txt b{font-family:var(--ui);font-weight:var(--fw-bold);font-size:var(--fs-sm);color:var(--ink)}
-.cp-trigger__txt span{font-family:var(--body);font-size:var(--fs-xs);color:var(--ink-mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-@media (max-width:520px){.cp-trigger__txt span{display:none}}
-.cp-trigger__ic{flex:0 0 auto;width:42px;height:42px;border-radius:50%;background:var(--ouro-soft);color:var(--ouro-dk);display:flex;align-items:center;justify-content:center;transition:background var(--transition-fast),color var(--transition-fast)}
-.cp-trigger:hover .cp-trigger__ic,.cp-trigger:focus-visible .cp-trigger__ic{background:var(--ouro);color:var(--navy-900)}
+/* ---- story--add (carrossel de destaques): abre o modal de novo lance ---- */
+.story--add:hover .story__ring,.story--add:focus-visible .story__ring{transform:scale(1.05)}
 
 /* ---- criar post (novo lance): modal estilo Instagram ---- */
 .modal.js-closed{display:none!important}
