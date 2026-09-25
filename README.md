@@ -5,6 +5,8 @@ Entrega de **Frontend Design (FED)**: protótipo de alta fidelidade em **HTML + 
 
 > Repositório: https://github.com/Isaacisrael10/ScoutX
 > Protótipo publicado: https://isaacisrael10.github.io/ScoutX/
+> Figma: _[adicionar link atualizado aqui]_
+> Stack: HTML5 + **Tailwind CSS v4** + JavaScript (Vanilla, sem framework) + Node/npm (build do CSS)
 
 > **Web Development (interatividade):** este branch `web-development` adiciona a camada de **JavaScript** sobre o protótipo. O FED estático (sem JS) permanece no branch `main`. Os scripts ficam em `assets/js/`. Veja o **Manual de Interatividade** abaixo.
 
@@ -47,15 +49,32 @@ Conceito **"A Carta do Atleta"**: cada atleta vira uma carta com foto, Índice d
 | Painel do recrutador | `app/gestor-dashboard.html` | Pelé Academia |
 | Criar peneira | `app/criar-peneira.html` | Pelé Academia |
 
-## 5. Sistema de design (CSS)
+## 5. Tailwind CSS & Design System (Sprint 3)
 
-CSS organizado por camadas, com componentes reutilizáveis e seus estados:
+O projeto roda inteiramente sobre **Tailwind CSS v4**. Os tokens do design system da Sprint 1 (cor, tipografia, escala de texto, raios) viram tokens reais do Tailwind via **`@theme`** em `assets/css/tailwind-input.css` — cada um gera automaticamente utilitários (`bg-navy`, `text-ouro-lt`, `font-display`, `text-lg`...) e uma CSS var real (`--color-navy`) consumida pelo resto do CSS.
 
-- `assets/css/tokens.css`: variáveis (cor, tipografia, espaçamento, raios, sombras).
-- `assets/css/base.css`: reset, tipografia, acessibilidade e utilitários de layout.
-- `assets/css/components.css`: botões, campos, badges, alertas e a Carta do Atleta, com os estados (default, hover, focus, active, disabled, error).
-- `assets/css/landing.css`: específico da landing.
-- `assets/css/app.css`: específico das telas internas (feed, perfil, dashboard, etc.).
+```css
+/* assets/css/tailwind-input.css */
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0B2A6B;
+  --color-ouro: #E0A92E;
+  --color-ouro-lt: #F2C964;
+  --color-paper: #F4EFE3;
+  --color-ink: #16120B;
+  /* ...+19 cores, --font-display/ui/stat/body/logo, --text-xs..4xl, --radius-sm/md/lg */
+}
+```
+
+**Decisão de arquitetura (documentada, como pede o enunciado):** em vez de reescrever as ~145 classes de componente (`.btn`, `.card`, `.carta`, `.igpost`...) linha a linha como utilitários soltos no HTML — o que reescreveria as 17 telas do zero sem tempo hábil — os arquivos autorais das sprints anteriores (`tokens.css`, `base.css`, `components.css`, `landing.css`, `app.css`, `interactive.css`) foram **portados para dentro do pipeline do Tailwind**: todo valor de cor/fonte/tamanho de texto que antes era uma variável CSS solta (`var(--navy)`) agora referencia o token real do Tailwind (`var(--color-navy)`), gerado pelo `@theme` acima. Isso elimina os valores mágicos e centraliza o design system numa fonte única — sem recriar do zero cada componente já testado e responsivo.
+
+Esse CSS portado é **intencionalmente colocado fora de `@layer components`**: o Tailwind faz *content-detection* automático no HTML e reconheceu nomes como `bg-navy`/`grid`/`center` (usados como classes semânticas nossas desde a Sprint 1) como padrões válidos de utilitário, gerando utilitários com o mesmo nome. CSS fora de qualquer `@layer` tem prioridade sobre *qualquer* `@layer` na cascata (spec de CSS Cascade Layers), então manter o CSS autoral sem layer garante que ele sempre vence sobre o utilitário homônimo gerado — sem precisar renomear classes no HTML existente nem quebrar nenhuma tela já pronta.
+
+- `assets/css/tailwind-input.css` — fonte: `@theme` + todo o CSS autoral das sprints anteriores, já com os tokens migrados.
+- `assets/css/tailwind.css` — **saída compilada**, é o único arquivo linkado pelas páginas (`npm run build:css` regenera).
+- Variantes de estado (`hover:`, `focus:`, `disabled:`) e responsividade (`sm:`, `md:`, `lg:`) do Tailwind são usadas diretamente como utilitários nas telas novas da Sprint 3; as telas herdadas das sprints anteriores mantêm seus próprios seletores de estado (`:hover`, `:focus-visible`, `:disabled`), agora todos referenciando os tokens do `@theme`.
+- Espaçamento, raio "pill", sombras e transições continuam como *custom properties* simples (`--space-4`, `--shadow-md`...) fora do `@theme` — a escala de espaçamento da Sprint 1 (`--space-7: 3rem` etc.) não bate número-a-número com a escala numérica padrão do Tailwind, então mapeá-la geraria confusão sem ganho real; ficou documentada aqui em vez de forçada.
 
 ## 6. Responsividade
 
@@ -117,15 +136,25 @@ ScoutX/
 ├── integrantes.txt         # identificação da equipe (nomes + RM)
 ├── app/                    # Telas internas (atleta, olheiro, recrutador Pelé)
 ├── assets/
-│   ├── css/                # tokens, base, components, landing, app, interactive
-│   ├── js/                 # ui, validation, filters, feed, votes, messages, criar-peneira, peneira (Web Development)
+│   ├── css/                # tailwind-input.css (fonte) + tailwind.css (compilado, linkado pelas paginas)
+│   ├── js/                 # ui, validation, filters, feed, votes, messages, criar-peneira, peneira, criar-post (Web Development)
 │   └── img/                # imagens
+├── scripts/                # scripts de migração (documentação do processo Sprint 3)
+├── package.json            # dependências do Tailwind + scripts de build
 └── docs/                   # PDF de entrega e prints da auditoria
 ```
 
 ## 9. Como executar
 
-Não há etapa de build. Basta abrir **`index.html`** no navegador. Para os caminhos relativos funcionarem sempre, recomenda-se um servidor local:
+O HTML/CSS/JS continuam **sem bundler** — basta abrir qualquer página no navegador, o `assets/css/tailwind.css` já vem **compilado e versionado** no repositório. Só é preciso instalar/rodar o Tailwind se for **alterar** o design system:
+
+```bash
+npm install                # instala o Tailwind CSS v4
+npm run build:css          # compila tailwind-input.css -> tailwind.css (uma vez)
+npm run watch:css          # ou: recompila automaticamente a cada alteração
+```
+
+Para navegar localmente sem quebrar caminhos relativos, um servidor estático (não obrigatório, mas recomendado):
 
 ```bash
 # opção 1: extensão "Live Server" do VS Code
@@ -141,3 +170,15 @@ python -m http.server 8000
 - Henrique Nunes Mororó, RM 574073
 - Isaac Israel Rosa Coimbra, RM 570072
 - Matheus Henrique Pedersen Guerra, RM 571197
+
+## Contribuições · Sprint 3 (Front-End Design)
+
+> Cada integrante precisa de **pelo menos uma branch própria mergeada na `main` via Pull Request** nesta sprint — quem não tiver, zera individualmente o critério, mesmo com a nota do grupo em dia. Preencha sua linha ao abrir seu PR.
+
+| Integrante | RM | Branch(es) | Pull Request(s) | Telas/Componentes entregues |
+|---|---|---|---|---|
+| Isaac Israel Rosa Coimbra | 570072 | `feature/tailwind-migration` | _(link do PR)_ | Migração completa do CSS pra Tailwind v4 (`@theme` com todos os tokens da Sprint 1), build (`npm run build:css`), atualização dos `<link>` nas 17 telas |
+| Bernardo de Paula Rodrigues | 572376 | _(pendente)_ | _(pendente)_ | |
+| Heitor Anacleto Araújo | 573599 | _(pendente)_ | _(pendente)_ | |
+| Henrique Nunes Mororó | 574073 | _(pendente)_ | _(pendente)_ | |
+| Matheus Henrique Pedersen Guerra | 571197 | _(pendente)_ | _(pendente)_ | |

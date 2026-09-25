@@ -1,0 +1,31 @@
+{
+  "name": "scoutx",
+  "version": "1.0.0",
+  "description": "**Challenge Pelé Academia · FIAP · 1º ano de Engenharia de Software · 2026**\r Entrega de **Frontend Design (FED)**: protótipo de alta fidelidade em **HTML + CSS** (a interatividade em JavaScript é tratada na disciplina de Web Development).",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "tailwindcss -i ./assets/css/tailwind-input.css -o ./assets/css/tailwind.css",
+    "watch:css": "tailwindcss -i ./assets/css/tailwind-input.css -o ./assets/css/tailwind.css --watch",
+    "dev": "npm run watch:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Isaacisrael10/ScoutX.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Isaacisrael10/ScoutX/issues"
+  },
+  "homepage": "https://github.com/Isaacisrael10/ScoutX#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}
