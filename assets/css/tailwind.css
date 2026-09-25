@@ -11,6 +11,7 @@
     --text-sm: .875rem;
     --text-base: 1rem;
     --text-lg: 1.375rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
     --text-xl: 1.75rem;
     --text-2xl: 2.5rem;
     --text-3xl: 3.5rem;
@@ -33,7 +34,7 @@
     --color-navy-700: #0e3a86;
     --color-navy-line: #1b3f86;
     --color-navy-soft: #13357d;
-    --color-ouro-dk: #A6781B;
+    --color-ouro-dk: #835D14;
     --color-ouro: #E0A92E;
     --color-ouro-lt: #F2C964;
     --color-ouro-soft: #fbf0d2;
@@ -42,7 +43,7 @@
     --color-paper-line: #ddd2bd;
     --color-ink: #16120B;
     --color-ink-soft: #4b4334;
-    --color-ink-mute: #7a715f;
+    --color-ink-mute: #655c4b;
     --color-on-navy: #ffffff;
     --color-mist: #cdd8f1;
     --color-mist-dim: #92a4cc;
@@ -262,6 +263,16 @@
   }
   .text-center {
     text-align: center;
+  }
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-ouro-lt {
+    color: var(--color-ouro-lt);
   }
 }
 :root {
@@ -6142,7 +6153,7 @@ input.msg-compose__in::placeholder {
 .tag-c__n {
   font-family: var(--font-stat);
   font-weight: 700;
-  opacity: .65;
+  opacity: .85;
   margin-left: 3px;
 }
 .tag-c.is-votable.is-confirmed .tag-c__n {

@@ -16,7 +16,7 @@
   --color-navy-line: #1b3f86;
   --color-navy-soft: #13357d;
 
-  --color-ouro-dk: #A6781B;
+  --color-ouro-dk: #835D14;
   --color-ouro: #E0A92E;
   --color-ouro-lt: #F2C964;
   --color-ouro-soft: #fbf0d2;
@@ -26,7 +26,7 @@
   --color-paper-line: #ddd2bd;
   --color-ink: #16120B;
   --color-ink-soft: #4b4334;
-  --color-ink-mute: #7a715f;
+  --color-ink-mute: #655c4b;
 
   --color-on-navy: #ffffff;
   --color-mist: #cdd8f1;
@@ -1390,7 +1390,7 @@ input.msg-compose__in::placeholder{color:var(--color-ink-mute)}
 .igtags .tag-c.is-votable::after{content:none}
 .tag-c.is-votable:hover{border-color:var(--color-ouro)}
 .tag-c.is-votable.is-confirmed{background:var(--color-ouro-soft);border-color:var(--color-ouro-dk);color:var(--color-ouro-dk)}
-.tag-c__n{font-family:var(--font-stat);font-weight:700;opacity:.65;margin-left:3px}
+.tag-c__n{font-family:var(--font-stat);font-weight:700;opacity:.85;margin-left:3px}
 .tag-c.is-votable.is-confirmed .tag-c__n{opacity:1}
 .vote-plus{position:absolute;top:-8px;right:6px;font-family:var(--font-stat);font-weight:800;font-size:14px;color:var(--color-verde-dk);pointer-events:none;animation:vote-up .9s ease forwards}
 @keyframes vote-up{0%{opacity:0;transform:translateY(4px)}20%{opacity:1}100%{opacity:0;transform:translateY(-18px)}}
