@@ -5,8 +5,10 @@ Entrega de **Frontend Design (FED)**: protótipo de alta fidelidade em **HTML + 
 
 > Repositório: https://github.com/Isaacisrael10/ScoutX
 > Protótipo publicado: https://isaacisrael10.github.io/ScoutX/
-> Figma: _[adicionar link atualizado aqui]_
+> Vídeo demonstrativo: https://youtu.be/o23w2S_gMTo
 > Stack: HTML5 + **Tailwind CSS v4** + JavaScript (Vanilla, sem framework) + Node/npm (build do CSS)
+>
+> _Não há protótipo em Figma nesta entrega — o MVP visual é a própria interface implementada em HTML/Tailwind, navegável e publicada (é a opção que o enunciado da Sprint 3 aceita: "protótipo navegável (ex.: Figma interativo) **ou interface implementada**")._
 
 > **Web Development (interatividade):** este branch `web-development` adiciona a camada de **JavaScript** sobre o protótipo. O FED estático (sem JS) permanece no branch `main`. Os scripts ficam em `assets/js/`. Veja o **Manual de Interatividade** abaixo.
 
