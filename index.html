@@ -2,12 +2,14 @@
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ScoutX · Visibilidade para o talento do futebol de base · Pelé Academia</title>
 <meta name="description" content="O ScoutX dá visibilidade ao talento do futebol de base de todo o Brasil: poste seus lances, a comunidade te revela e você entra no radar de olheiros e da própria Pelé Academia. Contato sempre seguro e intermediado.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Archivo+Expanded:wght@700;800;900&family=Space+Grotesk:wght@500;700&family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Archivo+Expanded:wght@700;800;900&family=Space+Grotesk:wght@500;700&family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Archivo+Expanded:wght@700;800;900&family=Space+Grotesk:wght@500;700&family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
 <link rel="stylesheet" href="assets/css/tailwind.css">
 </head>
 <body>
@@ -63,7 +65,7 @@
       <div class="hero__card">
         <article class="carta carta--tilt" aria-label="Carta do atleta Gabriel Pereira, Índice da Comunidade 92">
           <div class="carta__inner">
-            <img class="carta__photo" src="assets/img/craque-hero.jpg" alt="">
+            <img fetchpriority="high" class="carta__photo" src="assets/img/craque-hero.jpg" alt="">
             <div class="carta__navy"></div><div class="carta__gold"></div><div class="carta__shade"></div>
             <span class="carta__reg">REGISTRO 047 · PELÉ ACADEMIA</span>
             <div class="carta__top">
@@ -236,7 +238,7 @@
   <!-- ============ CTA FINAL ============ -->
   <section class="section--tight container">
     <div class="cta-band grain section--tight" style="padding-inline:var(--space-6)">
-      <img class="cta-band__img" src="assets/img/craque-celebra.jpg" alt="">
+      <img loading="lazy" decoding="async" class="cta-band__img" src="assets/img/craque-celebra.jpg" alt="">
       <div class="cta-band__ov"></div>
       <div class="stack stack-4" style="align-items:center;position:relative;z-index:2">
         <p class="eyebrow" style="color:var(--ouro-lt);text-align:center">É de graça, pra sempre</p>
