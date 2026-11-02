@@ -1,7 +1,7 @@
 # ScoutX · descoberta de talentos do futebol de base
 
 **Challenge Pelé Academia · FIAP · 1º ano de Engenharia de Software · 2026**
-Entrega final (Sprint 4): **MVP concierge** com entrega de valor de ponta a ponta, validado com usuários reais.
+Entrega final (Sprint 4): **MVP concierge** com entrega de valor de ponta a ponta.
 
 | | |
 |---|---|
@@ -135,12 +135,7 @@ Layout fluido com breakpoints em **1000px**, **900px**, **760px** e **600px**, c
 
 ## 10. Validação com usuários
 
-Teste com 5+ participantes externos aderentes às personas, sem intervenção do moderador.
-
-- Roteiro, tarefas por persona e escala de severidade: [`docs/sprint4/roteiro-teste.md`](docs/sprint4/roteiro-teste.md)
-- Questionário SUS no ar (calcula a nota e envia para a equipe): [`/teste/sus.html`](https://isaacisrael10.github.io/ScoutX/teste/sus.html)
-- Métricas brutas: [`docs/sprint4/metricas-teste.csv`](docs/sprint4/metricas-teste.csv)
-- Achados e os 3 ajustes com antes e depois: [`docs/sprint4/achados-teste.md`](docs/sprint4/achados-teste.md)
+Não realizada nesta entrega. O roteiro de teste por persona, a escala de severidade e o questionário SUS ficaram preparados para uma próxima rodada: [`docs/sprint4/roteiro-teste.md`](docs/sprint4/roteiro-teste.md) e [`/teste/sus.html`](https://isaacisrael10.github.io/ScoutX/teste/sus.html).
 
 ## Manual de Interatividade (JavaScript)
 
@@ -245,7 +240,7 @@ Para o canal do concierge funcionar, o e-mail da equipe fica em `assets/js/conci
 
 | Integrante | RM | Branch(es) Sprint 4 | PR(s) | Telas/Componentes |
 |---|---|---|---|---|
-| Isaac Israel Rosa Coimbra | 570072 | `feature/mvp-concierge`, `feature/design-system`, `feature/performance`, `feature/kit-teste` | [#2](https://github.com/Isaacisrael10/ScoutX/pull/2), [#3](https://github.com/Isaacisrael10/ScoutX/pull/3), [#4](https://github.com/Isaacisrael10/ScoutX/pull/4), [#5](https://github.com/Isaacisrael10/ScoutX/pull/5) | Fluxo concierge (inscrição, contato, denúncia, recuperar senha, termos), estados de interface, rota `/design-system`, performance, kit de teste + SUS |
+| Isaac Israel Rosa Coimbra | 570072 | `feature/mvp-concierge`, `feature/design-system`, `feature/performance`, `feature/kit-teste` | [#2](https://github.com/Isaacisrael10/ScoutX/pull/2), [#3](https://github.com/Isaacisrael10/ScoutX/pull/3), [#4](https://github.com/Isaacisrael10/ScoutX/pull/4), [#5](https://github.com/Isaacisrael10/ScoutX/pull/5) | Fluxo concierge (inscrição, contato, denúncia, recuperar senha, termos), estados de interface, rota `/design-system`, performance, roteiro de teste + SUS |
 | Bernardo de Paula Rodrigues | 572376 | _(preencher)_ | _(preencher)_ | |
 | Heitor Anacleto Araújo | 573599 | _(preencher)_ | _(preencher)_ | |
 | Henrique Nunes Mororó | 574073 | _(preencher)_ | _(preencher)_ | |
