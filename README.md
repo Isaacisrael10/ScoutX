@@ -131,7 +131,7 @@ Layout fluido com breakpoints em **1000px**, **900px**, **760px** e **600px**, c
 - Erros ligados aos campos por `aria-describedby`, `aria-invalid` e avisos com `role="alert"`.
 - **Lighthouse (Sprint 4):** Acessibilidade **100** e Performance **82 a 97** nas telas principais. Prints em produção no PDF de entrega.
 
-**Performance:** CSS do Tailwind minificado (118 KB, 20 KB com gzip), fontes carregadas sem bloquear a renderização, imagem principal com `fetchpriority="high"` e demais imagens com `loading="lazy"`. Console sem erros.
+**Performance:** CSS do Tailwind minificado (20 KB com gzip), fontes hospedadas no próprio site (subconjunto latin, sem conexões com terceiros no caminho crítico), imagens em WebP (1 MB caiu para 508 KB), imagem principal (LCP) com `fetchpriority="high"` e as demais com `loading="lazy"`. Console sem erros.
 
 ## 10. Validação com usuários
 

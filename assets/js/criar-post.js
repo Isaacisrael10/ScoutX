@@ -103,7 +103,7 @@
     article.className = "igpost is-new";
     article.innerHTML =
       '<header class="ig-head">' +
-        '<span class="ig-head__av"><img src="../assets/img/craque-hero.jpg" alt="Gabriel Pereira"></span>' +
+        '<span class="ig-head__av"><img src="../assets/img/craque-hero.webp" alt="Gabriel Pereira"></span>' +
         '<span class="ig-head__id">' +
           '<span class="ig-head__name">Gabriel Pereira ' + seloSVG + '</span>' +
           '<span class="ig-head__meta">ATA · Recife/PE · agora</span>' +
