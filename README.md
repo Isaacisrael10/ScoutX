@@ -1,16 +1,16 @@
 # ScoutX · descoberta de talentos do futebol de base
 
 **Challenge Pelé Academia · FIAP · 1º ano de Engenharia de Software · 2026**
-Entrega de **Frontend Design (FED)**: protótipo de alta fidelidade em **HTML + CSS** (a interatividade em JavaScript é tratada na disciplina de Web Development).
+Entrega final (Sprint 4): **MVP concierge** com entrega de valor de ponta a ponta, validado com usuários reais.
 
-> Repositório: https://github.com/Isaacisrael10/ScoutX
-> Protótipo publicado: https://isaacisrael10.github.io/ScoutX/
-> Vídeo demonstrativo: https://youtu.be/o23w2S_gMTo
-> Stack: HTML5 + **Tailwind CSS v4** + JavaScript (Vanilla, sem framework) + Node/npm (build do CSS)
->
-> _Não há protótipo em Figma nesta entrega — o MVP visual é a própria interface implementada em HTML/Tailwind, navegável e publicada (é a opção que o enunciado da Sprint 3 aceita: "protótipo navegável (ex.: Figma interativo) **ou interface implementada**")._
-
-> **Web Development (interatividade):** este branch `web-development` adiciona a camada de **JavaScript** sobre o protótipo. O FED estático (sem JS) permanece no branch `main`. Os scripts ficam em `assets/js/`. Veja o **Manual de Interatividade** abaixo.
+| | |
+|---|---|
+| Deploy (produção) | https://isaacisrael10.github.io/ScoutX/ |
+| Styleguide vivo | https://isaacisrael10.github.io/ScoutX/design-system/ |
+| Repositório | https://github.com/Isaacisrael10/ScoutX |
+| Vídeo demonstrativo (Sprint 4) | _(link do vídeo)_ |
+| Figma | Não usamos Figma: o protótipo é a própria interface implementada e publicada |
+| Stack | HTML5 + **Tailwind CSS v4** + JavaScript (Vanilla) + Node/npm (build do CSS) |
 
 ---
 
@@ -28,16 +28,47 @@ Três personas, cada uma com um fluxo próprio:
 | **Olheiro** (assinante) | Recrutador de clube ou agência | Descobrir talento e iniciar contato intermediado |
 | **Recrutador Pelé** (interno) | Equipe da academia | Acompanhar tendências e operar peneiras |
 
-## 3. Direção visual
+## 3. Modelo de MVP: concierge
+
+O ScoutX entrega valor de ponta a ponta no modelo **concierge**: a interface é real e envia cada pedido para um **canal monitorado pela equipe**, que opera os bastidores manualmente dentro de **prazos reais** mostrados na tela.
+
+**Escopo do MVP (o valor prometido):**
+
+| Fluxo | Quem | Tela | O que acontece de verdade |
+|---|---|---|---|
+| **Inscrição em peneira** (fluxo principal) | Atleta + responsável | `app/peneiras.html` → `app/inscricao-peneira.html` | O pedido chega no e-mail da equipe com protocolo. A equipe confere dados e vídeo e escreve ao responsável em até **2 dias úteis** |
+| **Pedido de contato intermediado** | Olheiro | `app/catalogo.html` → `app/atleta-detalhe.html` → `app/solicitar-contato.html` | A equipe confere o clube, leva a proposta ao responsável e retorna ao olheiro em até **2 dias úteis** |
+| Denúncia de conversa | Atleta | `app/mensagens-atleta.html` → `app/denunciar.html` | Análise pela equipe em até **1 dia útil** |
+| Recuperar senha | Todos | `app/entrar.html` → `app/recuperar-senha.html` | Link enviado em até **1 dia útil** |
+
+**Bastidores (como a equipe opera):**
+
+1. O formulário valida os campos no navegador e envia por `fetch` (JSON) para a API do **FormSubmit**, que entrega no e-mail da equipe (`assets/js/concierge.js`, canal configurado em `assets/js/concierge-config.js`).
+2. Cada pedido recebe um **protocolo** (`SX-AAAAMMDD-XXXX`) e um **prazo calculado em dias úteis**.
+3. A equipe responde ao responsável ou ao olheiro citando o protocolo, dentro do prazo.
+4. O pedido também fica salvo no navegador e aparece em **Minhas inscrições** / **Meus pedidos de contato**, com o prazo de retorno.
+
+**Estados de interface** em todos os envios: **vazio** (formulário e listas sem pedidos), **carregando** (botão com spinner, campos travados, `aria-busy`), **erro** (por campo, e falha de envio com mensagem clara e canal alternativo, sem perder os dados digitados) e **sucesso** (tela com protocolo, prazo e próximos passos). Não há botões mortos: links que antes apontavam para `#` viraram telas ou ações reais.
+
+## 4. Fluxos
+
+```
+Atleta:   Início → Entrar → Feed → Peneiras (filtros) → Inscrição → Sucesso (protocolo) → Minhas inscrições
+Olheiro:  Início → Entrar → Descoberta (filtros) → Carta do atleta → Solicitar contato → Sucesso → Meus pedidos
+                                                              └→ Salvar no radar
+Pelé:     Entrar → Painel do recrutador → Radar de tendências / Intermediação (aprovar, abrir, revisar) → Criar peneira
+```
+
+## 5. Direção visual
 
 Conceito **"A Carta do Atleta"**: cada atleta vira uma carta com foto, Índice da Comunidade, identidade e números verificados, unindo o legado da marca Pelé (azul-marinho e dourado) ao rigor dos dados.
 
 - Moodboard e direção visual: [`moodboard.html`](moodboard.html)
-- Vitrine de componentes com os 6 estados: [`componentes.html`](componentes.html)
+- **Styleguide vivo:** [`/design-system`](https://isaacisrael10.github.io/ScoutX/design-system/) com os tokens lidos ao vivo do Tailwind e todos os componentes em seus estados reais (default, hover, foco, pressionado, desativado, carregando, erro) e os estados de sistema do concierge
 - Paleta: Navy `#0B2A6B` · Dourado `#E0A92E` · Papel `#F4EFE3` · Tinta `#16120B`
 - Tipografia: Archivo Expanded (manchetes), Saira Condensed (números), Inter (corpo)
 
-## 4. Telas
+## 6. Telas
 
 | Tela | Arquivo | Para quem |
 |---|---|---|
@@ -50,8 +81,14 @@ Conceito **"A Carta do Atleta"**: cada atleta vira uma carta com foto, Índice d
 | Mensagens intermediadas | `app/mensagens.html` | Olheiro / Atleta |
 | Painel do recrutador | `app/gestor-dashboard.html` | Pelé Academia |
 | Criar peneira | `app/criar-peneira.html` | Pelé Academia |
+| Inscrição na peneira (concierge) | `app/inscricao-peneira.html` | Atleta + responsável |
+| Solicitar contato (concierge) | `app/solicitar-contato.html` | Olheiro |
+| Denunciar conversa | `app/denunciar.html` | Atleta |
+| Recuperar senha | `app/recuperar-senha.html` | Todos |
+| Termos e privacidade | `app/termos.html` | Todos |
+| Design System | `design-system/index.html` | Equipe / banca |
 
-## 5. Tailwind CSS & Design System (Sprint 3)
+## 7. Tailwind CSS & Design System
 
 O projeto roda inteiramente sobre **Tailwind CSS v4**. Os tokens do design system da Sprint 1 (cor, tipografia, escala de texto, raios) viram tokens reais do Tailwind via **`@theme`** em `assets/css/tailwind-input.css` — cada um gera automaticamente utilitários (`bg-navy`, `text-ouro-lt`, `font-display`, `text-lg`...) e uma CSS var real (`--color-navy`) consumida pelo resto do CSS.
 
@@ -78,11 +115,11 @@ Esse CSS portado é **intencionalmente colocado fora de `@layer components`**: o
 - Variantes de estado (`hover:`, `focus:`, `disabled:`) e responsividade (`sm:`, `md:`, `lg:`) do Tailwind são usadas diretamente como utilitários nas telas novas da Sprint 3; as telas herdadas das sprints anteriores mantêm seus próprios seletores de estado (`:hover`, `:focus-visible`, `:disabled`), agora todos referenciando os tokens do `@theme`.
 - Espaçamento, raio "pill", sombras e transições continuam como *custom properties* simples (`--space-4`, `--shadow-md`...) fora do `@theme` — a escala de espaçamento da Sprint 1 (`--space-7: 3rem` etc.) não bate número-a-número com a escala numérica padrão do Tailwind, então mapeá-la geraria confusão sem ganho real; ficou documentada aqui em vez de forçada.
 
-## 6. Responsividade
+## 8. Responsividade
 
 Layout fluido com breakpoints em **1000px**, **900px**, **760px** e **600px**, cobrindo desktop, tablet e celular até 360px. As grades colapsam, a navegação vira barra inferior no mobile (CSS puro) e os blocos se reempilham por viewport.
 
-## 7. Acessibilidade (WCAG 2.1 AA)
+## 9. Acessibilidade e performance
 
 - HTML **semântico** (`header`, `main`, `section`, `nav`, `article`, `aside`) e **landmarks**.
 - **Skip-link** "pular para o conteúdo" em todas as páginas.
@@ -90,9 +127,22 @@ Layout fluido com breakpoints em **1000px**, **900px**, **760px** e **600px**, c
 - **Contraste** dentro do AA nos pares texto/fundo.
 - **`alt`** em todas as imagens (decorativas com `alt=""`).
 - Hierarquia de headings consistente e `lang="pt-br"`.
-- Auditoria: **Lighthouse Acessibilidade 100** e **axe DevTools sem violações** (evidências em `docs/`).
+- Navegação **100% por teclado**, incluindo o popover de notificações (abre com Enter, fecha com Esc) e os formulários (o foco vai para o primeiro campo com erro e para o título da tela de sucesso).
+- Erros ligados aos campos por `aria-describedby`, `aria-invalid` e avisos com `role="alert"`.
+- **Lighthouse (Sprint 4):** Acessibilidade **100** e Performance **82 a 97** nas telas principais. Prints em produção no PDF de entrega.
 
-## Manual de Interatividade (Web Development)
+**Performance:** CSS do Tailwind minificado (118 KB, 20 KB com gzip), fontes carregadas sem bloquear a renderização, imagem principal com `fetchpriority="high"` e demais imagens com `loading="lazy"`. Console sem erros.
+
+## 10. Validação com usuários
+
+Teste com 5+ participantes externos aderentes às personas, sem intervenção do moderador.
+
+- Roteiro, tarefas por persona e escala de severidade: [`docs/sprint4/roteiro-teste.md`](docs/sprint4/roteiro-teste.md)
+- Questionário SUS no ar (calcula a nota e envia para a equipe): [`/teste/sus.html`](https://isaacisrael10.github.io/ScoutX/teste/sus.html)
+- Métricas brutas: [`docs/sprint4/metricas-teste.csv`](docs/sprint4/metricas-teste.csv)
+- Achados e os 3 ajustes com antes e depois: [`docs/sprint4/achados-teste.md`](docs/sprint4/achados-teste.md)
+
+## Manual de Interatividade (JavaScript)
 
 Onde clicar e o que esperar de cada simulação em JavaScript. Os scripts são modulares (`assets/js/`) e usam aprimoramento progressivo: o conteúdo estático continua funcionando, e o JS adiciona a camada viva.
 
@@ -121,32 +171,42 @@ Onde clicar e o que esperar de cada simulação em JavaScript. Os scripts são m
 - Edite o **nome, categoria, chips** (posição/formato/alcance), **data**, **vagas** ou envie uma **capa** → o **card de prévia** à direita atualiza na hora. "Publicar peneira" dá um toast de confirmação.
 
 **6. Página da peneira** · `app/peneira.html` (`peneira.js`)
-- O **prazo** mostra uma **contagem regressiva ao vivo** (dias/horas/min/seg, `setInterval`).
-- Clique em **"Inscrever-se"** → confirma (modal), o nº de **inscritos sobe**, as **vagas baixam** e o botão vira **"Inscrito ✓"**.
+- O **prazo** mostra uma contagem regressiva real até o fim das inscrições (30/11/2026). Depois da data, o botão vira "Inscrições encerradas".
+- **"Inscrever-se"** leva ao formulário concierge (`app/inscricao-peneira.html`), que envia de verdade para a equipe.
+
+**7. Concierge** · formulários com `data-concierge` (`concierge.js`)
+- Envie vazio: cada campo mostra o erro e o foco vai para o primeiro. Envie preenchido: botão em carregamento, depois a tela de sucesso com protocolo e prazo.
+- Sem internet ou com o canal fora do ar: aviso de erro, os dados continuam no formulário e dá para tentar de novo.
+
+**8. Ações rápidas** · `acoes.js`
+- **Sino** abre as notificações (Esc fecha). **Salvar no meu radar** e **Compartilhar carta** funcionam. No painel Pelé, **Aprovar** muda o status da conversa.
 
 > Notificações (toast) e o destaque ao vivo são criados dinamicamente no DOM por `assets/js/ui.js`.
 
-## 8. Estrutura do repositório
+## 11. Estrutura do repositório
 
 ```
 ScoutX/
 ├── index.html              # Landing
-├── componentes.html        # Vitrine do design system (componentes e estados)
+├── design-system/          # Styleguide vivo (/design-system)
+├── teste/sus.html          # Questionário SUS do teste com usuários
+├── componentes.html        # redireciona para /design-system
 ├── moodboard.html          # Moodboard e direção visual (Sprint 1)
 ├── entrega-sprint2.html    # Documento de entrega (fonte do PDF)
 ├── README.md
 ├── integrantes.txt         # identificação da equipe (nomes + RM)
+├── PROMPTS.md              # uso de IA generativa
 ├── app/                    # Telas internas (atleta, olheiro, recrutador Pelé)
 ├── assets/
 │   ├── css/                # tailwind-input.css (fonte) + tailwind.css (compilado, linkado pelas paginas)
-│   ├── js/                 # ui, validation, filters, feed, votes, messages, criar-peneira, peneira, criar-post (Web Development)
+│   ├── js/                 # concierge (envio real), acoes, ui, validation, filters, feed, votes, messages, criar-peneira, peneira, criar-post
 │   └── img/                # imagens
 ├── scripts/                # scripts de migração (documentação do processo Sprint 3)
 ├── package.json            # dependências do Tailwind + scripts de build
-└── docs/                   # PDF de entrega e prints da auditoria
+└── docs/                   # PDFs de entrega, prints e docs/sprint4 (teste com usuários)
 ```
 
-## 9. Como executar
+## 12. Como executar (setup local)
 
 O HTML/CSS/JS continuam **sem bundler** — basta abrir qualquer página no navegador, o `assets/css/tailwind.css` já vem **compilado e versionado** no repositório. Só é preciso instalar/rodar o Tailwind se for **alterar** o design system:
 
@@ -165,6 +225,12 @@ python -m http.server 8000
 # depois acesse http://localhost:8000
 ```
 
+## 13. Deploy
+
+Publicado no **GitHub Pages** a partir da branch `main` (pasta raiz). Todo merge na `main` atualiza o site em 1 a 2 minutos. O CSS compilado (`assets/css/tailwind.css`) é versionado, então o Pages não precisa de build.
+
+Para o canal do concierge funcionar, o e-mail da equipe fica em `assets/js/concierge-config.js`. Na primeira solicitação, o FormSubmit envia um e-mail de ativação para essa caixa; depois de ativado, todos os pedidos chegam direto.
+
 ## Integrantes
 
 - Bernardo de Paula Rodrigues, RM 572376
@@ -173,14 +239,20 @@ python -m http.server 8000
 - Isaac Israel Rosa Coimbra, RM 570072
 - Matheus Henrique Pedersen Guerra, RM 571197
 
-## Contribuições · Sprint 3 (Front-End Design)
+## Contribuições · Sprint 4
 
-> Cada integrante precisa de **pelo menos uma branch própria mergeada na `main` via Pull Request** nesta sprint — quem não tiver, zera individualmente o critério, mesmo com a nota do grupo em dia. Preencha sua linha ao abrir seu PR.
+> Regra: cada integrante tem **pelo menos uma branch própria mergeada na `main` via Pull Request** nesta sprint, sem commits diretos na `main`. As branches ficam preservadas após o merge. Passo a passo: [`docs/sprint4/tarefas-integrantes.md`](docs/sprint4/tarefas-integrantes.md).
 
-| Integrante | RM | Branch(es) | Pull Request(s) | Telas/Componentes entregues |
+| Integrante | RM | Branch(es) Sprint 4 | PR(s) | Telas/Componentes |
 |---|---|---|---|---|
-| Isaac Israel Rosa Coimbra | 570072 | `feature/tailwind-migration` | _(link do PR)_ | Migração completa do CSS pra Tailwind v4 (`@theme` com todos os tokens da Sprint 1), build (`npm run build:css`), atualização dos `<link>` nas 17 telas |
-| Bernardo de Paula Rodrigues | 572376 | _(pendente)_ | _(pendente)_ | |
-| Heitor Anacleto Araújo | 573599 | _(pendente)_ | _(pendente)_ | |
-| Henrique Nunes Mororó | 574073 | _(pendente)_ | _(pendente)_ | |
-| Matheus Henrique Pedersen Guerra | 571197 | _(pendente)_ | _(pendente)_ | |
+| Isaac Israel Rosa Coimbra | 570072 | `feature/mvp-concierge`, `feature/design-system`, `feature/performance`, `feature/kit-teste` | [#2](https://github.com/Isaacisrael10/ScoutX/pull/2), [#3](https://github.com/Isaacisrael10/ScoutX/pull/3), [#4](https://github.com/Isaacisrael10/ScoutX/pull/4), [#5](https://github.com/Isaacisrael10/ScoutX/pull/5) | Fluxo concierge (inscrição, contato, denúncia, recuperar senha, termos), estados de interface, rota `/design-system`, performance, kit de teste + SUS |
+| Bernardo de Paula Rodrigues | 572376 | _(preencher)_ | _(preencher)_ | |
+| Heitor Anacleto Araújo | 573599 | _(preencher)_ | _(preencher)_ | |
+| Henrique Nunes Mororó | 574073 | _(preencher)_ | _(preencher)_ | |
+| Matheus Henrique Pedersen Guerra | 571197 | _(preencher)_ | _(preencher)_ | |
+
+### Sprint 3 (histórico)
+
+| Integrante | Branch | PR | Entrega |
+|---|---|---|---|
+| Isaac Israel Rosa Coimbra | `feature/tailwind-migration` | [#1](https://github.com/Isaacisrael10/ScoutX/pull/1) | Migração do CSS para Tailwind v4 com os tokens da Sprint 1 |
