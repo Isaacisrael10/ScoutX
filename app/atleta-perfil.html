@@ -2,11 +2,13 @@
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
+<link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Meu Perfil · Atleta · ScoutX</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Archivo+Expanded:wght@700;800;900&family=Space+Grotesk:wght@500;700&family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Archivo+Expanded:wght@700;800;900&family=Space+Grotesk:wght@500;700&family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Archivo+Expanded:wght@700;800;900&family=Space+Grotesk:wght@500;700&family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/css/tailwind.css">
 </head>
 <body>
@@ -44,7 +46,7 @@
     <section class="profile-head grain" aria-labelledby="me-title">
       <article class="carta" aria-label="Carta do atleta de Gabriel Pereira">
         <div class="carta__inner">
-          <img class="carta__photo" src="../assets/img/craque-hero.jpg" alt="">
+          <img fetchpriority="high" class="carta__photo" src="../assets/img/craque-hero.jpg" alt="">
           <div class="carta__navy"></div><div class="carta__gold"></div><div class="carta__shade"></div>
           <span class="carta__reg">REGISTRO 047 · PELÉ ACADEMIA</span>
           <div class="carta__top">
@@ -161,31 +163,31 @@
         <span class="media-tile__tag">Drible · 0:38</span>
       </div>
       <div class="media-tile">
-        <img src="../assets/img/craque-perfil.jpg" alt="Vídeo: treino de velocidade">
+        <img loading="lazy" decoding="async" src="../assets/img/craque-perfil.jpg" alt="Vídeo: treino de velocidade">
         <span class="media-tile__eng"><span aria-label="38 mil visualizações"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>38 mil</span><span aria-label="2,7 mil curtidas"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z"/></svg>2,7 mil</span></span>
         <span class="media-tile__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,.35)"/><path d="M9 7l9 5-9 5z" fill="#fff"/></svg></span>
         <span class="media-tile__tag">Velocidade · 0:55</span>
       </div>
       <div class="media-tile">
-        <img src="../assets/img/craque-varzea.jpg" alt="Vídeo: gol de cobertura">
+        <img loading="lazy" decoding="async" src="../assets/img/craque-varzea.jpg" alt="Vídeo: gol de cobertura">
         <span class="media-tile__eng"><span aria-label="52 mil visualizações"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>52 mil</span><span aria-label="3,9 mil curtidas"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z"/></svg>3,9 mil</span></span>
         <span class="media-tile__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,.35)"/><path d="M9 7l9 5-9 5z" fill="#fff"/></svg></span>
         <span class="media-tile__tag">Cobertura · 0:31</span>
       </div>
       <div class="media-tile">
-        <img src="../assets/img/craque-rooftop.jpg" alt="Vídeo: embaixadinhas">
+        <img loading="lazy" decoding="async" src="../assets/img/craque-rooftop.jpg" alt="Vídeo: embaixadinhas">
         <span class="media-tile__eng"><span aria-label="29 mil visualizações"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>29 mil</span><span aria-label="2,2 mil curtidas"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z"/></svg>2,2 mil</span></span>
         <span class="media-tile__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,.35)"/><path d="M9 7l9 5-9 5z" fill="#fff"/></svg></span>
         <span class="media-tile__tag">Treino · 0:48</span>
       </div>
       <div class="media-tile">
-        <img src="../assets/img/craque-jovem.jpg" alt="Vídeo: passe de calcanhar">
+        <img loading="lazy" decoding="async" src="../assets/img/craque-jovem.jpg" alt="Vídeo: passe de calcanhar">
         <span class="media-tile__eng"><span aria-label="44 mil visualizações"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>44 mil</span><span aria-label="3,3 mil curtidas"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z"/></svg>3,3 mil</span></span>
         <span class="media-tile__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,.35)"/><path d="M9 7l9 5-9 5z" fill="#fff"/></svg></span>
         <span class="media-tile__tag">Assistência · 0:35</span>
       </div>
       <div class="media-tile">
-        <img src="../assets/img/craque-embaixada.jpg" alt="Vídeo: gol de fora da área">
+        <img loading="lazy" decoding="async" src="../assets/img/craque-embaixada.jpg" alt="Vídeo: gol de fora da área">
         <span class="media-tile__eng"><span aria-label="412 mil visualizações"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>412 mil</span><span aria-label="18,2 mil curtidas"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z"/></svg>18,2 mil</span></span>
         <span class="media-tile__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,.35)"/><path d="M9 7l9 5-9 5z" fill="#fff"/></svg></span>
         <span class="media-tile__tag">Golaço · 0:38</span>
