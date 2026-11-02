@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design System · ScoutX</title>
+<meta name="description" content="Styleguide vivo do ScoutX: tokens do Tailwind (@theme) e componentes em todos os estados reais.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Archivo+Expanded:wght@700;800;900&family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tailwind.css">
+<style>
+  .ds-wrap{display:grid;grid-template-columns:220px minmax(0,1fr);gap:var(--space-7);align-items:start}
+  .ds-toc{position:sticky;top:calc(var(--header-h) + var(--space-4));display:flex;flex-direction:column;gap:2px;font-family:var(--font-ui);font-size:var(--text-sm)}
+  .ds-toc p{font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.12em;color:var(--color-ink-mute);font-weight:var(--font-weight-extra);margin:0 0 var(--space-2)}
+  .ds-toc a{color:var(--color-ink-soft);padding:6px 10px;border-left:2px solid var(--color-paper-line)}
+  .ds-toc a:hover,.ds-toc a:focus-visible{color:var(--color-navy);border-left-color:var(--color-ouro);text-decoration:none}
+  .ds-sec{padding-top:var(--space-7);scroll-margin-top:calc(var(--header-h) + var(--space-4))}
+  .ds-sec:first-child{padding-top:0}
+  .ds-sec > h2{font-size:var(--text-xl);margin-bottom:var(--space-2)}
+  .ds-sec > p{color:var(--color-ink-soft);max-width:62ch;margin-bottom:var(--space-5)}
+  .ds-card{background:#fff;border:1px solid var(--color-paper-line);border-radius:var(--radius-lg);padding:var(--space-5);box-shadow:var(--shadow-sm)}
+  .ds-row{display:flex;flex-wrap:wrap;gap:var(--space-5);align-items:flex-end}
+  .ds-state{display:flex;flex-direction:column;gap:8px;min-width:0}
+  .ds-lbl{font-family:var(--font-stat);font-weight:var(--font-weight-bold);text-transform:uppercase;letter-spacing:.1em;font-size:11px;color:var(--color-ink-mute)}
+  .ds-grid{display:grid;gap:var(--space-5);grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
+  .sw{border:1px solid var(--color-paper-line);border-radius:var(--radius-md);overflow:hidden;background:#fff}
+  .sw__c{height:72px}
+  .sw__t{padding:var(--space-2) var(--space-3);font-size:var(--text-xs);line-height:1.45}
+  .sw__t b{display:block;font-family:var(--font-ui);font-size:var(--text-sm)}
+  .sw__t code{color:var(--color-ink-mute)}
+  .sw-grid{display:grid;gap:var(--space-3);grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+  .ty-row{display:grid;grid-template-columns:120px minmax(0,1fr);gap:var(--space-4);align-items:baseline;padding:var(--space-3) 0;border-bottom:1px solid var(--color-paper-line)}
+  .ty-row:last-child{border-bottom:0}
+  .ty-row code{font-size:var(--text-xs);color:var(--color-ink-mute)}
+  .ty-row span{overflow-wrap:anywhere}
+  .sp-row{display:flex;align-items:center;gap:var(--space-4);font-size:var(--text-xs)}
+  .sp-row i{display:block;height:14px;background:var(--color-ouro);border-radius:2px}
+  .sp-row code{width:110px;color:var(--color-ink-mute)}
+  .rd{width:84px;height:84px;background:var(--color-navy);display:grid;place-items:center;color:#fff;font-size:var(--text-xs)}
+  .sh{width:120px;height:84px;background:#fff;border-radius:var(--radius-md);display:grid;place-items:center;font-size:var(--text-xs)}
+  .is-hover.btn{filter:brightness(.92);transform:translateY(-1px);box-shadow:var(--shadow-md)}
+  .is-focus{outline:3px solid var(--color-focus-ring);outline-offset:2px}
+  .is-active.btn{transform:translateY(1px);box-shadow:none}
+  .ds-code{display:block;background:var(--color-ink);color:#f3ead6;border-radius:var(--radius-md);padding:var(--space-4);font-size:var(--text-xs);line-height:1.6;overflow-x:auto;white-space:pre}
+  .bp{display:grid;gap:var(--space-3);grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr))}
+  .bp div{border:1px dashed var(--color-paper-line);border-radius:var(--radius-md);padding:var(--space-4);background:#fff}
+  .bp b{display:block;font-family:var(--font-stat);font-size:var(--text-xl);color:var(--color-navy)}
+  @media (max-width:900px){.ds-wrap{grid-template-columns:1fr}.ds-toc{position:static;flex-direction:row;flex-wrap:wrap}.ds-toc p{width:100%}.ds-toc a{border-left:0;border-bottom:2px solid var(--color-paper-line)}}
+  @media (max-width:600px){.ty-row{grid-template-columns:1fr;gap:2px}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="app-bar">
+  <div class="container">
+    <a class="logo" href="../index.html" aria-label="ScoutX, início">
+      <svg class="logo__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <path d="M6 16 V6 H16 M32 6 H42 V16 M42 32 V42 H32 M16 42 H6 V32" stroke="#F2C964" stroke-opacity=".5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15 15 L33 33 M33 15 L15 33" stroke="#F2C964" stroke-width="7" stroke-linecap="round"/>
+      </svg>
+      Scout<span class="x">X</span>
+    </a>
+    <span class="app-ctx">Design System</span>
+    <a class="auth-top__back" href="../index.html" style="margin-left:auto">Voltar ao site</a>
+  </div>
+</header>
+
+<main id="conteudo" class="page">
+  <div class="container">
+    <p class="eyebrow" style="margin-bottom:6px">Sprint 4 · Styleguide vivo</p>
+    <div class="page-title"><h1>Design System ScoutX</h1></div>
+    <p class="lead" style="max-width:64ch;margin-bottom:var(--space-7)">Tudo nesta página usa o mesmo CSS do app (<code>assets/css/tailwind.css</code>). As cores, fontes e tamanhos são lidos ao vivo dos tokens do <strong>Tailwind v4 (<code>@theme</code>)</strong>: se um token mudar, esta página muda junto.</p>
+
+    <div class="ds-wrap">
+      <nav class="ds-toc" aria-label="Seções do design system">
+        <p>Tokens</p>
+        <a href="#cores">Cores</a><a href="#tipografia">Tipografia</a><a href="#espaco">Espaço, raio e sombra</a><a href="#breakpoints">Breakpoints</a>
+        <p style="margin-top:var(--space-4)">Componentes</p>
+        <a href="#botoes">Botões</a><a href="#campos">Campos</a><a href="#selecao">Seleção e chips</a><a href="#selos">Selos e avisos</a><a href="#cards">Cards e Carta</a><a href="#estados">Estados de sistema</a><a href="#tailwind">Utilitários Tailwind</a>
+      </nav>
+
+      <div>
+        <!-- ===================== CORES ===================== -->
+        <section class="ds-sec" id="cores" aria-labelledby="h-cores">
+          <h2 id="h-cores">Cores</h2>
+          <p>Navy e dourado vêm do legado Pelé; o papel dá o tom editorial. Cada amostra mostra o valor que o navegador está aplicando agora e o utilitário Tailwind gerado.</p>
+          <div class="sw-grid" id="swatches"></div>
+        </section>
+
+        <!-- ===================== TIPOGRAFIA ===================== -->
+        <section class="ds-sec" id="tipografia" aria-labelledby="h-tipo">
+          <h2 id="h-tipo">Tipografia</h2>
+          <p>Archivo Expanded nas manchetes, Saira Condensed nos números da carta, Inter no corpo.</p>
+          <div class="ds-card">
+            <div class="ty-row"><code>font-display</code><span style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:800;line-height:1.05">Talento de todo o Brasil</span></div>
+            <div class="ty-row"><code>font-stat</code><span style="font-family:var(--font-stat);font-size:var(--text-2xl);font-weight:800;color:var(--color-navy)">92 · ÍNDICE · ATA</span></div>
+            <div class="ty-row"><code>font-ui</code><span style="font-family:var(--font-ui);font-weight:700">Botões, rótulos e navegação</span></div>
+            <div class="ty-row"><code>font-body</code><span style="font-family:var(--font-body)">Texto corrido, descrições e mensagens. Altura de linha 1.6 para leitura confortável.</span></div>
+          </div>
+          <div class="ds-card" style="margin-top:var(--space-4)" id="escala"></div>
+        </section>
+
+        <!-- ===================== ESPAÇO ===================== -->
+        <section class="ds-sec" id="espaco" aria-labelledby="h-esp">
+          <h2 id="h-esp">Espaço, raio e sombra</h2>
+          <p>A escala de espaço da Sprint 1 continua como variáveis (<code>--space-1</code> a <code>--space-9</code>); raios são tokens do Tailwind.</p>
+          <div class="ds-card" id="spaces" style="display:flex;flex-direction:column;gap:var(--space-2)"></div>
+          <div class="ds-row" style="margin-top:var(--space-4);align-items:center">
+            <div class="ds-state"><span class="ds-lbl">rounded-sm</span><div class="rd" style="border-radius:var(--radius-sm)">4px</div></div>
+            <div class="ds-state"><span class="ds-lbl">rounded-md</span><div class="rd" style="border-radius:var(--radius-md)">8px</div></div>
+            <div class="ds-state"><span class="ds-lbl">rounded-lg</span><div class="rd" style="border-radius:var(--radius-lg)">14px</div></div>
+            <div class="ds-state"><span class="ds-lbl">shadow-sm</span><div class="sh" style="box-shadow:var(--shadow-sm)">sm</div></div>
+            <div class="ds-state"><span class="ds-lbl">shadow-md</span><div class="sh" style="box-shadow:var(--shadow-md)">md</div></div>
+            <div class="ds-state"><span class="ds-lbl">shadow-lg</span><div class="sh" style="box-shadow:var(--shadow-lg)">lg</div></div>
+          </div>
+        </section>
+
+        <!-- ===================== BREAKPOINTS ===================== -->
+        <section class="ds-sec" id="breakpoints" aria-labelledby="h-bp">
+          <h2 id="h-bp">Breakpoints</h2>
+          <p>Três faixas testadas em todas as telas, sem scroll lateral. A navegação vira barra inferior no celular.</p>
+          <div class="bp">
+            <div><b>360 a 599px</b>Celular · 1 coluna, nav inferior</div>
+            <div><b>600 a 999px</b>Tablet · 2 colunas, laterais recolhem</div>
+            <div><b>1000px +</b>Desktop · grade completa, container 1200px</div>
+          </div>
+          <p style="margin-top:var(--space-3);font-size:var(--text-sm)">Sua tela agora: <strong id="vw"></strong></p>
+        </section>
+
+        <!-- ===================== BOTÕES ===================== -->
+        <section class="ds-sec" id="botoes" aria-labelledby="h-btn">
+          <h2 id="h-btn">Botões</h2>
+          <p>Primeira linha: variações. Segunda: os estados do botão dourado. Hover, foco e pressionado aparecem fixos para comparação, e o botão de cima reage de verdade ao mouse e ao <kbd>Tab</kbd>.</p>
+          <div class="ds-card">
+            <div class="ds-row">
+              <div class="ds-state"><span class="ds-lbl">Primário</span><button type="button" class="btn">Enviar vídeo</button></div>
+              <div class="ds-state"><span class="ds-lbl">Dourado</span><button type="button" class="btn btn--gold">Inscrever-se</button></div>
+              <div class="ds-state"><span class="ds-lbl">Contorno</span><button type="button" class="btn btn--outline">Ver perfil</button></div>
+              <div class="ds-state"><span class="ds-lbl">Perigo</span><button type="button" class="btn btn--danger">Denunciar</button></div>
+              <div class="ds-state"><span class="ds-lbl">Pequeno</span><button type="button" class="btn btn--gold btn--sm">Aprovar</button></div>
+            </div>
+            <hr style="border:0;border-top:1px solid var(--color-paper-line);margin:var(--space-5) 0">
+            <div class="ds-row">
+              <div class="ds-state"><span class="ds-lbl">Default</span><button type="button" class="btn btn--gold">Enviar</button></div>
+              <div class="ds-state"><span class="ds-lbl">Hover</span><span class="btn btn--gold is-hover" aria-hidden="true">Enviar</span></div>
+              <div class="ds-state"><span class="ds-lbl">Foco</span><span class="btn btn--gold is-focus" aria-hidden="true">Enviar</span></div>
+              <div class="ds-state"><span class="ds-lbl">Pressionado</span><span class="btn btn--gold is-active" aria-hidden="true">Enviar</span></div>
+              <div class="ds-state"><span class="ds-lbl">Desativado</span><button type="button" class="btn btn--gold" disabled>Enviar</button></div>
+              <div class="ds-state"><span class="ds-lbl">Carregando</span><button type="button" class="btn btn--gold is-loading" aria-busy="true">Enviando</button></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== CAMPOS ===================== -->
+        <section class="ds-sec" id="campos" aria-labelledby="h-campos">
+          <h2 id="h-campos">Campos</h2>
+          <p>Rótulo sempre visível, dica abaixo e erro ligado ao campo por <code>aria-describedby</code>.</p>
+          <div class="ds-card ds-grid">
+            <div class="auth-field"><label for="c1">Default</label><input class="input" id="c1" placeholder="Nome do atleta"><span class="conc-hint">Clique para ver o foco.</span></div>
+            <div class="auth-field"><label for="c2">Preenchido</label><input class="input" id="c2" value="Gabriel Pereira"></div>
+            <div class="auth-field"><label for="c3">Foco</label><input class="input" id="c3" value="Recife/PE" style="border-color:var(--color-navy);box-shadow:0 0 0 3px rgba(11,42,107,.15)"></div>
+            <div class="auth-field"><label for="c4">Desativado</label><input class="input" id="c4" value="Não editável" disabled></div>
+            <div class="auth-field invalid"><label for="c5">Erro</label><input class="input" id="c5" value="maria@" aria-invalid="true" aria-describedby="c5-e"><span class="auth-err" id="c5-e">Digite um e-mail válido.</span></div>
+            <div class="auth-field"><label for="c6">Somente leitura (enviando)</label><input class="input" id="c6" value="maria@email.com" readonly style="background:var(--color-paper);cursor:progress"></div>
+            <div class="auth-field" style="grid-column:1/-1"><label for="c7">Área de texto</label><textarea class="textarea" id="c7" placeholder="Mensagem para o responsável"></textarea></div>
+          </div>
+        </section>
+
+        <!-- ===================== SELEÇÃO ===================== -->
+        <section class="ds-sec" id="selecao" aria-labelledby="h-sel">
+          <h2 id="h-sel">Seleção e chips</h2>
+          <p>Selects nos filtros e formulários; chips para características (o coração do produto) e filtros de posição.</p>
+          <div class="ds-card ds-grid">
+            <div class="auth-field"><label for="s1">Default</label><select class="select" id="s1"><option>Atacante</option><option>Meia</option></select></div>
+            <div class="auth-field"><label for="s2">Desativado</label><select class="select" id="s2" disabled><option>Sub-13</option></select></div>
+            <div class="auth-field invalid"><label for="s3">Erro</label><select class="select" id="s3" aria-invalid="true" aria-describedby="s3-e"><option>Selecione</option></select><span class="auth-err" id="s3-e">Campo obrigatório.</span></div>
+            <div class="auth-field" style="grid-column:1/-1">
+              <span class="lbl" style="display:block;font-weight:700;font-size:var(--text-sm);margin-bottom:6px">Chips (clique para alternar)</span>
+              <div class="ds-row" style="gap:var(--space-2)">
+                <button type="button" class="chip-toggle" aria-pressed="false">Finalização</button>
+                <button type="button" class="chip-toggle" aria-pressed="true">Drible</button>
+                <button type="button" class="chip-toggle" aria-pressed="false">Passe</button>
+                <button type="button" class="chip-toggle" aria-pressed="false" disabled>Indisponível</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== SELOS ===================== -->
+        <section class="ds-sec" id="selos" aria-labelledby="h-selos">
+          <h2 id="h-selos">Selos e avisos</h2>
+          <p>Selos marcam status; avisos explicam regras (sempre com texto, nunca só cor).</p>
+          <div class="ds-card">
+            <div class="ds-row" style="align-items:center;margin-bottom:var(--space-4)">
+              <span class="badge badge--navy">Presencial</span><span class="badge badge--gold">Em análise pela equipe</span><span class="badge badge--success">Verificado</span><span class="badge badge--danger">Sinalizada</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+              <div class="alert alert--info"><span>Informativo: o contato é sempre intermediado pela plataforma.</span></div>
+              <div class="alert alert--success"><span>Sucesso: inscrição recebida, protocolo SX-20261102-A1B2.</span></div>
+              <div class="alert alert--warning"><span>Atenção: a conta do menor só é ativada após o responsável confirmar.</span></div>
+              <div class="alert alert--danger"><span><strong>Erro:</strong> pedido não enviado. Seus dados continuam aqui, tente de novo.</span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== CARDS ===================== -->
+        <section class="ds-sec" id="cards" aria-labelledby="h-cards">
+          <h2 id="h-cards">Cards e Carta do Atleta</h2>
+          <p>O card clicável reage a hover e foco. A Carta do Atleta é o componente-assinatura.</p>
+          <div class="ds-row" style="align-items:stretch">
+            <article class="card" style="max-width:260px"><span class="card__num">01</span><h3 class="card__title">Card estático</h3><p class="muted">Agrupa informação.</p></article>
+            <a href="#cards" class="card card--hover" style="max-width:260px;text-decoration:none"><span class="card__num">02</span><h3 class="card__title">Card clicável</h3><p class="muted">Passe o mouse ou use Tab.</p></a>
+            <a href="../app/atleta-detalhe.html" class="carta carta--link" style="--w:240px" aria-label="Carta do atleta Gabriel Pereira">
+              <div class="carta__inner">
+                <img class="carta__photo" src="../assets/img/craque-hero.jpg" alt="" loading="lazy">
+                <div class="carta__navy"></div><div class="carta__gold"></div><div class="carta__shade"></div>
+                <span class="carta__reg">REGISTRO 047 · PELÉ ACADEMIA</span>
+                <div class="carta__top"><div class="carta__rating"><b>92</b><span>ÍNDICE · ATA</span></div></div>
+                <div class="carta__id"><span class="flag-br"><i></i></span><span class="carta__name">Gabriel Pereira<small>Atacante · 11 anos</small></span></div>
+                <div class="carta__stats"><div><b>18</b><span>GOL</span></div><div><b>7</b><span>AST</span></div><div><b>14</b><span>JOG</span></div></div>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <!-- ===================== ESTADOS DE SISTEMA ===================== -->
+        <section class="ds-sec" id="estados" aria-labelledby="h-est">
+          <h2 id="h-est">Estados de sistema (MVP concierge)</h2>
+          <p>Os quatro estados que todo envio do app atravessa. Os componentes abaixo são os mesmos de <a href="../app/inscricao-peneira.html">Inscrição na peneira</a>. Use os botões para ver o toast ao vivo.</p>
+          <div class="ds-grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))">
+            <div class="ds-state"><span class="ds-lbl">Vazio</span>
+              <div class="req-box" style="margin:0"><div class="req-empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg><p>Você ainda não se inscreveu em nenhuma peneira.</p></div></div>
+            </div>
+            <div class="ds-state"><span class="ds-lbl">Carregando</span>
+              <div class="req-box" style="margin:0"><button type="button" class="btn btn--gold btn--block is-loading" aria-busy="true">Enviando</button><p class="conc-hint" style="margin-top:var(--space-3)">Campos travados e <code>aria-busy="true"</code> no formulário.</p></div>
+            </div>
+            <div class="ds-state"><span class="ds-lbl">Erro de envio</span>
+              <div class="alert alert--danger"><span><strong>Pedido não enviado.</strong> A conexão demorou demais. Seus dados continuam aqui, é só tentar de novo.</span></div>
+            </div>
+            <div class="ds-state"><span class="ds-lbl">Sucesso</span>
+              <div class="req-box conc-ok" style="margin:0"><span class="conc-ok__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><b style="font-family:var(--font-display)">Inscrição recebida</b><div class="conc-ok__proto" style="margin:var(--space-3) 0 0"><span>Protocolo</span><b style="font-size:var(--text-md)">SX-20261102-A1B2</b></div></div>
+            </div>
+          </div>
+          <div class="ds-row" style="margin-top:var(--space-4)">
+            <button type="button" class="btn btn--outline btn--sm" data-toast="ok">Toast de sucesso</button>
+            <button type="button" class="btn btn--outline btn--sm" data-toast="alert">Toast de atenção</button>
+          </div>
+        </section>
+
+        <!-- ===================== TAILWIND ===================== -->
+        <section class="ds-sec" id="tailwind" aria-labelledby="h-tw">
+          <h2 id="h-tw">Utilitários Tailwind gerados dos tokens</h2>
+          <p>Este bloco é montado só com classes utilitárias do Tailwind, todas geradas a partir do <code>@theme</code> do projeto.</p>
+          <div class="bg-navy text-white rounded-lg p-6 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p class="font-stat text-ouro-lt text-sm uppercase tracking-widest">Peneira Nacional Sub-13</p>
+              <p class="font-display text-xl">Inscrições até 30/11</p>
+            </div>
+            <a href="../app/inscricao-peneira.html" class="bg-ouro text-ink font-ui font-bold rounded-md px-5 py-3 hover:bg-ouro-lt focus-visible:outline-3 focus-visible:outline-ouro-lt">Inscrever-se</a>
+          </div>
+          <code class="ds-code" style="margin-top:var(--space-4)">&lt;div class="bg-navy text-white rounded-lg p-6 md:flex-row"&gt;
+  &lt;p class="font-stat text-ouro-lt"&gt;...&lt;/p&gt;
+  &lt;a class="bg-ouro text-ink hover:bg-ouro-lt rounded-md"&gt;Inscrever-se&lt;/a&gt;
+&lt;/div&gt;
+
+/* assets/css/tailwind-input.css */
+@theme {
+  --color-navy: #0B2A6B;
+  --color-ouro: #E0A92E;
+  --font-display: "Archivo Expanded", ...;
+}</code>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+(function () {
+  var css = getComputedStyle(document.documentElement);
+  var cores = [
+    ["navy", "Navy", "Marca, títulos, nav"], ["navy-900", "Navy 900", "Fundos profundos"], ["ouro", "Dourado", "Ação principal"],
+    ["ouro-lt", "Dourado claro", "Destaques no navy"], ["ouro-dk", "Dourado escuro", "Texto dourado em papel"], ["paper", "Papel", "Fundo do app"],
+    ["paper-line", "Linha", "Bordas e divisões"], ["ink", "Tinta", "Texto principal"], ["ink-soft", "Tinta suave", "Texto secundário"],
+    ["ink-mute", "Tinta apagada", "Dicas e metadados"], ["verde", "Verde", "Sucesso, verificado"], ["vermelho", "Vermelho", "Erro, perigo"]
+  ];
+  var box = document.getElementById("swatches");
+  cores.forEach(function (c) {
+    var v = css.getPropertyValue("--color-" + c[0]).trim();
+    var d = document.createElement("div");
+    d.className = "sw";
+    d.innerHTML = '<div class="sw__c"></div><div class="sw__t"><b></b><code></code><br><span></span></div>';
+    d.querySelector(".sw__c").style.background = "var(--color-" + c[0] + ")";
+    d.querySelector("b").textContent = c[1];
+    d.querySelector("code").textContent = "bg-" + c[0] + " · " + v;
+    d.querySelector("span").textContent = c[2];
+    box.appendChild(d);
+  });
+
+  var esc = document.getElementById("escala");
+  ["4xl", "3xl", "2xl", "xl", "lg", "md", "base", "sm", "xs"].forEach(function (t) {
+    var v = css.getPropertyValue("--text-" + t).trim();
+    var r = document.createElement("div");
+    r.className = "ty-row";
+    r.innerHTML = "<code></code><span></span>";
+    r.querySelector("code").textContent = "text-" + t + " · " + v;
+    var s = r.querySelector("span");
+    s.textContent = "Descoberta";
+    s.style.fontFamily = "var(--font-display)";
+    s.style.fontWeight = "800";
+    s.style.lineHeight = "1.1";
+    s.style.fontSize = "min(var(--text-" + t + "), 12vw)";
+    esc.appendChild(r);
+  });
+
+  var sp = document.getElementById("spaces");
+  for (var i = 1; i <= 9; i++) {
+    var v = css.getPropertyValue("--space-" + i).trim();
+    var r = document.createElement("div");
+    r.className = "sp-row";
+    r.innerHTML = "<code></code><i></i>";
+    r.querySelector("code").textContent = "--space-" + i + " · " + v;
+    r.querySelector("i").style.width = "var(--space-" + i + ")";
+    sp.appendChild(r);
+  }
+
+  var vw = document.getElementById("vw");
+  function bp() {
+    var w = window.innerWidth;
+    vw.textContent = w + "px · " + (w < 600 ? "celular" : w < 1000 ? "tablet" : "desktop");
+  }
+  bp();
+  window.addEventListener("resize", bp);
+
+  document.querySelectorAll(".chip-toggle:not([disabled])").forEach(function (c) {
+    c.addEventListener("click", function () { c.setAttribute("aria-pressed", String(c.getAttribute("aria-pressed") !== "true")); });
+  });
+  document.querySelectorAll("[data-toast]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var ok = b.dataset.toast === "ok";
+      ScoutX.toast(ok ? "Inscrição recebida. Protocolo SX-20261102-A1B2." : "Confira os campos destacados.", b.dataset.toast);
+    });
+  });
+})();
+</script>
+<script src="../assets/js/ui.js"></script>
+</body>
+</html>
