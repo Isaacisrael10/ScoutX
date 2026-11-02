@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Denunciar conversa · ScoutX</title>
+<meta name="description" content="Denuncie uma conversa para a equipe de segurança do ScoutX.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Archivo+Expanded:wght@700;800;900&family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tailwind.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="authwrap">
+  <header class="app-bar">
+    <div class="container">
+      <a class="logo" href="../index.html" aria-label="ScoutX, início">
+        <svg class="logo__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M6 16 V6 H16 M32 6 H42 V16 M42 32 V42 H32 M16 42 H6 V32" stroke="#F2C964" stroke-opacity=".5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15 15 L33 33 M33 15 L15 33" stroke="#F2C964" stroke-width="7" stroke-linecap="round"/>
+        </svg>
+        Scout<span class="x">X</span>
+      </a>
+      <a class="auth-top__back" href="mensagens-atleta.html">← Voltar às mensagens</a>
+    </div>
+  </header>
+
+  <main id="conteudo" class="auth-main">
+    <div class="auth-card auth-card--wide">
+
+      <form id="form-denuncia" data-concierge="denuncia" data-titulo="Denúncia de conversa" novalidate>
+        <p class="eyebrow" style="color:var(--color-vermelho-dk)">Segurança</p>
+        <h1>Denunciar conversa</h1>
+        <p class="sub">A equipe de segurança analisa <strong>em até 1 dia útil</strong> e avisa seu responsável. Enquanto isso, você não precisa responder a ninguém.</p>
+        <input type="hidden" name="conversa" value="Ricardo S. (olheiro) com Gabriel Pereira">
+        <div class="auth-field">
+          <label for="motivo">O que aconteceu</label>
+          <select class="select" id="motivo" name="motivo" required>
+            <option value="">Selecione</option>
+            <option>Pediu meu telefone ou rede social</option>
+            <option>Pediu dinheiro ou pagamento</option>
+            <option>Mensagem ofensiva ou que me deixou desconfortável</option>
+            <option>Promessa que parece falsa</option>
+            <option>Outro</option>
+          </select>
+        </div>
+        <div class="auth-field">
+          <label for="detalhes">Conte com suas palavras (opcional)</label>
+          <textarea class="textarea" id="detalhes" name="detalhes"></textarea>
+        </div>
+        <div class="auth-field">
+          <label for="contato_resp">E-mail do responsável</label>
+          <input class="input" id="contato_resp" name="contato_resp" type="email" autocomplete="email" required>
+        </div>
+        <div class="alert alert--danger" data-state="error" role="alert" tabindex="-1" hidden style="margin-top:var(--space-5)">
+          <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg></span>
+          <div>
+            <strong>Denúncia não enviada.</strong> <span data-msg></span>
+            <div class="alert__actions"><a href="#" data-fallback hidden>Ou escreva para a equipe por e-mail</a></div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn--danger btn--block btn--lg" style="margin-top:var(--space-5)">Enviar denúncia</button>
+      </form>
+      <section class="conc-ok" data-state="success" data-for="form-denuncia" hidden aria-labelledby="ok-title">
+        <span class="conc-ok__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <h1 id="ok-title">Denúncia recebida</h1>
+        <p class="sub">Obrigado por avisar. A equipe de segurança analisa até <strong data-prazo></strong> e fala com seu responsável em <strong data-campo="contato_resp"></strong>.</p>
+        <div class="conc-ok__proto"><span>Protocolo</span><b data-protocolo></b></div>
+        <div class="conc-ok__actions"><a class="btn btn--gold" href="mensagens-atleta.html">Voltar às mensagens</a></div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<script src="../assets/js/ui.js" defer></script>
+<script src="../assets/js/concierge-config.js" defer></script>
+<script src="../assets/js/concierge.js" defer></script>
+</body>
+</html>

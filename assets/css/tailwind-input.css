@@ -1433,3 +1433,51 @@ input.msg-compose__in::placeholder{color:var(--color-ink-mute)}
 #cp-tags{margin-bottom:var(--space-2)}
 #cp-submit:disabled{opacity:.45;cursor:not-allowed}
 
+
+/* =====================================================================
+   Sprint 4 · MVP concierge: estados de envio, painel de sucesso,
+   "Minhas solicitações" e popover de notificações.
+   ===================================================================== */
+[hidden]{display:none!important}
+.btn.is-loading{color:transparent!important}
+form[aria-busy="true"] .input,form[aria-busy="true"] .select,form[aria-busy="true"] .textarea{background:var(--color-paper);cursor:progress}
+.alert--danger{background:var(--color-vermelho-soft);border-color:#f3b9b9;color:var(--color-vermelho-dk)}
+.alert:focus{outline:none}
+.alert:focus-visible{outline:3px solid var(--color-focus-ring);outline-offset:2px}
+.alert__actions{display:flex;gap:var(--space-3);flex-wrap:wrap;margin-top:var(--space-3)}
+.alert__actions a{color:inherit;font-weight:var(--font-weight-bold);text-decoration:underline}
+.conc-hint{display:block;font-size:var(--text-xs);color:var(--color-ink-mute);margin-top:6px;line-height:1.4}
+.conc-ok{text-align:left}
+.conc-ok__ic{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--color-verde-soft);color:var(--color-verde-dk);margin-bottom:var(--space-4)}
+.conc-ok__ic svg{width:28px;height:28px}
+.conc-ok__proto{display:flex;justify-content:space-between;gap:var(--space-3);flex-wrap:wrap;align-items:baseline;background:var(--color-paper);border:1px dashed var(--color-paper-line);border-radius:var(--radius-md);padding:var(--space-3) var(--space-4);margin:var(--space-5) 0}
+.conc-ok__proto span{font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.08em;color:var(--color-ink-mute);font-weight:var(--font-weight-bold)}
+.conc-ok__proto b{font-family:var(--font-stat);font-size:var(--text-xl);color:var(--color-navy);letter-spacing:.04em}
+.conc-ok .flow-step p{margin:0}
+.conc-ok__actions{display:flex;gap:var(--space-3);flex-wrap:wrap;margin-top:var(--space-5)}
+.conc-banner{display:flex;gap:var(--space-3);align-items:flex-start;background:var(--color-navy);color:var(--color-mist);border-radius:var(--radius-md);padding:var(--space-3) var(--space-4);font-size:var(--text-xs);line-height:1.5;margin-bottom:var(--space-5)}
+.conc-banner b{color:#fff}
+.conc-banner svg{width:18px;height:18px;flex:0 0 auto;color:var(--color-ouro-lt);margin-top:1px}
+.req-box{background:#fff;border:1px solid var(--color-paper-line);border-radius:var(--radius-lg);padding:var(--space-5);margin-top:var(--space-6)}
+.req-box h2{font-size:var(--text-lg);margin-bottom:var(--space-3)}
+.req-empty{display:flex;gap:var(--space-4);align-items:center;flex-wrap:wrap;color:var(--color-ink-soft);font-size:var(--text-sm)}
+.req-empty svg{width:40px;height:40px;color:var(--color-paper-line);flex:0 0 auto}
+.req-empty p{flex:1;min-width:200px;margin:0}
+.req-items{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:var(--space-2)}
+.req-item{display:flex;justify-content:space-between;align-items:center;gap:var(--space-3);flex-wrap:wrap;padding:var(--space-3) 0;border-bottom:1px solid var(--color-paper-line)}
+.req-item:last-child{border-bottom:0}
+.req-item b{display:block;font-family:var(--font-ui)}
+.req-item__meta{font-size:var(--text-xs);color:var(--color-ink-mute)}
+.notif-pop{position:absolute;top:calc(100% + 8px);right:0;width:min(320px,calc(100vw - 32px));background:#fff;color:var(--color-ink);border:1px solid var(--color-paper-line);border-radius:var(--radius-md);box-shadow:var(--shadow-lg);padding:var(--space-3);z-index:250;text-align:left}
+.notif-pop h2{font-size:var(--text-sm);font-family:var(--font-ui);margin:0 0 var(--space-2);padding:0 var(--space-2)}
+.notif-pop ul{list-style:none;margin:0;padding:0}
+.notif-pop li a,.notif-pop li p{display:block;padding:var(--space-2);border-radius:var(--radius-sm);font-size:var(--text-sm);color:var(--color-ink);line-height:1.4;margin:0}
+.notif-pop li a:hover,.notif-pop li a:focus-visible{background:var(--color-paper)}
+.notif-pop small{display:block;color:var(--color-ink-mute);font-size:var(--text-xs)}
+.app-user{position:relative}
+.conc-fs{border:0;padding:0;margin:0;min-width:0}
+.conc-fs.auth-sec{border-top:1px solid var(--color-paper-line);padding-top:var(--space-5)}
+.conc-fs > legend{float:left;width:100%;padding:0}
+.conc-fs > legend + *{clear:both}
+.conc-ok h1:focus{outline:none}
+.req-box{margin-bottom:var(--space-6)}

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recuperar senha · ScoutX</title>
+<meta name="description" content="Peça um link para redefinir sua senha do ScoutX.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Archivo+Expanded:wght@700;800;900&family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tailwind.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="authwrap">
+  <header class="app-bar">
+    <div class="container">
+      <a class="logo" href="../index.html" aria-label="ScoutX, início">
+        <svg class="logo__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M6 16 V6 H16 M32 6 H42 V16 M42 32 V42 H32 M16 42 H6 V32" stroke="#F2C964" stroke-opacity=".5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15 15 L33 33 M33 15 L15 33" stroke="#F2C964" stroke-width="7" stroke-linecap="round"/>
+        </svg>
+        Scout<span class="x">X</span>
+      </a>
+      <a class="auth-top__back" href="entrar.html">← Voltar ao login</a>
+    </div>
+  </header>
+
+  <main id="conteudo" class="auth-main">
+    <div class="auth-card auth-card--wide">
+
+      <form id="form-senha" data-concierge="recuperar-senha" data-titulo="Recuperar senha" novalidate>
+        <h1>Esqueci minha senha</h1>
+        <p class="sub">Informe o e-mail da conta. A equipe ScoutX envia um link de redefinição <strong>em até 1 dia útil</strong>. Contas de atleta recebem o link no e-mail do responsável.</p>
+        <div class="auth-field">
+          <label for="conta_email">E-mail da conta</label>
+          <input class="input" id="conta_email" name="conta_email" type="email" autocomplete="email" required>
+        </div>
+        <div class="auth-field">
+          <label for="perfil">Tipo de conta</label>
+          <select class="select" id="perfil" name="perfil" required>
+            <option value="">Selecione</option><option>Atleta (responsável)</option><option>Olheiro</option><option>Recrutador Pelé</option>
+          </select>
+        </div>
+        <div class="alert alert--danger" data-state="error" role="alert" tabindex="-1" hidden style="margin-top:var(--space-5)">
+          <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg></span>
+          <div>
+            <strong>Pedido não enviado.</strong> <span data-msg></span>
+            <div class="alert__actions"><a href="#" data-fallback hidden>Ou escreva para a equipe por e-mail</a></div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn--gold btn--block btn--lg" style="margin-top:var(--space-5)">Pedir link de redefinição</button>
+      </form>
+      <section class="conc-ok" data-state="success" data-for="form-senha" hidden aria-labelledby="ok-title">
+        <span class="conc-ok__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <h1 id="ok-title">Pedido recebido</h1>
+        <p class="sub">Até <strong data-prazo></strong> o link chega em <strong data-campo="conta_email"></strong>. Confira também a caixa de spam.</p>
+        <div class="conc-ok__proto"><span>Protocolo</span><b data-protocolo></b></div>
+        <div class="conc-ok__actions"><a class="btn btn--gold" href="entrar.html">Voltar ao login</a></div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<script src="../assets/js/ui.js" defer></script>
+<script src="../assets/js/concierge-config.js" defer></script>
+<script src="../assets/js/concierge.js" defer></script>
+</body>
+</html>
