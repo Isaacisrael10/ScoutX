@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inscrição na peneira · ScoutX</title>
+<meta name="description" content="Inscreva o atleta numa peneira da Pelé Academia. A equipe ScoutX confirma com o responsável em até 2 dias úteis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Archivo+Expanded:wght@700;800;900&family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tailwind.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="authwrap">
+  <header class="app-bar">
+    <div class="container">
+      <a class="logo" href="../index.html" aria-label="ScoutX, início">
+        <svg class="logo__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M6 16 V6 H16 M32 6 H42 V16 M42 32 V42 H32 M16 42 H6 V32" stroke="#F2C964" stroke-opacity=".5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15 15 L33 33 M33 15 L15 33" stroke="#F2C964" stroke-width="7" stroke-linecap="round"/>
+        </svg>
+        Scout<span class="x">X</span>
+      </a>
+      <a class="auth-top__back" href="peneiras.html">← Voltar às peneiras</a>
+    </div>
+  </header>
+
+  <main id="conteudo" class="auth-main">
+    <div class="auth-card auth-card--wide">
+
+      <!-- ============ FORMULÁRIO (estado vazio / erro / loading) ============ -->
+      <form id="form-inscricao" data-concierge="inscricao-peneira" data-titulo="Inscrição · Peneira" novalidate>
+        <p class="eyebrow" style="color:var(--color-ouro-dk)" id="pen-nome-eyebrow">Peneira Nacional Sub-13</p>
+        <h1>Inscrever o atleta</h1>
+        <p class="sub">Leva cerca de 2 minutos. A inscrição é gratuita e só vale com a autorização do responsável legal (LGPD/ECA).</p>
+
+        <div class="conc-banner" role="note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span><b>Como funciona:</b> sua inscrição vai direto para a equipe ScoutX, que confere os dados e o vídeo e <b>confirma por e-mail com o responsável em até 2 dias úteis</b>. Inscrições abertas até <b data-pen-prazo>30/11/2026</b>.</span>
+        </div>
+
+        <input type="hidden" name="peneira" id="peneira" value="Peneira Nacional Sub-13">
+
+        <fieldset class="conc-fs">
+          <legend class="auth-sec__h">O atleta</legend>
+          <div class="auth-field">
+            <label for="atleta_nome">Nome completo</label>
+            <input class="input" id="atleta_nome" name="atleta_nome" type="text" autocomplete="name" required minlength="5">
+          </div>
+          <div class="field-row">
+            <div class="auth-field">
+              <label for="atleta_nascimento">Data de nascimento</label>
+              <input class="input" id="atleta_nascimento" name="atleta_nascimento" type="date" required data-idade-min="8" data-idade-max="17">
+            </div>
+            <div class="auth-field">
+              <label for="atleta_posicao">Posição principal</label>
+              <select class="select" id="atleta_posicao" name="atleta_posicao" required>
+                <option value="">Selecione</option>
+                <option>Atacante</option><option>Meia</option><option>Volante</option>
+                <option>Lateral</option><option>Zagueiro</option><option>Goleiro</option>
+              </select>
+            </div>
+          </div>
+          <div class="auth-field">
+            <label for="atleta_cidade">Cidade / UF</label>
+            <input class="input" id="atleta_cidade" name="atleta_cidade" type="text" placeholder="Ex.: Recife/PE" autocomplete="address-level2" required>
+          </div>
+          <div class="auth-field">
+            <label for="atleta_video">Link de um vídeo jogando</label>
+            <input class="input" id="atleta_video" name="atleta_video" type="url" placeholder="https://youtube.com/..." aria-describedby="video-hint" required>
+            <span class="conc-hint" id="video-hint">YouTube, Google Drive ou Instagram. Até 90 segundos, mostrando finalização, drible ou jogo.</span>
+          </div>
+        </fieldset>
+
+        <fieldset class="conc-fs auth-sec">
+          <legend class="auth-sec__h">Responsável legal</legend>
+          <div class="auth-field">
+            <label for="resp_nome">Nome do responsável</label>
+            <input class="input" id="resp_nome" name="resp_nome" type="text" required minlength="5">
+          </div>
+          <div class="field-row">
+            <div class="auth-field">
+              <label for="resp_email">E-mail do responsável</label>
+              <input class="input" id="resp_email" name="resp_email" type="email" autocomplete="email" required>
+            </div>
+            <div class="auth-field">
+              <label for="resp_whats">WhatsApp do responsável</label>
+              <input class="input" id="resp_whats" name="resp_whats" type="tel" inputmode="tel" placeholder="(21) 99999-0000" autocomplete="tel" required data-tel>
+            </div>
+          </div>
+          <label class="auth-check"><input type="checkbox" name="autorizacao" value="sim" required> Sou o responsável legal pelo atleta, autorizo a inscrição e li a <a href="termos.html" style="color:var(--color-navy);font-weight:600">Política de Privacidade</a> (LGPD/ECA).</label>
+        </fieldset>
+
+        <!-- estado de erro de envio -->
+        <div class="alert alert--danger" data-state="error" role="alert" tabindex="-1" hidden style="margin-top:var(--space-5)">
+          <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg></span>
+          <div>
+            <strong>Pedido não enviado.</strong> <span data-msg></span>
+            <div class="alert__actions">
+              <a href="#" data-fallback hidden>Ou escreva para a equipe por e-mail</a>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn--gold btn--block btn--lg" style="margin-top:var(--space-5)">Enviar inscrição</button>
+        <p class="auth-foot">Nada é público até o responsável confirmar. Nenhum olheiro fala direto com o atleta.</p>
+      </form>
+
+      <!-- ============ SUCESSO ============ -->
+      <section class="conc-ok" data-state="success" data-for="form-inscricao" hidden aria-labelledby="ok-title">
+        <span class="conc-ok__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <h1 id="ok-title">Inscrição recebida</h1>
+        <p class="sub">A inscrição de <strong data-campo="atleta_nome"></strong> na <strong data-campo="peneira"></strong> chegou na equipe ScoutX.</p>
+
+        <div class="conc-ok__proto"><span>Protocolo</span><b data-protocolo></b></div>
+
+        <div class="flow-step"><span class="n">1</span><p><b>Até <span data-prazo></span></b>, a equipe confere os dados e o vídeo e escreve para <span data-campo="resp_email"></span>.</p></div>
+        <div class="flow-step"><span class="n">2</span><p>O responsável <b>confirma a autorização</b> respondendo esse e-mail. Sem a confirmação, a inscrição não segue.</p></div>
+        <div class="flow-step"><span class="n">3</span><p>O resultado da pré-seleção sai <b>até 07/12/2026</b>, por e-mail e WhatsApp.</p></div>
+
+        <p class="muted" style="font-size:var(--text-xs);margin-top:var(--space-4)">Guarde o protocolo. Se o e-mail não chegar no prazo, procure na caixa de spam ou fale com a equipe citando o número.</p>
+
+        <div class="conc-ok__actions">
+          <a class="btn btn--gold" href="peneiras.html#minhas">Ver minhas inscrições</a>
+          <a class="btn btn--outline" href="atleta-feed.html">Ir para o feed</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<script>
+  /* dados da peneira escolhida (vem de ?p= na URL) */
+  (function () {
+    var PENEIRAS = {
+      "nacional-sub13": ["Peneira Nacional Sub-13", "30/11/2026"],
+      "recife": ["Seletiva Pelé Academia · Recife", "27/11/2026"],
+      "finalizacao": ["Desafio de Finalização", "10/12/2026"],
+      "base-fc": ["Seletiva Base FC (parceiro)", "15/12/2026"],
+      "goleiro": ["Olho de Goleiro", "18/12/2026"],
+      "nordeste-sub17": ["Seletiva Nordeste Sub-17", "20/12/2026"]
+    };
+    var p = PENEIRAS[new URLSearchParams(location.search).get("p")] || PENEIRAS["nacional-sub13"];
+    document.getElementById("peneira").value = p[0];
+    document.getElementById("pen-nome-eyebrow").textContent = p[0];
+    document.getElementById("form-inscricao").dataset.titulo = p[0];
+    document.querySelector("[data-pen-prazo]").textContent = p[1];
+    document.title = "Inscrição · " + p[0] + " · ScoutX";
+  })();
+</script>
+<script src="../assets/js/ui.js" defer></script>
+<script src="../assets/js/concierge-config.js" defer></script>
+<script src="../assets/js/concierge.js" defer></script>
+</body>
+</html>

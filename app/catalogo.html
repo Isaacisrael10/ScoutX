@@ -39,6 +39,15 @@
 
 <main id="conteudo" class="page">
   <div class="container">
+
+    <section class="req-box" id="minhas" data-minhas-solicitacoes="contato-atleta" aria-labelledby="minhas-title" style="margin-top:0;margin-bottom:var(--space-5)">
+      <h2 id="minhas-title">Meus pedidos de contato</h2>
+      <div class="req-empty" data-empty>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg>
+        <p>Nenhum pedido ainda. Abra a carta de um atleta e toque em "Solicitar contato": a equipe fala com o responsável e retorna em até 2 dias úteis.</p>
+      </div>
+      <ul class="req-items" data-list hidden></ul>
+    </section>
     <div class="discover">
 
       <!-- ============ FEED ============ -->
@@ -273,5 +282,7 @@
 <script src="../assets/js/ui.js" defer></script>
 <script src="../assets/js/feed.js" defer></script>
 <script src="../assets/js/votes.js" defer></script>
+<script src="../assets/js/concierge-config.js" defer></script>
+<script src="../assets/js/concierge.js" defer></script>
 </body>
 </html>

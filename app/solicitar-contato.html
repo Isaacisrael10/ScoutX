@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solicitar contato com atleta · ScoutX</title>
+<meta name="description" content="Pedido de contato intermediado com um atleta da base. A equipe ScoutX fala com o responsável e retorna em até 2 dias úteis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Archivo+Expanded:wght@700;800;900&family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tailwind.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="authwrap">
+  <header class="app-bar">
+    <div class="container">
+      <a class="logo" href="../index.html" aria-label="ScoutX, início">
+        <svg class="logo__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M6 16 V6 H16 M32 6 H42 V16 M42 32 V42 H32 M16 42 H6 V32" stroke="#F2C964" stroke-opacity=".5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15 15 L33 33 M33 15 L15 33" stroke="#F2C964" stroke-width="7" stroke-linecap="round"/>
+        </svg>
+        Scout<span class="x">X</span>
+      </a>
+      <a class="auth-top__back" href="atleta-detalhe.html">← Voltar ao atleta</a>
+    </div>
+  </header>
+
+  <main id="conteudo" class="auth-main">
+    <div class="auth-card auth-card--wide">
+
+      <form id="form-contato" data-concierge="contato-atleta" data-titulo="Pedido de contato · Gabriel Pereira" novalidate>
+        <p class="eyebrow" style="color:var(--color-ouro-dk)">Contato intermediado</p>
+        <h1>Falar com Gabriel Pereira</h1>
+        <p class="sub">Gabriel tem 11 anos. Por isso você não fala direto com ele: o pedido vai para a equipe ScoutX, que apresenta você ao responsável legal.</p>
+
+        <div class="conc-banner" role="note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          <span><b>Como funciona:</b> a equipe confere seu clube ou agência, leva a proposta ao responsável e <b>retorna para você em até 2 dias úteis</b>, com o aceite ou a recusa. Se aceitar, a conversa abre em Mensagens, sempre acompanhada.</span>
+        </div>
+
+        <input type="hidden" name="atleta" value="Gabriel Pereira (@gabriel.pereira) · ATA Sub-13 · Recife/PE">
+
+        <div class="auth-field">
+          <label for="olheiro_nome">Seu nome</label>
+          <input class="input" id="olheiro_nome" name="olheiro_nome" type="text" autocomplete="name" required minlength="5">
+        </div>
+        <div class="field-row">
+          <div class="auth-field">
+            <label for="olheiro_clube">Clube ou agência</label>
+            <input class="input" id="olheiro_clube" name="olheiro_clube" type="text" autocomplete="organization" required>
+          </div>
+          <div class="auth-field">
+            <label for="olheiro_email">E-mail profissional</label>
+            <input class="input" id="olheiro_email" name="olheiro_email" type="email" autocomplete="email" required>
+          </div>
+        </div>
+        <div class="auth-field">
+          <label for="objetivo">O que você quer propor</label>
+          <select class="select" id="objetivo" name="objetivo" required>
+            <option value="">Selecione</option>
+            <option>Convite para avaliação / treino</option>
+            <option>Convite para peneira do clube</option>
+            <option>Acompanhar a evolução do atleta</option>
+            <option>Outro</option>
+          </select>
+        </div>
+        <div class="auth-field">
+          <label for="mensagem">Mensagem para o responsável</label>
+          <textarea class="textarea" id="mensagem" name="mensagem" required minlength="30" aria-describedby="msg-hint"></textarea>
+          <span class="conc-hint" id="msg-hint">Conte quem você é e o que viu no atleta. Não inclua telefone nem rede social: o contato é sempre intermediado.</span>
+        </div>
+        <label class="auth-check"><input type="checkbox" name="aceite" value="sim" required> Concordo que o contato com o menor será sempre intermediado e acompanhado pelo responsável (<a href="termos.html" style="color:var(--color-navy);font-weight:600">Termos de Uso</a>).</label>
+
+        <div class="alert alert--danger" data-state="error" role="alert" tabindex="-1" hidden style="margin-top:var(--space-5)">
+          <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg></span>
+          <div>
+            <strong>Pedido não enviado.</strong> <span data-msg></span>
+            <div class="alert__actions"><a href="#" data-fallback hidden>Ou escreva para a equipe por e-mail</a></div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn--gold btn--block btn--lg" style="margin-top:var(--space-5)">Enviar pedido de contato</button>
+      </form>
+
+      <section class="conc-ok" data-state="success" data-for="form-contato" hidden aria-labelledby="ok-title">
+        <span class="conc-ok__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <h1 id="ok-title">Pedido enviado à equipe</h1>
+        <p class="sub">Seu pedido de contato com <strong>Gabriel Pereira</strong> está com a equipe ScoutX.</p>
+        <div class="conc-ok__proto"><span>Protocolo</span><b data-protocolo></b></div>
+        <div class="flow-step"><span class="n">1</span><p>A equipe confere <b data-campo="olheiro_clube"></b> e leva sua proposta ao responsável legal.</p></div>
+        <div class="flow-step"><span class="n">2</span><p><b>Até <span data-prazo></span></b> você recebe o aceite ou a recusa em <span data-campo="olheiro_email"></span>.</p></div>
+        <div class="flow-step"><span class="n">3</span><p>Com o aceite, a conversa abre em <b>Mensagens</b>, com o responsável acompanhando tudo.</p></div>
+        <div class="conc-ok__actions">
+          <a class="btn btn--gold" href="catalogo.html#minhas">Ver meus pedidos</a>
+          <a class="btn btn--outline" href="catalogo.html">Voltar à descoberta</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<script src="../assets/js/ui.js" defer></script>
+<script src="../assets/js/concierge-config.js" defer></script>
+<script src="../assets/js/concierge.js" defer></script>
+</body>
+</html>
