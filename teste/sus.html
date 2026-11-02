@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Questionário de usabilidade · ScoutX</title>
+<meta name="description" content="Questionário SUS (System Usability Scale) do teste de usabilidade do ScoutX.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Archivo+Expanded:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="../assets/css/tailwind.css">
+<style>
+  .sus-q{border:0;padding:var(--space-4) 0;margin:0;border-bottom:1px solid var(--color-paper-line);min-width:0}
+  .sus-q legend{font-weight:600;line-height:1.45;margin-bottom:var(--space-3);float:left;width:100%}
+  .sus-q legend + *{clear:both}
+  .sus-scale{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+  .sus-scale label{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:var(--text-xs);color:var(--color-ink-mute);text-align:center;cursor:pointer;border:1px solid var(--color-paper-line);border-radius:var(--radius-md);padding:8px 2px;background:#fff}
+  .sus-scale input{accent-color:var(--color-navy);width:18px;height:18px}
+  .sus-scale label:has(input:checked){border-color:var(--color-navy);background:rgba(11,42,107,.06);color:var(--color-navy);font-weight:700}
+  .sus-scale label:has(input:focus-visible){outline:3px solid var(--color-focus-ring);outline-offset:2px}
+  .sus-ends{display:flex;justify-content:space-between;font-size:var(--text-xs);color:var(--color-ink-mute);margin-top:4px}
+  .sus-q.invalid legend{color:var(--color-vermelho-dk)}
+  .sus-score{font-family:var(--font-stat);font-size:var(--text-3xl);color:var(--color-navy);line-height:1}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="authwrap">
+  <header class="app-bar">
+    <div class="container">
+      <a class="logo" href="../index.html" aria-label="ScoutX, início">
+        <svg class="logo__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M6 16 V6 H16 M32 6 H42 V16 M42 32 V42 H32 M16 42 H6 V32" stroke="#F2C964" stroke-opacity=".5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15 15 L33 33 M33 15 L15 33" stroke="#F2C964" stroke-width="7" stroke-linecap="round"/>
+        </svg>
+        Scout<span class="x">X</span>
+      </a>
+      <span class="app-ctx">Teste de usabilidade</span>
+    </div>
+  </header>
+
+  <main id="conteudo" class="auth-main">
+    <div class="auth-card auth-card--wide">
+      <form id="form-sus" data-concierge="sus" data-titulo="Questionário SUS" novalidate>
+        <h1>Como foi usar o ScoutX?</h1>
+        <p class="sub">10 frases rápidas. Marque o quanto você concorda com cada uma, pensando no que acabou de fazer. Não existe resposta certa: estamos testando o site, não você.</p>
+
+        <div class="field-row">
+          <div class="auth-field">
+            <label for="participante">Código do participante</label>
+            <input class="input" id="participante" name="participante" placeholder="P1" required>
+          </div>
+          <div class="auth-field">
+            <label for="perfil">Você testou como</label>
+            <select class="select" id="perfil" name="perfil" required>
+              <option value="">Selecione</option><option>Atleta</option><option>Responsável</option><option>Olheiro / técnico</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="perguntas"></div>
+
+        <input type="hidden" name="sus_score" id="sus_score">
+        <div class="auth-field" style="margin-top:var(--space-4)">
+          <label for="comentario">Quer contar mais alguma coisa? (opcional)</label>
+          <textarea class="textarea" id="comentario" name="comentario"></textarea>
+        </div>
+
+        <div class="alert alert--danger" data-state="error" role="alert" tabindex="-1" hidden style="margin-top:var(--space-5)">
+          <div><strong>Respostas não enviadas.</strong> <span data-msg></span>
+            <div class="alert__actions"><a href="#" data-fallback hidden>Ou envie por e-mail</a></div></div>
+        </div>
+        <button type="submit" class="btn btn--gold btn--block btn--lg" style="margin-top:var(--space-5)">Enviar respostas</button>
+      </form>
+
+      <section class="conc-ok" data-state="success" data-for="form-sus" hidden aria-labelledby="ok-title">
+        <span class="conc-ok__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <h1 id="ok-title">Obrigado!</h1>
+        <p class="sub">Suas respostas chegaram para a equipe. Sua nota SUS para o ScoutX:</p>
+        <p class="sus-score" data-campo="sus_score"></p>
+        <p class="muted" style="font-size:var(--text-xs);margin-top:var(--space-3)">Escala de 0 a 100. Acima de 68 é considerado acima da média.</p>
+      </section>
+    </div>
+  </main>
+</div>
+
+<script>
+(function () {
+  var Q = [
+    "Eu acho que gostaria de usar o ScoutX com frequência.",
+    "Achei o ScoutX mais complicado do que precisava ser.",
+    "Achei o ScoutX fácil de usar.",
+    "Acho que precisaria da ajuda de alguém para conseguir usar o ScoutX.",
+    "As partes do ScoutX funcionam bem juntas.",
+    "Achei que o ScoutX tem muita coisa sem sentido ou inconsistente.",
+    "Acho que a maioria das pessoas aprenderia a usar o ScoutX rapidinho.",
+    "Achei o ScoutX confuso de usar.",
+    "Me senti seguro(a) usando o ScoutX.",
+    "Precisei aprender muita coisa antes de conseguir usar o ScoutX."
+  ];
+  var box = document.getElementById("perguntas");
+  Q.forEach(function (q, i) {
+    var n = i + 1;
+    var fs = document.createElement("fieldset");
+    fs.className = "sus-q";
+    var html = "<legend></legend><div class='sus-scale'>";
+    for (var v = 1; v <= 5; v++) {
+      html += "<label><input type='radio' name='q" + n + "' value='" + v + "'" + (v === 1 ? " required" : "") + ">" + v + "</label>";
+    }
+    html += "</div><div class='sus-ends' aria-hidden='true'><span>Discordo totalmente</span><span>Concordo totalmente</span></div>";
+    fs.innerHTML = html;
+    fs.querySelector("legend").textContent = n + ". " + q + " (1 = discordo totalmente, 5 = concordo totalmente)";
+    box.appendChild(fs);
+  });
+
+  // calcula o SUS e bloqueia o envio se faltar resposta (roda antes do concierge.js)
+  var form = document.getElementById("form-sus");
+  form.addEventListener("submit", function (e) {
+    var soma = 0, falta = null;
+    for (var n = 1; n <= 10; n++) {
+      var r = form.querySelector("input[name='q" + n + "']:checked");
+      var fs = form.querySelectorAll(".sus-q")[n - 1];
+      fs.classList.toggle("invalid", !r);
+      if (!r) { falta = falta || fs.querySelector("input"); continue; }
+      var v = +r.value;
+      soma += (n % 2 === 1) ? (v - 1) : (5 - v);
+    }
+    if (falta) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      falta.focus();
+      ScoutX.toast("Responda as 10 frases para enviar.", "alert");
+      return;
+    }
+    document.getElementById("sus_score").value = (soma * 2.5).toFixed(1);
+  }, true);
+})();
+</script>
+<script src="../assets/js/ui.js" defer></script>
+<script src="../assets/js/concierge-config.js" defer></script>
+<script src="../assets/js/concierge.js" defer></script>
+</body>
+</html>
