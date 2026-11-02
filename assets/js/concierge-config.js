@@ -11,7 +11,7 @@
    ===================================================================== */
 window.SCOUTX_CONCIERGE = {
   // caixa monitorada pela equipe ScoutX
-  email: "CONFIGURE_O_EMAIL_DA_EQUIPE",
+  email: "isaac.coimbraa@gmail.com",
 
   // prazos reais que a equipe se compromete a cumprir (dias úteis)
   prazos: {
