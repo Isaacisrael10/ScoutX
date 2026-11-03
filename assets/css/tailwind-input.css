@@ -1209,6 +1209,9 @@ p{color:var(--color-ink-soft)}
 .auth-sec__h{font-family:var(--font-ui);font-weight:var(--font-weight-extra);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.1em;color:var(--color-ink-mute);margin-bottom:var(--space-4)}
 .auth-check{display:flex;gap:10px;align-items:flex-start;font-size:var(--text-sm);color:var(--color-ink-soft);line-height:1.45;margin-top:var(--space-4)}
 .auth-check input{margin-top:3px;flex:0 0 auto}
+.auth-check{flex-wrap:wrap}
+.auth-check > span:not(.auth-err){flex:1 1 0;min-width:0}
+.auth-check .auth-err{flex-basis:100%;margin-top:0;padding-left:26px}
 .auth-foot{margin-top:var(--space-5);text-align:center;font-size:var(--text-sm);color:var(--color-ink-mute)}
 .auth-foot a{color:var(--color-navy);font-weight:var(--font-weight-bold)}
 .auth-note{display:flex;gap:8px;align-items:flex-start;background:var(--color-ouro-soft);border:1px solid #ecdcb4;border-radius:var(--radius-md);padding:var(--space-3) var(--space-4);font-size:var(--text-xs);color:var(--color-ouro-dk);line-height:1.5;margin-top:var(--space-4)}
