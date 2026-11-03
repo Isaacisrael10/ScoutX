@@ -8,7 +8,7 @@ Entrega final (Sprint 4): **MVP concierge** com entrega de valor de ponta a pont
 | Deploy (produção) | https://isaacisrael10.github.io/ScoutX/ |
 | Styleguide vivo | https://isaacisrael10.github.io/ScoutX/design-system/ |
 | Repositório | https://github.com/Isaacisrael10/ScoutX |
-| Vídeo demonstrativo (Sprint 4) | _(link do vídeo)_ |
+| Entrega Sprint 4 (PDF) | [`docs/ScoutX-Entrega-Sprint4.pdf`](docs/ScoutX-Entrega-Sprint4.pdf) |
 | Figma | Não usamos Figma: o protótipo é a própria interface implementada e publicada |
 | Stack | HTML5 + **Tailwind CSS v4** + JavaScript (Vanilla) + Node/npm (build do CSS) |
 
@@ -129,7 +129,7 @@ Layout fluido com breakpoints em **1000px**, **900px**, **760px** e **600px**, c
 - Hierarquia de headings consistente e `lang="pt-br"`.
 - Navegação **100% por teclado**, incluindo o popover de notificações (abre com Enter, fecha com Esc) e os formulários (o foco vai para o primeiro campo com erro e para o título da tela de sucesso).
 - Erros ligados aos campos por `aria-describedby`, `aria-invalid` e avisos com `role="alert"`.
-- **Lighthouse (Sprint 4):** Acessibilidade **100** e Performance **82 a 97** nas telas principais. Prints em produção no PDF de entrega.
+- **Lighthouse em produção (Sprint 4):** Performance **91 a 99**, Acessibilidade **100** e Boas práticas **100** nas 7 telas principais. Relatórios em [`docs/sprint4/lighthouse/`](docs/sprint4/lighthouse/).
 
 **Performance:** CSS do Tailwind minificado (20 KB com gzip), fontes hospedadas no próprio site (subconjunto latin, sem conexões com terceiros no caminho crítico), imagens em WebP (1 MB caiu para 508 KB), imagem principal (LCP) com `fetchpriority="high"` e as demais com `loading="lazy"`. Console sem erros.
 
