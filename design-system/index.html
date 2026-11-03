@@ -6,10 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Design System · ScoutX</title>
 <meta name="description" content="Styleguide vivo do ScoutX: tokens do Tailwind (@theme) e componentes em todos os estados reais.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Archivo+Expanded:wght@700;800;900&family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Archivo+Expanded:wght@700;800;900&family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
+<noscript></noscript>
 <link rel="stylesheet" href="../assets/css/tailwind.css">
 <style>
   .ds-wrap{display:grid;grid-template-columns:220px minmax(0,1fr);gap:var(--space-7);align-items:start}
@@ -216,7 +213,7 @@
             <a href="#cards" class="card card--hover" style="max-width:260px;text-decoration:none"><span class="card__num">02</span><h3 class="card__title">Card clicável</h3><p class="muted">Passe o mouse ou use Tab.</p></a>
             <a href="../app/atleta-detalhe.html" class="carta carta--link" style="--w:240px">
               <div class="carta__inner">
-                <img class="carta__photo" src="../assets/img/craque-hero.jpg" alt="" loading="lazy">
+                <img fetchpriority="high" class="carta__photo" src="../assets/img/craque-hero.webp" alt="">
                 <div class="carta__navy"></div><div class="carta__gold"></div><div class="carta__shade"></div>
                 <span class="carta__reg">REGISTRO 047 · PELÉ ACADEMIA</span>
                 <div class="carta__top"><div class="carta__rating"><b>92</b><span>ÍNDICE · ATA</span></div></div>
