@@ -240,11 +240,11 @@ Para o canal do concierge funcionar, o e-mail da equipe fica em `assets/js/conci
 
 | Integrante | RM | Branch(es) Sprint 4 | PR(s) | Telas/Componentes |
 |---|---|---|---|---|
-| Isaac Israel Rosa Coimbra | 570072 | `feature/mvp-concierge`, `feature/design-system`, `feature/performance`, `feature/kit-teste` | [#2](https://github.com/Isaacisrael10/ScoutX/pull/2), [#3](https://github.com/Isaacisrael10/ScoutX/pull/3), [#4](https://github.com/Isaacisrael10/ScoutX/pull/4), [#5](https://github.com/Isaacisrael10/ScoutX/pull/5) | Fluxo concierge (inscrição, contato, denúncia, recuperar senha, termos), estados de interface, rota `/design-system`, performance, roteiro de teste + SUS |
-| Bernardo de Paula Rodrigues | 572376 | _(preencher)_ | _(preencher)_ | |
-| Heitor Anacleto Araújo | 573599 | _(preencher)_ | _(preencher)_ | |
-| Henrique Nunes Mororó | 574073 | _(preencher)_ | _(preencher)_ | |
-| Matheus Henrique Pedersen Guerra | 571197 | _(preencher)_ | _(preencher)_ | |
+| Isaac Israel Rosa Coimbra | 570072 | `feature/mvp-concierge`, `feature/design-system`, `feature/performance`, `feature/kit-teste`, `feature/perf-imagens`, `fix/checkbox-termos`, `docs/entrega-sprint4` | [#2](https://github.com/Isaacisrael10/ScoutX/pull/2), [#3](https://github.com/Isaacisrael10/ScoutX/pull/3), [#4](https://github.com/Isaacisrael10/ScoutX/pull/4), [#5](https://github.com/Isaacisrael10/ScoutX/pull/5), [#6](https://github.com/Isaacisrael10/ScoutX/pull/6), [#7](https://github.com/Isaacisrael10/ScoutX/pull/7), [#8](https://github.com/Isaacisrael10/ScoutX/pull/8) | Fluxo concierge (inscrição, contato, denúncia, recuperar senha, termos), estados de interface, rota `/design-system`, performance (WebP, fontes, LCP), correção do checkbox de termos, PDF de entrega |
+| Bernardo de Paula Rodrigues | 572376 | `bernardorodrigues830-patch-1` | [#9](https://github.com/Isaacisrael10/ScoutX/pull/9) | Revisão da entrega: site publicado, Design System, PDF e relatório de STED (`docs/sprint4/integrantes/bernardo.md`) |
+| Heitor Anacleto Araújo | 573599 | _(pendente)_ | _(pendente)_ | |
+| Henrique Nunes Mororó | 574073 | `HenriqNM-patch-1` | [#10](https://github.com/Isaacisrael10/ScoutX/pull/10) | Revisão da entrega: site publicado, Design System e PDF (`docs/sprint4/integrantes/henrique.md`) |
+| Matheus Henrique Pedersen Guerra | 571197 | _(pendente)_ | _(pendente)_ | |
 
 ### Sprint 3 (histórico)
 
